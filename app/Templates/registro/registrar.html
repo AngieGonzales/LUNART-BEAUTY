@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='registro.css') }}" rel="stylesheet">
     <title>Registro</title>
 </head>
 <body>
@@ -27,8 +29,8 @@
             <option value="Administrador">Administrador</option>
         </select><br><br>
 
-        <label for="fecha_registro">Fecha de Registro:</label>
-        <input type="text" id="fecha_registro" name="fecha_registro" placeholder="DD/MM/AA" required><br><br>
+        <label for="fecha_nacimiento">fecha de nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
 
         <button type="submit">Registrar</button>
     </form>
