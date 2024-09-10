@@ -52,27 +52,7 @@ def registro():
         db.session.add(nuevo_usuario)
         db.session.commit()
         flash('Usuario registrado con éxito.')
-        return redirect(url_for('usuario.login'))  
+        return redirect(url_for('auth.login'))  
 
 
     return render_template('registro/registrar.html')
-
-
-@bp.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        correo = request.form.get('correo')
-        contraseña = request.form.get('contraseña')
-        usuario = Usuario.query.filter_by(correo=correo).first()
-        
-        if usuario and usuario.check_password(contraseña):
-          
-            flash('Inicio de sesión exitoso.')
-            return redirect(url_for('usuario.registro'))  
-   
-        else:
-            flash('Correo o contraseña incorrectos.')
-            return redirect(url_for('usuario.login'))
-
-
-    return render_template('registro/login.html')
