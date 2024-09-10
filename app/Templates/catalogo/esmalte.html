@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='productos.css') }}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Esmaltes</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>Glamur</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a>
+                <a href="{{ url_for('menu.ruta_servicios') }}">SERVICIOS</a>
+                <a href="{{ url_for('menu.ruta_carrito')}}"><i class="fa-solid fa-cart-shopping fa-L" style="color: #000000;"></i></a>
+                <a href="{{ url_for('menu.ruta_catalogo') }}"><i class="fa-solid fa-house"></i></a>
+            </nav>
+        </div> 
+    </header>
+
+    <div class="header-content container">
+        <div class="header-txt">
+            <h1>ESMALTES</h1>
+        </div>
+    </div>   
+
+    <main class="menu-pl container">
+        <div class="general-content">
+            <!-- Producto 1 -->
+            <div class="general-txt">
+                <img class="img-1" src="{{ url_for('static', filename='img/27.png') }}" alt="Esmalte Diana">
+                <p>
+                    <h3>Diana</h3>
+                    <h3>$8000</h3>
+                </p>
+                <div class="prices">
+                    <button onclick="agregarAlCarrito('Diana', 8000)">Agregar</button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="general-txt">
+                <img class="img-1" src="{{ url_for('static', filename='img/28.jpg') }}" alt="Esmalte Gel Envy">
+                <p>
+                    <h3>Gel Envy</h3>
+                    <h3>$1000</h3>
+                </p>
+                <div class="prices">
+                    <button onclick="agregarAlCarrito('Gel Envy', 1000)">Agregar</button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="general-txt">
+                <img class="img-1" src="{{ url_for('static', filename='img/29.jpg') }}" alt="Esmalte Masglo">
+                <p>
+                    <h3>Masglo</h3>
+                    <h3>$7500</h3>
+                </p>
+                <div class="prices">
+                    <button onclick="agregarAlCarrito('Masglo', 7500)">Agregar</button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="general-txt">
+                <img class="img-1" src="{{ url_for('static', filename='img/32.png') }}" alt="Esmalte Lasting Pro">
+                <p>
+                    <h3>Lasting Pro</h3>
+                    <h3>$1000</h3>
+                </p>
+                <div class="prices">
+                    <button onclick="agregarAlCarrito('Lasting Pro', 1000)">Agregar</button>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="general-txt">
+                <img class="img-1" src="{{ url_for('static', filename='img/31.jpg') }}" alt="Esmalte Diana">
+                <p>
+                    <h3>Diana</h3>
+                    <h3>$8000</h3>
+                </p>
+                <div class="prices">
+                    <button onclick="agregarAlCarrito('Diana', 8000)">Agregar</button>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="general-txt">
+                <img class="img-1" src="{{ url_for('static', filename='img/32.png') }}" alt="Esmalte Diana">
+                <p>
+                    <h3>Diana</h3>
+                    <h3>$8000</h3>
+                </p>
+                <div class="prices">
+                    <button onclick="agregarAlCarrito('Diana', 8000)">Agregar</button>
+                </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="general-txt">
+                <img class="img-1" src="{{ url_for('static', filename='img/34.jpg') }}" alt="Esmalte Fashion">
+                <p>
+                    <h3>Fashion</h3>
+                    <h3>$8500</h3>
+                </p>
+                <div class="prices">
+                    <button onclick="agregarAlCarrito('Fashion', 8500)">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push({ nombre: nombre, precio: precio });
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(`${nombre} ha sido agregado al carrito`);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+}
+
+.contact-info {
+    padding: 50px;
+    background-color:#ebcdd8;
+    width: 50%;
+}
+
+.contact-info h2, .contact-form h2 {
+    color: #af668c;
+    margin-bottom: 20px;
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.info-section h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    color: #000000;
+    margin: 5px 0;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media a {
+    color: #b85c8c;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.contact-form {
+    padding: 50px;
+    background: linear-gradient(135deg, #f5f7fa, #fafafa);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center; /* Centra el formulario */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contact-form button {
+    background-color: #b85c8c;
+    color: white;
+    padding: 8px 20px; /* Ajusta el tamaño del botón */
+    border: none;
+    border-radius: 20px;
+    font-size: 16px; /* Ajusta el tamaño de la fuente del botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Centra el botón */
+    margin-top: 15px;
+}
+
+.contact-form button:hover {
+    background-color: #9f6a86;
+}

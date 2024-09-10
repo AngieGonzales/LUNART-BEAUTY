@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+body {
+    font-family: 'Alex+Brush&display';
+    margin: 0;
+    padding: 0;
+    color: #0a0a0a;
+    line-height: 1.6;
+}
+
+.header {
+    background: #cccccc;
+    color: #050505;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-family: 'Arizonia';
+    color: #000000; /* Color del texto de la marca */
+}
+
+.header .menu a {
+    color: #0f0f0f;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.header .menu a:hover {
+    color: rgb(212, 110, 154);
+}
+
+
+
+header.hero .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
+}
+
+header.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-family: 'Arizonia';
+    color: #000000; /* Color del texto de la marca */
+}
+
+header.hero p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+header.hero .btn {
+    background-color: #e91e63;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header.hero .btn:hover {
+    background-color: #c2185b;
+}
+
+main {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.services h3{
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #f7f4f4;
+    box-shadow: 4px 4px 10px rgba(207, 67, 114, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    
+}
+
+.service-item img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+

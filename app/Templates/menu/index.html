@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Menu</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>LunArt Beauty</h2>
+                
+            </div>
+
+            <nav class="menu">
+                <a href="{{ url_for('menu.ruta_servicios') }}">SERVICIOS</a>
+                <a href="{{ url_for('menu.ruta_catalogo') }}">CATALOGOS</a>
+                <a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a>
+            </nav>
+        </div>    
+
+    </header>
+
+    <div class="header-content container">
+        <div class="header-img">
+            <img class="img-1" src="{{ url_for('static', filename='img/20.png') }}" alt="shampos">
+        
+        </div>
+        
+        <div class="header-txt">
+            <h1>TU BELLEZA, NUESTRO COMPROMISO</h1>
+            <p>"Descubre lo mejor de nuestros servicios y productos."</p>
+            <a href="{{ url_for('menu.ruta_servicios') }}"class ="btn-1">informacion</a>
+        
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

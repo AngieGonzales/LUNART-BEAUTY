@@ -1,0 +1,110 @@
+font-family: 'Times New Roman', Times, serif;
+    color: #4a4a4a;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b98cb1;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #b98cb1;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #7d7d7d;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #4a4a4a;
+}
+
+th {
+    background-color: #f4e1f0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #fff;
+}
+
+tfoot th {
+    background-color: #b98cb1;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tfoot td {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+button {
+    background-color: #b98cb1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #a0729c;
+}
+
+                    </style>
+                </head>
+                <body>
+                    <h1>Glamur</h1>
+                    <h2>Factura</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                co

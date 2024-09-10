@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css')}}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Actualizar Perfil</title>
+</head>
+<body>
+    <header>
+      <h2>LunArt Beauty</h2>
+        <nav class="fondo">
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>  
+    
+    <div class="main-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Actualizar Perfil</a></li>
+                <li><a href="#">Historial</a></li>
+                <li><a href="#">Configuraciones</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <h1>Actualizar Perfil</h1>
+            <form action="/actualizar_perfil" method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu email">
+
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" name="phone" placeholder="Ingresa tu número de teléfono">
+
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" name="address" placeholder="Ingresa tu dirección">
+
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

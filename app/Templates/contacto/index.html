@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Beauty Clinic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contac.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="contact-info">
+            <h2>Contáctanos</h2>
+            <div class="info-section">
+                <h3>Horario de atención</h3>
+                <p>Lunes - Viernes: 8am a 5pm</p>
+                <p>Sábado: 8am a 11am</p>
+                <p>Domingo: cerrado</p>
+            </div>
+            <div class="info-section">
+                <h3>Contacto</h3>
+                <p>Número de teléfono: +1 234 567 890</p>
+                <p>Email: contacto@gmail.com</p>
+            </div>
+            <div class="info-section">
+                <h3>Dirección</h3>
+                <p>Ubicación: 1 Stanford Street, Londres, Inglaterra</p>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>BeautyClinic</h2>
+            <form>
+                <input type="text" name="phone" placeholder="Número de teléfono" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar comentario</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

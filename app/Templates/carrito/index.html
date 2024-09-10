@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='car.css') }}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Carrito de Compras</title>
+    <style>
+        /* Estilos para el menú de navegación */
+        .header {
+            
+            background: #cccccc;
+            padding: 25px 0;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .Logo h2 {
+            color: #080808;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+        }
+
+        .menu a {
+            color: #010101;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: rgb(212, 110, 154);
+        }
+
+        /* Ajustes para el cuerpo y contenido de la página */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f9fafb;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            padding-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #000000;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .carrito {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .cantidad {
+            width: 90px;
+            text-align: center;
+        }
+
+        
+        .acccion {
+            width: 90px;
+            text-align: center;
+        }
+
+        .btn-update {
+            background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-delete {
+            background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-update:hover {
+            background: linear-gradient(to right, #c586a1, #0a0a0a); /* Gradiente de fondo */
+        }
+
+        .btn-empty {
+            background: linear-gradient(to right, #ca769a, #4b4a4a); /* Gradiente de fondo */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn-empty:hover {
+            background-color: #c2185b;
+        }
+
+        .btn-comprar {
+            background: linear-gradient(to right, #ca769a, #4b4a4a); /* Gradiente de fondo */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .btn-comprar:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>LunArt Beauty</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a>
+                <a href="{{ url_for('menu.ruta_servicios') }}">SERVICIOS</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <table id="tablaCarrito">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoCarrito">
+            </tbody>
+        </table>
+        <h3>Total: <span id="total">$0</span></h3>
+        <button id="vaciarCarrito" class="btn-empty">Vaciar Carrito</button>
+        <button id="comprarCarrito" class="btn-comprar">Comprar</button>
+
+    </div>
+
+    <script>
+        function actualizarTabla() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let total = 0;
+
+    const cuerpoCarrito = document.getElementById('cuerpoCarrito');
+    cuerpoCarrito.innerHTML = '';
+
+    carrito.forEach((item, index) => {
+        const subtotal = item.precio * item.cantidad;
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${item.nombre}</td>
+            <td><input type="number" class="cantidad" value="${item.cantidad}" min="1" data-index="${index}"></td>
+            <td>$${item.precio}</td>
+            <td>$${subtotal}</td>
+            <td><button class="btn-update" data-index="${index}">Actualizar</button>
+            <button class="btn-delete" data-index="${index}">Eliminar</button></td>
+        `;
+        cuerpoCarrito.appendChild(fila);
+        total += subtotal;
+    });
+
+    document.getElementById('total').innerText = `$${total}`;
+
+    document.querySelectorAll('.btn-update').forEach(button => {
+        button.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            const cantidadInput = document.querySelector(`.cantidad[data-index="${index}"]`);
+            const nuevaCantidad = parseInt(cantidadInput.value);
+
+            if (nuevaCantidad > 0) {
+                carrito[index].cantidad = nuevaCantidad;
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                actualizarTabla();
+            } else {
+                alert('La cantidad debe ser mayor a 0.');
+            }
+        });
+    });
+
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            carrito.splice(index, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarTabla();
+        });
+    });
+}
+
+
+        document.getElementById('vaciarCarrito').addEventListener('click', function() {
+            if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
+                localStorage.removeItem('carrito');
+                actualizarTabla();
+            }
+        });
+
+        document.getElementById('comprarCarrito').addEventListener('click', function() {
+            if (confirm('¿Deseas confirmar la compra de los productos en tu carrito?')) {
+                generarFactura();
+            }
+        });
+
+        function generarFactura() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let facturaVentana = window.open('', '_blank');
+
+    let contenidoFactura = `
+        <html>
+        <head>
+            <title>Factura</title>
+            <style>
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: #4a4a4a;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b98cb1;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #b98cb1;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #7d7d7d;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #4a4a4a;
+}
+
+th {
+    background-color: #f4e1f0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #fff;
+}
+
+tfoot th {
+    background-color: #b98cb1;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tfoot td {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+button {
+    background-color: #b98cb1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #a0729c;
+}
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Glamur</h1>
+                <h2>Factura</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    `;
+
+    carrito.forEach(item => {
+        const subtotal = item.precio * item.cantidad;
+        contenidoFactura += `
+            <tr>
+                <td>${item.nombre}</td>
+                <td>${item.cantidad}</td>
+                <td>$${item.precio}</td>
+                <td>$${subtotal}</td>
+            </tr>
+        `;
+    });
+
+    contenidoFactura += `
+                    </tbody>
+                </table>
+                <h3>Total: ${document.getElementById('total').innerText}</h3>
+                <p style="text-align: center; margin-top: 30px; font-size: 1.2em; color: #7d7d7d;">Gracias por tu compra. ¡Vuelve pronto!</p>
+            </div>
+        </body>
+        </html>
+    `;
+
+    facturaVentana.document.write(contenidoFactura);
+    facturaVentana.document.close();
+
+    localStorage.removeItem('carrito');
+    actualizarTabla();
+}
+
+
+        actualizarTabla();
+    </script>
+</body>
+</html>

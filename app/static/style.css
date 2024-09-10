@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Alex+Brush&display';
+    font-style: italic; /* Agregado para cursiva */
+    color: #050505;
+    background-color: #fbfafa;
+}
+
+.cart-icon {
+    font-size: 1.5em;
+    color: #df0505; 
+    margin-left: 20px;
+}
+
+
+.cart-icon:hover {
+    color: #f39c12;
+}
+
+.header {
+    background-color: #cccccc;
+    color: #050505;
+    padding: 20px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+ h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    font-family: 'Arizonia';
+    color: #000000; /* Color del texto de la marca */
+}
+
+.header .menu a {
+    color: #050505;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.header .menu a:hover {
+    color: rgb(212, 110, 154);
+}
+
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    border-radius: 20px; /* Bordes redondeados */
+}
+
+.header-img {
+    flex: 1;
+    padding: 20px;
+}
+
+.header-img img {
+    max-width: 100%;
+    border-radius: 20px; /* Bordes redondeados para la imagen */
+    transition: transform 0.3s; /* Animación de transformación */
+}
+
+.header-img img:hover {
+    transform: scale(1.05); /* Agrandar un poco al pasar el ratón */
+}
+
+.header-txt {
+    text-align: center;
+    flex-basis: 50%;
+    padding: 20px; /* Espacio adicional para centrar el contenido */
+}
+
+.header-txt h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-family: 'Georgia', serif; /* Fuente elegante */
+    margin-bottom: 15px;
+    color: #d46e9a; /* Color más llamativo */
+}
+
+.header-txt p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.header-txt .btn-1 {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.header-txt .btn-1:hover {
+    background: linear-gradient(to right, #0f0d0a, #d46e9a);
+    transform: scale(1.05); /* Agrandar un poco el botón */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-txt h1 {
+        font-size: 36px; /* Reducir el tamaño en pantallas más pequeñas */
+    }
+}

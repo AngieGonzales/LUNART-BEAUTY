@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LISTA DE EMPLEADOS</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Caargo</th>
+        
+        </tr>
+        {% for empleado in data %}
+            <tr>
+                <td>{{ empleado.idempleado }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.telefono }}</td>
+                <td>{{ empleado.cargo }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('empleado.add') }}">Agregar Empleado</a>
+    <br>
+    <a href="{{ url_for('municipio.index') }}">Ir a Clientes</a> 
+</body>
+</html>

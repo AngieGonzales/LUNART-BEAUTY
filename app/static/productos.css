@@ -1,0 +1,143 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Estilos para el cuerpo y contenedores principales */
+body {
+    background-color: #f5f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Estilo del encabezado */
+.header {
+    background: #cccccc;
+    color: #030303;
+    padding: 20px 0;
+}
+
+.header .Logo h2 {
+    float: left;
+    margin-top: 10px;
+}
+
+.header .menu {
+    float: right;
+    margin-top: 15px;
+}
+
+.header .menu a {
+    color: #050505;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-size: 17px;
+}
+
+
+
+/* Estilo de contenido del encabezado */
+.header-content {
+    height: 300px;
+    text-align: center;
+    color: #080808;
+    padding: 10px 0;
+}
+
+.header-content .header-txt h1 {
+    padding-top: 100px;
+    font-size: 50px;
+}
+
+/* Estilo de contenido general */
+.general-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.general-txt {
+    background: #fff;
+    padding: 20px;
+    width: calc(33% - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 9px;
+}
+
+.general-txt img {
+    width: 100%;
+    height: auto; /* Mantener la proporción de la imagen */
+    max-height: 400px; /* Establecer una altura máxima consistente */
+    object-fit: cover; /* Recortar las imágenes para que se ajusten al contenedor */
+    border-radius: 9px;
+}
+
+.general-txt h3 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #333;
+}
+
+.general-txt p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Estilo de los precios y botones */
+.prices {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.prices button {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    border: none;
+    color: #f6f5f5;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.prices button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+.prices button:active {
+    background-color: #c2185b;
+    transform: scale(1);
+}
+
+/* Responsividad */
+@media(max-width: 768px) {
+    .general-txt {
+        width: calc(50% - 40px);
+    }
+}
+
+@media(max-width: 500px) {
+    .header-content .header-txt h1 {
+        font-size: 30px;
+    }
+
+    .general-txt {
+        width: 100%;
+    }
+}

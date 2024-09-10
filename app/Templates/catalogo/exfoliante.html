@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='productos.css') }}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Catalogo</title>
+</head>
+<body>
+
+    
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>Glamur</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a>
+                <a href="{{ url_for('menu.ruta_servicios') }}">SERVICIOS</a>
+                <a href="{{ url_for('menu.ruta_carrito') }}"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #050505;"></i></a>
+                <a href="{{ url_for('menu.ruta_catalogo') }}"><i class="fa-solid fa-house"></i></a>
+                
+            </nav>
+
+
+    </header>
+
+    <div class="header-content container">
+        
+        <div class="header-txt">
+            <h1>EXFOLIANTES</h1>
+            
+        </div>
+
+    </div>  
+
+    
+<section class="menu-pl container">
+    <div class="general-content">
+        <div class="general-txt">
+            <img class="img-1" src="{{ url_for('static', filename='img/35.jpg') }}" alt="shampos">
+
+            <p>
+                <h3>Exfoliante Sephora</h3>
+                <h3>$12000</h3>
+            </p>
+            <div class="prices">
+                
+                <button onclick="agregarAlCarrito('Exfoliante Sephora', 12000)">Agregar</button>
+
+
+            </div>
+
+        </div>
+
+        <div class="general-txt">
+            <img class="img-1" src="{{ url_for('static', filename='img/36.jpg') }}" alt="shampos">
+
+            <p>
+                <h3>Exfoliante Cactus Blossc</h3>
+                <h3>$15000</h3>
+            </p>
+            <div class="prices">
+                
+                <button onclick="agregarAlCarrito('Exfoliante Cactus Blossc, 15000')">Agregar</button>
+
+
+            </div>
+        </div>
+
+
+        <div class="general-txt">
+            <img class="img-1" src="{{ url_for('static', filename='img/37.jpg') }}" alt="shampos">
+
+            <p>
+                <h3>Exfoliante Body</h3>
+                <h3>11000</h3>
+            </p>
+            <div class="prices">
+                
+                <button onclick="agregarAlCarrito('Exfoliante Body', 11000)">Agregar</button>
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="general-txt">
+            <img class="img-1" src="{{ url_for('static', filename='img/38.jpg') }}" alt="shampos">
+
+            <p>
+                <h3>Exfoliante Biotherm</h3>
+                <h3>$15000</h3>
+            </p>
+            <div class="prices">
+                
+                <button onclick="agregarAlCarrito('Exfoliante Biotherm', 15000)">Agregar</button>
+
+
+            </div>
+        </div>
+
+
+        <div class="general-txt">
+            <img class="img-1" src="{{ url_for('static', filename='img/8.jpg') }}" alt="shampos">
+
+            <p>
+                <h3>Exfoliante Coco</h3>
+                <h3>$20000</h3>
+            </p>
+            <div class="prices">
+                
+                <button onclick="agregarAlCarrito('Exfoliante Coco', 20000)">Agregar</button>
+
+
+            </div>
+        </div>
+
+
+        <div class="general-txt">
+            <img class="img-1" src="{{ url_for('static', filename='img/9.jpg') }}" alt="shampos">
+
+            <p>
+                <h3>Exfoliante Summer</h3>
+                <h3>$9000</h3>
+            </p>
+            <div class="prices">
+                <button onclick="agregarAlCarrito('Exfoliante Summer', 9000)">Agregar</button>
+
+            </div>
+        </div>
+
+        
+</section>
+
+<script>
+    function agregarAlCarrito(nombre, precio) {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.push({ nombre: nombre, precio: precio });
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        alert(`${nombre} ha sido agregado al carrito`);
+    }
+</script>
+
+
+</body>
+</html>

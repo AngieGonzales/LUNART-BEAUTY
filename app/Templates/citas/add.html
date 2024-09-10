@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='etil.css') }}" rel="stylesheet">
+    <title>Agenda</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>LunArt Beauty</h2>
+            </div>
+            <nav class="menu">
+                <a href="{{ url_for('cita.index') }}">LISTA DE CITAS</a>
+                <a href="{{ url_for('menu.ruta_catalogo') }}">CATALOGOS</a>
+            </nav>
+        </div>
+    </header>
+    <h1>AGENDAR CITA</h1>
+    <form action="{{ url_for('cita.add') }}" method="post">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <label for="servicio">Tipo de servicio:</label>
+        <select id="servicio" name="servicio_id" required>
+            {% for servicio in data %}
+                <option value="{{ servicio.idservicio }}">{{ servicio.nombre }}</option>
+            {% endfor %}
+        </select><br>
+
+
+        <label for="estilista">Estilista:</label>
+        <select id="estilista" name="estilista_id" required>
+            {% for estilista in data1 %}
+                <option value="{{ estilista.idEstilista }}">{{ estilista.nombre }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <button type="submit">AGENDAR</button>
+    </form>
+</body>
+</html>

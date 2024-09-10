@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Soft, off-white background */
+}
+
+header {
+    background-color: #eaeaea; /* Light grey background */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+    font-family: 'Arizonia', cursive;
+    color: #000000; /* Soft muted rose color */
+    margin: 0;
+    font-size: 2.5em;
+
+}
+
+.fondo ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.fondo ul li {
+    margin: 0 15px;
+}
+
+.fondo ul li a {
+    text-decoration: none;
+    color: #666; /* Muted text color */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.fondo ul li a:hover {
+    color: #b5838d; /* Matching soft rose on hover */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f2e8e6; /* Very soft pink */
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #333; /* Elegant dark grey for links */
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #dbc7c4; /* Slightly darker soft pink on hover */
+}
+
+/* Main Content */
+.main-container {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #666; /* Muted text */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9; /* Soft, calming background for inputs */
+}
+
+form input:focus {
+    border-color: #b5838d; /* Soft rose on focus */
+    outline: none;
+}
+
+form button {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 0 auto; /* Centered button */
+}
+
+form button:hover {
+    background-color: #b5838d; /* Slightly darker on hover */
+    transform: scale(1.05); /* Gentle zoom on hover */
+}

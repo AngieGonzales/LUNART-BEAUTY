@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>LISTA DE CLIENTES</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            
+        
+        </tr>
+        {% for cliente in data %}
+            <tr>
+                <td>{{ cliente.idempleado }}</td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.telefono }}</td>
+                
+
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="{{ url_for('clientes.add')}}">Agregar Cliente</a>
+    <br>
+    <a href="{{ url_for('servicio.index')}}">Ir a servicios</a>
+    
+
+   
+</body>
+</html>

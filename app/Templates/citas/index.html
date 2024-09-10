@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lista.css') }}">
+    <title>Citas</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>LunArt Beauty</h2>
+            </div>
+
+            <nav class="menu">
+                <a href="{{ url_for('menu.ruta_citas') }}">AGENDAR</a>
+                <a href="{{ url_for('menu.ruta_catalogo') }}">CATALOGOS</a>
+            </nav>
+        </div>    
+    </header>
+
+    <h1>LISTA DE CITAS</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Servicio</th>
+            <th>Estilista</th>
+            <th>Acciones</th>
+        </tr>
+        {% for cita in data %}
+            <tr>
+                <td>{{ cita.idcita }}</td>
+                <td>{{ cita.fecha }}</td>
+                <td>{{ cita.hora }}</td>
+                <td>{{ cita.servicio.nombre }}</td>
+                <td>{{ cita.estilista.nombre }}</td>
+                <td>
+                    <a class="btn-edit" href="{{ url_for('cita.edit', idcita=cita.idcita) }}">Editar</a>
+                    <a class="btn-delete" href="{{ url_for('cita.delete', idcita=cita.idcita) }}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
