@@ -9,4 +9,4 @@ class Compra(db.Model):
     total = db.Column(db.Float, nullable =False)
 
     provedor = db.Column(db.Integer, db.ForeignKey('provedor.idprovedor'))
-    empleado =  db.Column(db.Integer, db.ForeignKey('empleado.idempleado'))
+    estilista =  db.Column(db.Integer, db.ForeignKey('estilista.idEstilista'))
