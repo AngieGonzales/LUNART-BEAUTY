@@ -30,11 +30,8 @@ def registro():
         if len(contraseña) <= 5:
             flash('La contraseña debe tener más de 5 caracteres.')
             return redirect(url_for('usuario.registro'))
-        try:
-            datetime.strptime(fecha_registro, '%d/%m/%y')
-        except ValueError:
-            flash('La fecha debe estar en formato DD/MM/AA.')
-            return redirect(url_for('usuario.registro'))
+       
+        
         if not nombre or not apellido or not celular or not correo or not contraseña or not rol:
             flash('No puede haber campos vacíos.')
             return redirect(url_for('usuario.registro'))
@@ -46,7 +43,7 @@ def registro():
             celular=celular,
             correo=correo,
             rol=rol,
-            fecha_registro=datetime.strptime(fecha_registro, '%d/%m/%y')
+            
         )
         nuevo_usuario.set_password(contraseña)  
         db.session.add(nuevo_usuario)
