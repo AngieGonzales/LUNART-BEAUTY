@@ -1,7 +1,6 @@
 
 from app import db 
 
-
 class Carrito(db.Model):
     __tablename__='carrito'
     id = db.Column(db.Integer, primary_key=True)

@@ -21,13 +21,14 @@ def create_app():
         from .Models.cliente import Cliente
         return Cliente.query.get(cliente_idcliente)
 
-    from app.Routes import cita_routes, servicio_routes, menu_routes, estilista_routes, carrito_routes
+    from app.Routes import cita_routes, servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes
 
     app.register_blueprint(cita_routes.bp)
     app.register_blueprint(servicio_routes.bp)
     app.register_blueprint(menu_routes.bp)
     app.register_blueprint(carrito_routes.bp)
     app.register_blueprint(estilista_routes.bp)
+    app.register_blueprint(usuario_routes.bp)
 
     from app.Routes.auth import auth_bp
     app.register_blueprint (auth_bp)
