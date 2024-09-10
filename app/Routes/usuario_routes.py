@@ -16,8 +16,9 @@ def registro():
         correo = request.form.get('correo')
         contraseña = request.form.get('contraseña')
         rol = request.form.get('rol')
-        fecha_nacimiento = request.form.get('fecha_registro')
+        fecha_nacimiento = request.form.get('fecha_nacimiento')
 
+        # validaciones del formulario
         if not nombre.isalpha() or not apellido.isalpha():
             flash('Nombre y apellido solo deben contener letras.')
             return redirect(url_for('usuario.registro'))
@@ -39,7 +40,7 @@ def registro():
             flash('No puede haber campos vacíos.')
             return redirect(url_for('usuario.registro'))
 
-    
+        # creacion del nuevo usuario
         nuevo_usuario = Usuario(
             nombre=nombre,
             apellido=apellido,
