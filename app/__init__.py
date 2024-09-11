@@ -30,8 +30,5 @@ def create_app():
     app.register_blueprint(estilista_routes.bp)
     app.register_blueprint(usuario_routes.bp)
 
-    from app.Routes.auth import auth_bp
-    app.register_blueprint (auth_bp)
-
 
     return app
