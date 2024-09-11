@@ -11,7 +11,8 @@ class Usuario(db.Model):
     celular = db.Column(db.String(10), nullable=False)
     correo = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
-    fecha_nacimiento = db.Column(db.DateTime, default=datetime.utcnow)
+    # Usamos db.Date en vez de db.DateTime si no necesitas almacenar la hora
+    fecha_nacimiento = db.Column(db.Date, nullable=False)
     rol = db.Column(db.String(20), nullable=False)  
 
     def set_password(self, password):
