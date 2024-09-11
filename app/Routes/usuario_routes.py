@@ -83,6 +83,10 @@ def login():
         contraseña = request.form.get('contraseña')
         usuario = Usuario.query.filter_by(correo=correo).first()
         
+        if usuario is None:
+            flash('Por favor registrate antes de iniciar sesión')
+            return redirect(url_for('usuario.login'))
+        
         if usuario and usuario.check_password(contraseña):
             session['usuario_id'] = usuario.id  # Guardar ID del usuario en la sesión
             session['rol'] = usuario.rol  # Guardar el rol en la sesión
