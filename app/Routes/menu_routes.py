@@ -1,6 +1,9 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, request
+
 
 bp = Blueprint('menu', __name__)
+
+
 
 @bp.route('/estilista')
 
@@ -83,5 +86,6 @@ def ruta_tintes():
 @bp.route('/catalogo/cera')
 def ruta_cera():
     return render_template('catalogo/cera.html')
+
 
 

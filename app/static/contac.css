@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+.nerko-one-regular {
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f3f3f3;
@@ -24,18 +32,28 @@ body {
     width: 50%;
 }
 
-.contact-info h2, .contact-form h2 {
+.contact-info h2 {
     color: #af668c;
     margin-bottom: 20px;
+    font-family: 'Arizonia';
+    font-size: 35px;
+    text-align: center;
 }
-
+.contact-form h2 {
+    color: #af668c;
+    margin-bottom: 20px;
+    font-family: 'Arizonia';
+    font-size: 35px;
+}
 .info-section {
     margin-bottom: 30px;
 }
 
 .info-section h3 {
-    color: #333;
+    color: #4e4d4d;
     margin-bottom: 10px;
+    font-family: "Nerko One", cursive;
+    font-size: 20px;
 }
 
 .info-section p {
@@ -57,7 +75,7 @@ body {
 .contact-form {
     padding: 50px;
     background: linear-gradient(135deg, #f5f7fa, #fafafa);
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,16 +85,16 @@ body {
 .contact-form form {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     align-items: center; /* Centra el formulario */
 }
 
 .contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #000000;
+    border-radius: 30px;
+    border: 1px solid #777676;
     background-color: #f9f9f9;
     font-size: 16px;
     color: #333;
