@@ -12,14 +12,14 @@
     <header class="header">
         <div class="container">
             <div class="Logo">
-                <h2>Glamur</h2>
+                <h2>Glamur  <a href="{{ url_for('menu.ruta_catalogo') }}"><i class="fa-solid fa-house"></i></a></h2>
             </div>
 
             <nav class="menu">
                 <a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a>
                 <a href="{{ url_for('menu.ruta_servicios') }}">SERVICIOS</a>
                 <a href="{{ url_for('menu.ruta_carrito')}}"><i class="fa-solid fa-cart-shopping fa-L" style="color: #000000;"></i></a>
-                <a href="{{ url_for('menu.ruta_catalogo') }}"><i class="fa-solid fa-house"></i></a>
+              
             </nav>
         </div> 
     </header>
