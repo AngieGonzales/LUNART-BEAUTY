@@ -2,12 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from app.Models.usuario import Usuario
 from app import db
 from datetime import date
-<<<<<<< Updated upstream
 
-=======
-import re
-from sqlalchemy.exc import IntegrityError
->>>>>>> Stashed changes
 
 bp = Blueprint('usuario', __name__)
 
@@ -23,7 +18,6 @@ def registro():
         rol = request.form.get('rol')
         fecha_nacimiento = request.form.get('fecha_nacimiento')
 
-<<<<<<< Updated upstream
         if not nombre.replace(" ", "").isalpha() or not apellido.replace(" ", "").isalpha():
             print(f"Alfa Nombre {nombre} alfaapellido {apellido} ")
 
@@ -50,46 +44,11 @@ def registro():
             return redirect(url_for('usuario.registro'))
 
         
-=======
-        # Verificar si los campos están vacíos
->>>>>>> Stashed changes
         if not nombre or not apellido or not celular or not correo or not contraseña or not rol:
             flash('No puede haber campos vacíos.')
             return redirect(url_for('usuario.registro'))
 
-        # Validaciones básicas
-        if not nombre.isalpha() or not apellido.isalpha():
-            flash('Nombre y apellido solo deben contener letras.')
-            return redirect(url_for('usuario.registro'))
-
-        if len(celular) != 10 or not celular.isdigit():
-            flash('El celular debe tener 10 dígitos.')
-            return redirect(url_for('usuario.registro'))
-
-        # Validación del correo con regex
-        email_regex = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-        if not re.match(email_regex, correo):
-            flash('Formato de correo inválido.')
-            return redirect(url_for('usuario.registro'))
-
-        if len(contraseña) <= 5:
-            flash('La contraseña debe tener más de 5 caracteres.')
-            return redirect(url_for('usuario.registro'))
-
-        # Validar formato de la fecha
-        try:
-            fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
-        except ValueError:
-            flash('La fecha debe estar en formato AAAA-MM-DD.')
-            return redirect(url_for('usuario.registro'))
-
-        # Verificar si el correo ya está registrado
-        usuario_existente = Usuario.query.filter_by(correo=correo).first()
-        if usuario_existente:
-            flash('El correo ya está registrado.')
-            return redirect(url_for('usuario.registro'))
-
-        # Crear un nuevo usuario
+       
         nuevo_usuario = Usuario(
             nombre=nombre,
             apellido=apellido,
@@ -98,29 +57,19 @@ def registro():
             rol=rol,
             fecha_nacimiento=fecha_nacimiento  
         )
-
+        
         # Hash de la contraseña
         nuevo_usuario.set_password(contraseña)
-
-        # Intentar agregar el nuevo usuario a la base de datos
+        
         try:
             print("En el try")
             db.session.add(nuevo_usuario)
             db.session.commit()
             flash('Usuario registrado con éxito.')
             return redirect(url_for('usuario.login'))
-<<<<<<< Updated upstream
         except Exception as e:           
             db.session.rollback() # Deshacer los cambios si ocurre un error
             logging.error(f"Error al registrar el usuario: {str(e)}")  # Registrar el error
-=======
-        except IntegrityError:
-            db.session.rollback()  # Deshacer los cambios si ocurre un error
-            flash('Error: El correo ya está registrado.')
-            return redirect(url_for('usuario.registro'))
-        except Exception as e:
-            db.session.rollback()
->>>>>>> Stashed changes
             flash(f'Error al registrar el usuario: {str(e)}')
             return redirect(url_for('usuario.registro'))
 
@@ -133,7 +82,7 @@ def login():
         correo = request.form.get('correo')
         contraseña = request.form.get('contraseña')
         usuario = Usuario.query.filter_by(correo=correo).first()
-
+        
         if usuario and usuario.check_password(contraseña):
             session['usuario_id'] = usuario.id  # Guardar ID del usuario en la sesión
             session['rol'] = usuario.rol  # Guardar el rol en la sesión
