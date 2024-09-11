@@ -18,6 +18,7 @@ def registro():
         rol = request.form.get('rol')
         fecha_nacimiento = request.form.get('fecha_nacimiento')
 
+    
         # validaciones del formulario
         if not nombre.isalpha() or not apellido.isalpha():
             flash('Nombre y apellido solo deben contener letras.')
@@ -31,11 +32,14 @@ def registro():
         if len(contraseña) <= 5:
             flash('La contraseña debe tener más de 5 caracteres.')
             return redirect(url_for('usuario.registro'))
+        
+        # Conversión de fecha
         try:
-            datetime.strptime(fecha_nacimiento, '%d/%m/%y')
+            fecha_nacimiento = datetime.datetime.strptime(fecha_nacimiento, '%d/%m/%Y')  # Formato correcto
         except ValueError:
-            flash('La fecha debe estar en formato DD/MM/AA.')
+            flash('La fecha debe estar en formato DD/MM/YYYY.')
             return redirect(url_for('usuario.registro'))
+
         if not nombre or not apellido or not celular or not correo or not contraseña or not rol:
             flash('No puede haber campos vacíos.')
             return redirect(url_for('usuario.registro'))
@@ -47,13 +51,21 @@ def registro():
             celular=celular,
             correo=correo,
             rol=rol,
-            fecha_nacimiento=datetime.strptime(fecha_nacimiento, '%d/%m/%y')
-        )
-        nuevo_usuario.set_password(contraseña)  
-        db.session.add(nuevo_usuario)
-        db.session.commit()
-        flash('Usuario registrado con éxito.')
-        return redirect(url_for('usuario.login'))  
+            fecha_nacimiento=fecha_nacimiento
+            )
+        
+        nuevo_usuario.set_password(contraseña) 
+        try:
+            db.session.add(nuevo_usuario)
+            db.session.commit()
+            print("usuario registrado")
+            flash('Usuario registrado con éxito.')
+            return redirect(url_for('usuario.login'))
+        except Exception as e:
+            db.session.rollback()  # Deshacer cualquier cambio en la sesión si ocurre un error
+            print(f"Error al registrar usuario: {str(e)}")
+            flash(f'Ocurrió un error: {str(e)}')  # Mostrar el error al usuario
+            return redirect(url_for('usuario.registro'))
 
 
     return render_template('registro/registrar.html')
