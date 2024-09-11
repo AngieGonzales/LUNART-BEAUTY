@@ -9,7 +9,7 @@
         <h1>BIENVENIDOS A LUNART BEAUTY </h1>
 
         <div class="container mt-5"></div>
-            <div class="col-md-6 offset-md-3">
+            <div class="login col-md-6 offset-md-3">
                 <h2>Login</h2>
                 {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}             
@@ -20,12 +20,20 @@
             {% endwith %}
 
                 <form method="post">
-                    <label for="correo">Correo:</label>
-                    <input type="email" id="correo" name="correo" required><br><br>
-                    <img class="img-1" src="{{ url_for('static', filename='img/contraseña.svg') }}" alt="contra">
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" id="contraseña" name="contraseña" required><br><br>
-                    <button type="submit">Iniciar Sesión</button>
+                    <div class="form-group">
+
+                        <input type="email" id="correo" name="correo" placeholder="Correo" required><br><br>
+                    
+                    </div>
+
+                    <div  class="form-group">
+                        <label class="letra" for="password"><img class="icon" src="static/img/Contraseña.svg" alt=""></label>
+                        <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required><br><br>
+    
+
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary">Iniciar sesion</button>
                 </form>
             </div>
                
