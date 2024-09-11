@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, request
 from flask_login import login_required
+
 
 bp = Blueprint('menu', __name__)
 
@@ -15,7 +16,6 @@ def ruta_catalogo():
     return render_template('catalogo/index.html')
 
 @bp.route('/contacto')
-@login_required
 def ruta_contacto():
     return render_template('contacto/index.html')
 
@@ -87,5 +87,6 @@ def ruta_tintes():
 @bp.route('/catalogo/cera')
 def ruta_cera():
     return render_template('catalogo/cera.html')
+
 
 

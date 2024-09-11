@@ -9,3 +9,4 @@ from app.Models.factura import Factura
 from app.Models.producto import Producto
 from app.Models.provedor import Provedor
 from app.Models.registro import Registro
+from app.Models.contacto import Contacto
