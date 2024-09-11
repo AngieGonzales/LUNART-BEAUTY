@@ -6,7 +6,7 @@ from datetime import date
 
 bp = Blueprint('usuario', __name__)
 
-@bp.route('/', methods=['GET', 'POST'])
+@bp.route('/registro', methods=['GET', 'POST'])
 def registro():
     if request.method == 'POST':
         # Recoger datos del formulario
@@ -76,7 +76,7 @@ def registro():
     return render_template('registro/registrar.html')
 
 
-@bp.route('/login', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         correo = request.form.get('correo')

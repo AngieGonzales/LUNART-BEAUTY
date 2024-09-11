@@ -4,7 +4,7 @@ from app import db
 
 bp = Blueprint('contact', __name__)
 
-@bp.route('7enviar_contacto', methods=['POST'])
+@bp.route('/enviar_contacto', methods=['POST'])
 def enviar_contacto():
     if request.method == 'POST':
         phone = request.form['phone']
