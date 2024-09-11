@@ -9,4 +9,4 @@ class Factura(db.Model):
     total = db.Column(db.Float, nullable=False)
 
 
-    carrito_items = db.relationship('Carrito', backref='factura', lazy=True)
+    
