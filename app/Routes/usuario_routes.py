@@ -22,30 +22,30 @@ def registro():
             print(f"Alfa Nombre {nombre} alfaapellido {apellido} ")
 
             print(f"Alfa Nombre {nombre.isalpha()} alfaapellido {apellido.isalpha()} ")
-            flash('Nombre y apellido solo deben contener letras.')
+            flash('NOMBRE Y APELLIDO SOLO DEBEN CONTENER LETRAS.')
             return redirect(url_for('usuario.registro'))
         
         if len(celular) != 10 or not celular.isdigit():
-            flash('El celular debe tener 10 dígitos.')
+            flash('EL CELULAR DEBE TENER 10 DIGITOS.')
             return redirect(url_for('usuario.registro'))
         
         if '@' not in correo:
-            flash('El correo debe contener un @.')
+            flash('EL CORREO DEBE CONTENER UN @.')
             return redirect(url_for('usuario.registro'))
         
-        if len(contraseña) <= 5:
-            flash('La contraseña debe tener más de 5 caracteres.')
+        if len(contraseña) <= 4:
+            flash('LA CONTRASEÑA DEBE CONTENER MAS DE 4 CARACTERES.')
             return redirect(url_for('usuario.registro'))
         
         try:
           fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
         except ValueError:
-            flash('La fecha debe estar en formato DD/MM/AAAA.')
+            flash('LA FECHA DEBE ESTAR EN FORMATO DD/MM/AAAA.')
             return redirect(url_for('usuario.registro'))
 
         
         if not nombre or not apellido or not celular or not correo or not contraseña or not rol:
-            flash('No puede haber campos vacíos.')
+            flash('NO PUEDEN HABER CAMPOS VACIOS.')
             return redirect(url_for('usuario.registro'))
 
        
