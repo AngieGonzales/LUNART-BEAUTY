@@ -9,6 +9,7 @@ bp = Blueprint('usuario', __name__)
 @bp.route('/', methods=['GET', 'POST'])
 def registro():
     if request.method == 'POST':
+        # Recoger datos del formulario
         nombre = request.form.get('nombre')
         apellido = request.form.get('apellido')
         celular = request.form.get('celular')
@@ -73,6 +74,7 @@ def registro():
             return redirect(url_for('usuario.registro'))
 
     return render_template('registro/registrar.html')
+
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
