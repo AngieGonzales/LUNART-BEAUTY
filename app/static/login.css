@@ -14,6 +14,22 @@ body {
     
 }
 
+/* Estilo para el enlace de registrarse */
+.register-link {
+    display: block; /* Hace que el enlace se comporte como un bloque */
+    text-align: center; /* Centra el texto */
+    margin-top: 15px; /* Espaciado hacia arriba */
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente */
+    color: #000000; /* Color rosa palo para que combine con el botón */
+    text-decoration: none; /* Quita el subrayado */
+    font-weight: bold;
+}
+
+.register-link:hover {
+    color: #f8a5c2; /* Cambia el color cuando el usuario pasa el ratón por encima */
+    text-decoration: underline; /* Añade subrayado en el hover */
+}
+
 .icon {
     width: 20px;
     height: 20px;
