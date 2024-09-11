@@ -4,7 +4,6 @@ from app import db
 from datetime import date
 
 
-
 bp = Blueprint('usuario', __name__)
 
 @bp.route('/', methods=['GET', 'POST'])
