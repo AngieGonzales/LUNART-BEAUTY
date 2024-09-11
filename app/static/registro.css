@@ -1,87 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Open+Sans:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Alex+Brush&display';
     color: #333;
     margin: 0;
     padding: 0;
     background: url('https://example.com/your-background-image.jpg') no-repeat center center fixed;
     background-size: cover;
+}
+.header {
+    background: #cccccc;
+    color: #050505;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
-.registro-titulo {
+h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-family: 'Arizonia';
+    color: #000000; /* Color del texto de la marca */
+}
+
+
+h1 {
     text-align: center;
-    color: #d46e9a;
-    font-family: 'Arizonia', cursive;
-    font-size: 2.5em; /* Tamaño del texto del título reducido */
-    margin-bottom: 15px;
+    color: #333;
+    margin-top: 6%;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-.registro {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px; /* Reducir el padding */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    max-width: 800px; /* Reducir el ancho del formulario */
+/* Formulario */
+form {
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: rgba(250, 247, 247, 0.167);
+    padding: 30px;
+    border-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(174, 22, 22, 0.231);
+    transition: transform 0.3s;
 }
 
-.registro-txt label {
-    font-size: 0.9rem; /* Reducir el tamaño de las etiquetas */
-    margin-bottom: 5px;
-    color: #d46e9a;
-    font-weight: 600;
+form:hover {
+    transform: scale(1.02);
 }
 
-.registro-txt input, select {
-    padding: 8px; /* Reducir el padding de los campos */
-    margin-bottom: 15px; /* Reducir el espacio entre los campos */
-    border-radius: 6px; /* Reducir el borde redondeado */
-    border: 1px solid #ddd;
-    font-size: 0.9rem; /* Reducir el tamaño del texto */
-    background-color: #fafafa;
-    transition: border 0.3s ease-in-out;
+form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #0c0c0c;
 }
 
-.registro-txt input:focus, select:focus {
+form input[type="text"],
+form input[type="email"], /* Añadido para el campo de correo */
+form input[type="password"], /* Añadido para el campo de contraseña */
+form input[type="date"],
+form input[type="time"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus, /* Añadido para el campo de correo */
+form input[type="password"]:focus, /* Añadido para el campo de contraseña */
+form input[type="date"]:focus,
+form input[type="time"]:focus,
+form select:focus {
     border-color: #d46e9a;
     outline: none;
-    box-shadow: 0 0 4px rgba(212, 110, 154, 0.5);
 }
 
-.registro-formulario button {
-    background: linear-gradient(to right, #d46e9a, #6b0f1a);
-    color: white;
+form button[type="submit"] {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    padding: 8px 15px; /* Reducir el padding del botón */
-    border-radius: 6px; /* Reducir el borde redondeado del botón */
-    font-size: 1rem; /* Reducir el tamaño del texto del botón */
+    display: block; 
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    margin-top: 10px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.registro-formulario button:hover {
-    background: linear-gradient(to right, #de6db7, #800020);
-    transform: scale(1.03);
+form button[type="submit"]:hover {
+    background-color: #de6db7;
+    transform: scale(1.05);
 }
 
-.registro-formulario button:active {
-    transform: scale(1);
-}
-
-@media (max-width: 768px) {
-    form {
-        width: 90%;
-        padding: 15px; /* Ajustar el padding en pantallas pequeñas */
-    }
-
-    h1 {
-        font-size: 2em; /* Ajustar el tamaño del título en pantallas pequeñas */
-    }
-}
+/* Tabla */
