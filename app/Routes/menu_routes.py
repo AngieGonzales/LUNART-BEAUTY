@@ -1,17 +1,18 @@
 from flask import Blueprint, render_template, redirect, url_for, request
-from flask_login import login_required
 
 
 bp = Blueprint('menu', __name__)
 
+
+
 @bp.route('/estilista')
-@login_required
+
 def index():
     return render_template('estilista/index.html')
 
 
 @bp.route('/catalogo')
-@login_required
+
 def ruta_catalogo():
     return render_template('catalogo/index.html')
 
@@ -21,26 +22,24 @@ def ruta_contacto():
 
 
 @bp.route('/servicios')
-@login_required
 def ruta_servicios():
     return render_template('servicios/index.html')
 
 
 @bp.route('/citas')
-@login_required
+
 def ruta_citas():
     return redirect(url_for('cita.add'))
 
 
 @bp.route('/inicio')
-@login_required
+
 def ruta_inicio():
     return render_template('menu/index.html')
 
 
 
 @bp.route('/disponibilidad')
-@login_required
 def ruta_disponibilidad():
     return render_template('citas/index.html')
 
