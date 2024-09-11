@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from werkzeug.security import generate_password_hash
 from app.Models.usuario import Usuario
 from app import db
+from datetime import date
+
 
 
 bp = Blueprint('usuario', __name__)
@@ -36,7 +37,7 @@ def registro():
 
         # Formato correcto de fecha: AAAA-MM-DD
         try:
-            fecha_nacimiento = date.strptime(fecha_nacimiento, '%Y-%m-%d')
+          fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
         except ValueError:
             flash('La fecha debe estar en formato AAAA-MM-DD.')
             return redirect(url_for('usuario.registro'))

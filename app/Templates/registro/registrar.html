@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link href="{{ url_for('static', filename='registro.css') }}" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="Logo">
+            <div class="logo">
                 <h2>LunArt Beauty</h2>
             </div>
-            
         </div>
     </header>
 
     <div class="registro">
-
         <div class="registro-titulo">
             <h1>Registro de Usuario</h1>
         </div>
@@ -25,7 +25,6 @@
                 <div class="registro-txt">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required><br><br>
-                    
                 </div>
 
                 <div class="registro-txt">
@@ -33,30 +32,25 @@
                     <input type="text" id="apellido" name="apellido" required><br><br>
                 </div>
 
-
                 <div class="registro-txt">
                     <label for="celular">Celular:</label>
                     <input type="text" id="celular" name="celular" required><br><br>
                 </div>
 
-
                 <div class="registro-txt">
-                    <label for="fecha_nacimiento">fecha de nacimiento:</label>
+                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
                     <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
                 </div>
-
 
                 <div class="registro-txt">
                     <label for="correo">Correo:</label>
                     <input type="email" id="correo" name="correo" required><br><br>
                 </div>
 
-
                 <div class="registro-txt">
                     <label for="contraseña">Contraseña:</label>
                     <input type="password" id="contraseña" name="contraseña" required><br><br>
                 </div>
-
 
                 <div class="registro-txt">
                     <label for="rol">Rol:</label>
@@ -66,21 +60,11 @@
                     </select><br><br>
                 </div>
 
-               
-
-                <button type="submit">REGISTRAR</button>
+                <button type="submit">Registrar</button>
             </form>
         </div>
     </div>
 
-
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
-
