@@ -18,7 +18,7 @@ def registro():
         rol = request.form.get('rol')
         fecha_nacimiento = request.form.get('fecha_nacimiento')
 
-        # Validaciones del formulario
+       
         if not nombre.isalpha() or not apellido.isalpha():
             flash('Nombre y apellido solo deben contener letras.')
             return redirect(url_for('usuario.registro'))
@@ -35,26 +35,26 @@ def registro():
             flash('La contraseña debe tener más de 5 caracteres.')
             return redirect(url_for('usuario.registro'))
 
-        # Formato correcto de fecha: AAAA-MM-DD
+      
         try:
           fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
         except ValueError:
             flash('La fecha debe estar en formato AAAA-MM-DD.')
             return redirect(url_for('usuario.registro'))
 
-        # Validación de campos vacíos
+        
         if not nombre or not apellido or not celular or not correo or not contraseña or not rol:
             flash('No puede haber campos vacíos.')
             return redirect(url_for('usuario.registro'))
 
-        # Creación del nuevo usuario
+       
         nuevo_usuario = Usuario(
             nombre=nombre,
             apellido=apellido,
             celular=celular,
             correo=correo,
             rol=rol,
-            fecha_nacimiento=fecha_nacimiento  # Ya está en el formato correcto
+            fecha_nacimiento=fecha_nacimiento  
         )
         
         # Hash de la contraseña
