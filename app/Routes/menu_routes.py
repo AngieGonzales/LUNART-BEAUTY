@@ -89,3 +89,13 @@ def ruta_cera():
 
 
 
+@bp.route('/perfil')
+def ruta_perfil():
+    return render_template('perfil/index.html')
+
+
+@bp.route('/Historial')
+def ruta_historial():
+    return render_template('perfil/historial.html')
+
+

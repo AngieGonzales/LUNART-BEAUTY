@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Soft, off-white background */
+}
+
+header {
+    background-color: #eaeaea; /* Light grey background */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+    font-family: 'Arizonia', cursive;
+    color: #000000;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #b5838d;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f2e8e6; /* Very soft pink */
+    width: 230px;
+    height: 90vh;
+    position: fixed;
+    top: 15%;
+    left: 0;
+    padding-top: 100px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #dbc7c4;
+}
+
+/* Main Content */
+.main-container {
+    margin-left: 300px;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arizonia', cursive;
+    color: #b5838d;
+}
+
+/* Table Styling */
+.historial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.historial-table th, .historial-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.historial-table th {
+    background-color: #f2e8e6;
+    color: #333;
+    text-align: center;
+}
+
+.historial-table tr:hover {
+    background-color: #f2e2df; /* Slight hover effect */
+}
+
+.historial-table td {
+    text-align: center;
+}

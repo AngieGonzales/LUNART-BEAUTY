@@ -12,8 +12,8 @@
       <h2>LunArt Beauty</h2>
         <nav class="fondo">
             <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
             </ul>
         </nav>
     </header>  
@@ -21,9 +21,8 @@
     <div class="main-container">
         <aside class="sidebar">
             <ul>
-                <li><a href="#">Actualizar Perfil</a></li>
-                <li><a href="#">Historial</a></li>
-                <li><a href="#">Configuraciones</a></li>
+                <li><a href="{{ url_for('menu.ruta_perfil') }}">Actualizar Perfil</a></li>
+                <li><a href="{{ url_for('menu.ruta_historial') }}">Historial</a></li>
                 <li><a href="#">Cerrar Sesión</a></li>
             </ul>
         </aside>
