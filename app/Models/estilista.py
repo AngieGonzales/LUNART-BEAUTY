@@ -1,6 +1,5 @@
 from app import db
 
-
 class Estilista(db.Model):
 
     __tablename__ = 'estilista'

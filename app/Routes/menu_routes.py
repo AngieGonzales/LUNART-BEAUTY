@@ -86,17 +86,17 @@ def ruta_cera():
 
 @bp.route('/perfil')
 def ruta_perfil():
-    return render_template('perfil/index.html')
+    return render_template('usuario/index.html')
 
 
 @bp.route('/Historial')
 def ruta_historial():
-    return render_template('perfil/historial.html')
+    return render_template('usuario/historial.html')
 
 
 @bp.route('/Agregar')
-def ruta_add():
-    return render_template('admin/add.html')
+def ruta_edit():
+    return render_template('usuario/edit.html')
 
 
 

@@ -1,0 +1,48 @@
+<!DOCTYPE htm  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">l>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+  
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <h1>BIENVENIDOS A LUNART BEAUTY </h1>
+
+        <div class="container mt-5">
+            <div class="col-md-6 offset-md-3">
+                <h2>Login</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}             
+                            {% for category, message in messages %}
+                                <div class="flash-message alert alert-{{ category }}">{{ message }}</div>
+                            {% endfor %}
+                    {% endif %}
+                {% endwith %}
+        
+                <form method="post" action="{{ url_for('auth.login') }}">
+                    <div class="form-group">
+                        <img class="img-1" src="{{ url_for('static', filename='img/user.svg') }}" alt="contra">
+        
+                        <label for="nombre">Username</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <img class="img-1" src="{{ url_for('static', filename='img/contraseña.svg') }}" alt="contra">
+                        <label for="passwordclien">Password</label>
+        
+                        <input type="password" name="passwordclien" id="passwordclien" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+ 
+
+
+</body>
+</html>
