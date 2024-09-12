@@ -96,7 +96,7 @@ def login():
             if usuario.rol == 'Administrador':
                 return redirect(url_for('usuario.admin_dashboard'))  # Redirigir al panel de administración
             else:
-                return redirect(url_for('usuario.home'))  # Redirigir a la página de usuario
+                return redirect(url_for('usuario.index'))  # Redirigir a la página de usuario
         else:
             flash('Correo o contraseña incorrectos.')
             return redirect(url_for('usuario.login'))
@@ -110,10 +110,39 @@ def logout():
     return redirect(url_for('usuario.login'))
 
 @bp.route('/home')
-def home():
+def index():
     return render_template('menu/index.html')  # Página de inicio para el usuario normal
 
 # Ruta del administrador
 @bp.route('/admin/dashboard')
 def admin_dashboard():
     return render_template('admin/dashboard.html')  # Panel de administración
+    
+
+@bp.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+    # Obtener el usuario por ID
+    usuario = Usuario.query.get_or_404(id)
+
+    if request.method == 'POST':
+        # Recoger los datos del formulario
+        nombre = request.form.get('nombre')
+        correo = request.form.get('correo')
+        celular = request.form.get('celular')
+
+        # Actualizar los campos del usuario
+        usuario.nombre = nombre
+        usuario.correo = correo
+        usuario.celular = celular
+
+        try:
+            # Guardar cambios en la base de datos
+            db.session.commit()
+            flash('Perfil actualizado con éxito.')
+            return redirect(url_for('usuario.index'))  # Cambia esto a la ruta correcta
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Error al actualizar el perfil: {str(e)}')
+
+    # Renderizar el formulario para editar, pasando 'usuario'
+    return render_template('usuario/edit.html', usuario=usuario)

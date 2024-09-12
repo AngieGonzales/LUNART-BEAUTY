@@ -9,7 +9,6 @@ class Registro(db.Model):
 
 
 
-    cliente =  db.Column(db.Integer, db.ForeignKey('cliente.idcliente'))
     producto =  db.Column(db.Integer, db.ForeignKey('producto.idproducto'))
 
 
