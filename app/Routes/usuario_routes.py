@@ -90,7 +90,6 @@ def login():
         if usuario and usuario.check_password(contraseña):
             session['usuario_id'] = usuario.id  # Guardar ID del usuario en la sesión
             session['rol'] = usuario.rol  # Guardar el rol en la sesión
-            flash('Inicio de sesión exitoso.')
 
             # Redirigir según el rol
             if usuario.rol == 'Administrador':

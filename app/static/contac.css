@@ -5,7 +5,28 @@
     font-weight: 400;
     font-style: normal;
   }
+/* Estilos de mensajes flash */
+.flash {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    width: 100%; /* Se asegura de que ocupe todo el ancho del contenedor del formulario */
+    box-sizing: border-box;
+    text-align: center;
+}
 
+.flash.success {
+    background-color: #ebcdd8;
+    color: #af668c;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #721c24;
+}
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f3f3f3;
@@ -44,6 +65,7 @@ body {
     margin-bottom: 20px;
     font-family: 'Arizonia';
     font-size: 35px;
+    margin-top: 1%;
 }
 .info-section {
     margin-bottom: 30px;
@@ -89,7 +111,9 @@ body {
     align-items: center; /* Centra el formulario */
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form textarea {
+    resize: none;
+    height: 200px;
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -98,11 +122,6 @@ body {
     background-color: #f9f9f9;
     font-size: 16px;
     color: #333;
-}
-
-.contact-form textarea {
-    resize: none;
-    height: 100px;
 }
 
 .contact-form button {
