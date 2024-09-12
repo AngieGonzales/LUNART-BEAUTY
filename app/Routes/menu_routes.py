@@ -99,3 +99,9 @@ def ruta_historial():
     return render_template('perfil/historial.html')
 
 
+@bp.route('/Agregar')
+def ruta_add():
+    return render_template('admin/add.html')
+
+
+

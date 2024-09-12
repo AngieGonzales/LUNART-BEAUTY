@@ -84,7 +84,9 @@ h2 {
 .main-container {
     margin-left: 510px;
     padding: 20px;
+
 }
+
 
 .content h1 {
     font-size: 2rem;
@@ -92,15 +94,19 @@ h2 {
     margin-bottom: 20px;
     font-family: 'Arizonia', cursive;
     color: #b5838d;
+    margin-top: 5%;
+    text-align: left; /* Dejar el texto alineado a la izquierda */
+    transform: translateX(20%); /* Desplaza el texto hacia la derecha un 50% */
 }
+
 
 form {
     background-color: #c2bfbf7b;
-    padding: 50px;
+    padding: 70px;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
     width: 60%; /* Reduce el ancho si es necesario */
-    margin-left: 0; /* Alinear hacia la izquierda */
+    margin-left: 290px; /* Alinear hacia la izquierda */
 } 
 
 form label {
