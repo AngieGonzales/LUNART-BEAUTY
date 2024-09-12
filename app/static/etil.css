@@ -12,7 +12,9 @@ body {
     background: #cccccc;
     color: #050505;
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+    padding: 2px 0; /* Adds space to the top and bottom of the header */
 }
+
 
 .header .container {
     display: flex;
