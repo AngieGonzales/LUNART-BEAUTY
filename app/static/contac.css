@@ -15,6 +15,7 @@
     width: 100%; /* Se asegura de que ocupe todo el ancho del contenedor del formulario */
     box-sizing: border-box;
     text-align: center;
+    
 }
 
 .flash.success {
