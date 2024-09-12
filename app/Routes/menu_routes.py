@@ -3,18 +3,15 @@ from flask import Blueprint, render_template, redirect, url_for, request
 
 bp = Blueprint('menu', __name__)
 
-
-
 @bp.route('/estilista')
-
 def index():
     return render_template('estilista/index.html')
 
 
 @bp.route('/catalogo')
-
 def ruta_catalogo():
     return render_template('catalogo/index.html')
+
 
 @bp.route('/contacto')
 def ruta_contacto():
@@ -27,13 +24,11 @@ def ruta_servicios():
 
 
 @bp.route('/citas')
-
 def ruta_citas():
     return redirect(url_for('cita.add'))
 
 
 @bp.route('/inicio')
-
 def ruta_inicio():
     return render_template('menu/index.html')
 

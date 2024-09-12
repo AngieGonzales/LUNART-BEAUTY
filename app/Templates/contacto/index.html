@@ -35,10 +35,17 @@
         </div>
         <div class="contact-form">
             <h2>LunArt Beauty</h2>
-            <form action="{{ url_for('menu.ruta_contacto') }}" method="POST">
-                <input type="text" name="phone" placeholder="Número de teléfono" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <textarea name="message" placeholder="Mensaje" required></textarea>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %} 
+                    <ul>            
+                        {% for category, message in messages %}
+                            <div class="flash {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <form action="{{ url_for('contact.enviar_contacto') }}" method="POST">
+                <textarea name="message" placeholder="Deja aquí tu comentario" required></textarea>
                 <button type="submit">Enviar comentario</button>
             </form>
         </div>
