@@ -15,12 +15,6 @@ def create_app():
     login_manager.init_app(app)
     login_manager.login_view = 'auth.login'
 
-    @login_manager.user_loader
-    def load_user(cliente_idcliente):
-        
-        from .Models.cliente import Cliente
-        return Cliente.query.get(cliente_idcliente)
-
     from app.Routes import cita_routes, servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes, contacto_routes
 
     app.register_blueprint(cita_routes.bp)
