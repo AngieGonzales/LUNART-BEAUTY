@@ -32,13 +32,13 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f3f3f3;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    justify-content: center;
+
 }
 
 .container {
+    margin-top: 100px;
     background-color: white;
     border-radius: 10px;
     display: flex;
@@ -46,12 +46,27 @@ body {
     overflow: hidden;
     max-width: 800px;
     width: 100%;
+    top: 20px;
+    text-align: center;
+
+}
+
+@media (max-width: 440px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+    }
+
+    .contact-info {
+        padding: 0;
+    }
+
 }
 
 .contact-info {
     padding: 50px;
     background-color:#ebcdd8;
-    width: 50%;
 }
 
 .contact-info h2 {
