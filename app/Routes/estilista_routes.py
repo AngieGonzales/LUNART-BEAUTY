@@ -12,7 +12,7 @@ def index():
     # Renderizar la plantilla con los estilistas
     return render_template('estilistas/index.html', data=data)
 
-@bp.route('/add3', methods=['GET', 'POST'])
+@bp.route('/add', methods=['GET', 'POST'])
 def add():  
     if request.method == 'POST':
         # Recoger los datos del formulario

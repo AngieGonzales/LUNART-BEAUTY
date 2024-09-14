@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>LISTA DE EMPLEADOS</h1>
+    <h1>LISTA DE ESTILISTAS</h1>
     <table>
         <tr>
             <th>ID</th>
             <th>Nombre</th>
             <th>Telefono</th>
-            <th>Caargo</th>
+            <th>Cargo</th>
         
         </tr>
         {% for empleado in data %}
@@ -26,8 +26,8 @@
         {% endfor %}
     </table>
     <br>
-    <a href="{{ url_for('empleado.add') }}">Agregar Empleado</a>
+    <a href="{{ url_for('estilistas.add') }}">Agregar Empleado</a>
     <br>
-    <a href="{{ url_for('municipio.index') }}">Ir a Clientes</a> 
+    <a href="{{ url_for('servicio.index') }}">Ir a Clientes</a> 
 </body>
 </html>

@@ -5,7 +5,7 @@ bp = Blueprint('menu', __name__)
 
 @bp.route('/estilista')
 def index():
-    return render_template('estilista/index.html')
+    return render_template('estilistas/index.html')
 
 
 @bp.route('/catalogo')
