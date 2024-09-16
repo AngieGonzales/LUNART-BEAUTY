@@ -38,9 +38,9 @@ def registro():
             return redirect(url_for('usuario.registro'))
         
         try:
-          fecha_nacimiento = datetime.strptime(fecha_nacimiento)
+          fecha_nacimiento = datetime.strptime(fecha_nacimiento, '%d/%m/%Y').date()
         except ValueError:
-            flash('LA FECHA DEBE ESTAR EN FORMATO DD/MM/AAAA.')
+            flash('LA FECHA DEBE ESTAR EN FORMATO DD/MM/AAAA Y SEPARAD POR /')
             return redirect(url_for('usuario.registro'))
 
         
