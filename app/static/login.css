@@ -53,17 +53,12 @@ body {
     
     height: 20px;
 }
-
-
 .login {
     background-color: rgba(255, 255, 255, 0.763);
     padding: 40px  50px 60px 30px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.564);
 }
-
-
-
 .content-wrapper h1{
     font-family: 'Playfair Display', serif; /* Cambia a una fuente más elegante */
     font-size: 3em; /* Aumenta el tamaño de la fuente */
@@ -78,17 +73,13 @@ body {
     top: 43%; /* Ajusta la posición vertical */
     left: 30%;
     transform: translateX(-50%); /* Centra el texto horizontalmente */
-
-
 }
-
 /* Encabezado del formulario */
 h2 {
     text-align: center;
     color: #000000;
     font-size: 2em; 
 }
-
 /* Etiquetas de los campos */
 .form-group label {
     display: block;
@@ -99,9 +90,6 @@ h2 {
     color: #000000;
     
 }
-
-
-
 /* Campos de entrada de texto */
 .form-control {
   
@@ -184,4 +172,12 @@ h2 {
 .register-link:hover {
     color: #f8a5c2; /* Cambia el color cuando el usuario pasa el ratón por encima */
     text-decoration: underline; /* Añade subrayado en el hover */
+}
+
+@media (max-width: 440px) {
+    .container {
+        margin-top: 10px;
+        background-color: #fdcb6e;
+    }
+
 }

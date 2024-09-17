@@ -1,0 +1,49 @@
+<html></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css')}}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Editar Estilistas</title>
+</head>
+<body>
+    <header>
+      <h2>LunArt Beauty</h2>
+        <nav class="fondo">
+            <ul>
+                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>  
+    
+    <div class="main-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="{{ url_for('menu.ruta_perfil') }}">Actualizar Perfil</a></li>
+                <li><a href="{{ url_for('menu.ruta_historial') }}">Historial</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <h1>Editar Estilistas</h1>
+            <form action="{{ url_for('estilistas.edit', idEstilista=estilista.idEstilista) }}" method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="{{ estilista.nombre }}">
+            
+                <label for="email">Telefono:</label>
+                <input type="number" id="telefono" name="telefono" value="{{ estilista.telefono }}">
+            
+                <label for="phone">Cargo:</label>
+                <input type="text" id="cargo" name="cargo" value="{{ estilista.cargo }}">
+            
+                <button type="submit">Guardar Cambios</button>
+            </form>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

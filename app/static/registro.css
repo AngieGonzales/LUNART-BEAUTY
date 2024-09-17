@@ -79,7 +79,7 @@ form label {
 form input[type="text"],
 form input[type="email"], /* Añadido para el campo de correo */
 form input[type="password"], /* Añadido para el campo de contraseña */
-form input[type="datetime"],
+form input[type="date"],
 form input[type="time"],
 form select {
     width: 100%;
@@ -94,7 +94,7 @@ form select {
 form input[type="text"]:focus,
 form input[type="email"]:focus, /* Añadido para el campo de correo */
 form input[type="password"]:focus, /* Añadido para el campo de contraseña */
-form input[type="datetime"]:focus,
+form input[type="date"]:focus,
 form input[type="time"]:focus,
 form select:focus {
     border-color: #d46e9a;

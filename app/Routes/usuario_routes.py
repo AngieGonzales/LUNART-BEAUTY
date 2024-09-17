@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, logging
 from app.Models.usuario import Usuario
 from app import db
-from datetime import datetime
+from datetime import date
 
 
 bp = Blueprint('usuario', __name__)
@@ -38,7 +38,7 @@ def registro():
             return redirect(url_for('usuario.registro'))
         
         try:
-          fecha_nacimiento = datetime.strptime(fecha_nacimiento, '%d/%m/%Y').date()
+          fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
         except ValueError:
             flash('LA FECHA DEBE ESTAR EN FORMATO DD/MM/AAAA Y SEPARAD POR /')
             return redirect(url_for('usuario.registro'))
