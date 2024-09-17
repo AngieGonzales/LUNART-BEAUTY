@@ -8,7 +8,7 @@ body {
 }
 header {
     background-color: #eaeaea; /* Light grey background */
-    padding: 15px;
+    padding: 40px;
     text-align: center;
     box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
@@ -131,4 +131,19 @@ form button {
 form button:hover {
     background-color: #b5838d; /* Slightly darker on hover */
     transform: scale(1.05); /* Gentle zoom on hover */
+}
+
+
+.form-group {
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center;     /* Centra la imagen verticalmente */
+    margin: 3% 0;          /* Espacio alrededor del contenedor */
+}
+
+.img-1 {
+    width: 110px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    
+    
 }

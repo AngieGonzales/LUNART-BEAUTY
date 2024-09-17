@@ -10,12 +10,7 @@
 <body>
     <header>
       <h2>LunArt Beauty</h2>
-        <nav class="fondo">
-            <ul>
-                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
-                <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
-            </ul>
-        </nav>
+        
     </header>  
     
     <div class="main-container">
@@ -30,17 +25,20 @@
         <div class="content">
             <h1>Actualizar Perfil</h1>
             <form action="{{ url_for('usuario.edit', id=usuario.id) }}" method="POST">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="nombre" value="{{ usuario.nombre }}" placeholder="Ingresa tu nombre">
-            
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="correo" value="{{ usuario.correo }}" placeholder="Ingresa tu email">
-            
-                <label for="phone">Teléfono:</label>
-                <input type="text" id="phone" name="celular" value="{{ usuario.celular }}" placeholder="Ingresa tu número de teléfono">
-            
-                <button type="submit">Guardar Cambios</button>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="{{ usuario.nombre }}" required><br><br>
+                
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" value="{{ usuario.correo }}" required><br><br>
+                
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular" value="{{ usuario.celular }}" required><br><br>
+                
+               
+
+                <button type="submit">Actualizar</button>
             </form>
+            
             
         </div>
     </div>
