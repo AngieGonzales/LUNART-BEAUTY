@@ -8,25 +8,23 @@
 <body>
     <header>
         <h2>LunArt Beauty</h2>
-          <nav class="fondo">
-              <ul>
-                  <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
-              </ul>
-          </nav>
-          
-    </header>
-    <div class="main-container"> 
-        <aside class="sidebar">
-            <ul>
-                <li><a href="{{ url_for('estilistas.index') }}">ESTILISTAS</a></li>
-                <li><a href="#">PRODUCTOS</a></li>
-                <li><a href="{{ url_for('menu.ruta_perfil') }}">NOTIFICACIONES STOCK</a></li>
-                <li><a href="{{ url_for('menu.ruta_perfil') }}">CITAS</a></li>
-               
-                
-            </ul>
-        </aside>
-    </div>
+            <nav class="fondo">
+                <ul>
+                    <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                </ul>
+            </nav>   
+    </header>  
+        <div class="main-container"> 
+            <aside class="sidebar">
+                <ul>
+                    <li><a href="{{ url_for('estilistas.index') }}">ESTILISTAS</a></li>
+                    <li><a href="#">PRODUCTOS</a></li>
+                    <li><a href="{{ url_for('menu.ruta_perfil') }}">NOTIFICACIONES STOCK</a></li>
+                    <li><a href="{{ url_for('menu.ruta_perfil') }}">CITAS</a></li>
+                    <li><a href="{{ url_for('servicio.index_admin') }}">SERVICIOS</a></li>
+                </ul>
+            </aside>
+        </div>
     <div>
         <h1>LISTA DE ESTILISTAS</h1>
     </div>

@@ -6,94 +6,88 @@ body {
     padding: 0;
     background-color: #f7f7f7; /* Soft, off-white background */
 }
-
 header {
     background-color: #eaeaea; /* Light grey background */
     padding: 15px;
     text-align: center;
     box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-
-
-
 h2 {
     font-family: 'Arizonia', cursive;
     color: #000000; /* Soft muted rose color */
     margin: 0;
-    font-size: 2.5em;
-
+    font-size: 3.5em;
 }
-
 .fondo ul {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 0;
 }
-
 .fondo ul li {
     margin: 0 15px;
 }
-
 .fondo ul li a {
     text-decoration: none;
     color: #666; /* Muted text color */
     font-size: 18px;
     transition: color 0.3s ease;
 }
-
 .fondo ul li a:hover {
     color: #b5838d; /* Matching soft rose on hover */
 }
-
-/* Sidebar */
 .sidebar {
-    background-color: #f2e8e6; /* Very soft pink */
-    width: 230px;
-    height: 90vh;
-    position: fixed;
-    top: 15%;
+    width: 250px; /* Ancho de la barra lateral */
+    background-color: #f3dcd8; /* Very soft pink */
+    padding: 20px; /* Espaciado interno */
+    height: 100vh; /* Altura completa de la ventana */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
+    position: fixed; /* Fijar al costado izquierdo */
     left: 0;
-    padding-top: 100px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .sidebar ul {
-    list-style: none;
+    list-style: none; /* Sin puntos de lista */
     padding: 0;
 }
 
 .sidebar ul li {
-    margin: 20px 0;
+    margin-bottom: 20px; /* Espacio entre los elementos de la lista */
 }
 
 .sidebar ul li a {
-    color: #333; /* Elegant dark grey for links */
-    padding: 10px 20px;
-    text-decoration: none;
     display: block;
-    font-size: 16px;
-    transition: background 0.3s ease;
+    color: white; /* Texto blanco */
+    background-color: #f2e8e6; /* Very soft pink */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave en hover */
+    font-size: 16px; /* Tamaño de letra */
+    font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
 }
 
 .sidebar ul li a:hover {
-    background-color: #dbc7c4; /* Slightly darker soft pink on hover */
+    background-color: #1abc9c; /* Cambia a verde agua en hover */
 }
-
-/* Main Content */
 .main-container {
     margin-left: 510px;
     padding: 20px;
 }
-
 .content h1 {
-    font-size: 2rem;
+    text-align: center;
     color: #333;
-    margin-bottom: 20px;
-    font-family: 'Arizonia', cursive;
-    color: #b5838d;
+    margin-top: 4%;
+    font-size: 2.8em;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    width: 45%;
+    margin-left: 11%;
 }
-
+.content {
+    margin-left: 32%;
+    width: 60%;
+}
 form {
     background-color: #c2bfbf7b;
     padding: 50px;
@@ -102,7 +96,6 @@ form {
     width: 60%; /* Reduce el ancho si es necesario */
     margin-left: 0; /* Alinear hacia la izquierda */
 } 
-
 form label {
     display: block;
     margin-bottom: 8px;
@@ -110,7 +103,6 @@ form label {
     font-family: 'Times New Roman', Times, serif;
     color: #000000; /* Muted text */
 }
-
 form input {
     width: 80%;
     padding: 10px;
@@ -120,12 +112,10 @@ form input {
     font-size: 16px;
     background-color: #f9f9f9; /* Soft, calming background for inputs */
 }
-
 form input:focus {
     border-color: #b5838d; /* Soft rose on focus */
     outline: none;
 }
-
 form button {
     background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
     color: white;
@@ -138,7 +128,6 @@ form button {
     display: block;
     margin: 0 auto; /* Centered button */
 }
-
 form button:hover {
     background-color: #b5838d; /* Slightly darker on hover */
     transform: scale(1.05); /* Gentle zoom on hover */

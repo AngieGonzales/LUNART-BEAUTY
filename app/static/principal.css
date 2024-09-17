@@ -232,5 +232,27 @@ form input:focus {
 .styled-link:hover {
     background-color: #e2669c;
 }
+.btn-edit, .btn-delete {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.btn-edit {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    margin-right: 20px;
+}
+.btn-edit:hover {
+    background-color: #e0add2;
+}
+.btn-delete {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+}
+.btn-delete:hover {
+    background-color: #e0add2;
+}
 
 
