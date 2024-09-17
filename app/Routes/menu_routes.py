@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-from flask import Blueprint, render_template, redirect, url_for, request, flash
-from app.Models.usuario import Usuario
-from app import db
-=======
 from flask import Blueprint, render_template, redirect, url_for, request
 from app.Models.estilista import Estilista
->>>>>>> ffea4090b45e6776c02230789346813722fd8e55
 
 bp = Blueprint('menu', __name__)
 
