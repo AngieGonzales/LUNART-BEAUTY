@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, redirect, url_for, request
-
+from flask import Blueprint, render_template, redirect, url_for, request, flash
+from app.Models.usuario import Usuario
+from app import db
 
 bp = Blueprint('menu', __name__)
 
@@ -86,7 +87,7 @@ def ruta_cera():
 
 @bp.route('/perfil')
 def ruta_perfil():
-    return render_template('usuario/index.html')
+    return render_template('usuarios/index.html')
 
 
 @bp.route('/Historial')
@@ -94,9 +95,10 @@ def ruta_historial():
     return render_template('usuario/historial.html')
 
 
-@bp.route('/Agregar')
-def ruta_edit():
-    return render_template('usuario/edit.html')
+
+    
+
+
 
 
 

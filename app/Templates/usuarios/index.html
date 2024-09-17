@@ -5,28 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css')}}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
-    <title>Inicio</title>
+    <title>Perfil de Usuario</title>
 </head>
 <body>
     <header>
-      <h2>LunArt Beauty</h2>
-        <nav class="fondo">
-            <ul>
-                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
-                <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
-            </ul>
-        </nav>
+      <h2>LunArt Beauty - Perfil de Usuario</h2>
+       
     </header>  
     
     <div class="main-container">
         <aside class="sidebar">
             <ul>
-            
-                
-                <li><a href="{{ url_for('menu.ruta_edit') }}">Actualizar Perfil</a></li>
+                <li><a href="{{ url_for('usuario.lista_usuarios') }}">Lista de clientes</a></li>
                 <li><a href="{{ url_for('usuario.logout') }}">Cerrar sesión</a></li>
             </ul>
         </aside>
     </div>
+
+    <div class="form-group">
+        <img class="img-1" src="{{ url_for('static', filename='img/usuario.png') }}" alt="contra">
+    </div>
+    
+
+
+
+    
+
+    
+
 </body>
 </html>

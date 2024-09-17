@@ -9,12 +9,62 @@ body {
 
 header {
     background-color: #eaeaea; /* Light grey background */
-    padding: 15px;
+    padding: 40px;
     text-align: center;
     box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 4%;
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn-edit, .btn-delete {
+
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: rgb(253, 252, 252);
+    transition: background-color 0.3s ease;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    margin-right: 30px;
+}
+
+
+table {
+    width: 60%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #000000;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center; /* Centra el texto de las celdas */
+    border-bottom: 1px solid #000000;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
 h2 {
     font-family: 'Arizonia', cursive;
@@ -87,11 +137,13 @@ h2 {
 }
 
 .content h1 {
+
     font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-family: 'Arizonia', cursive;
     color: #b5838d;
+     margin-bottom: 50px;
+    font-family: 'Arizonia', cursive;
+    text-align: center; /* Centers the text */
+    
 }
 
 form {
@@ -142,4 +194,19 @@ form button {
 form button:hover {
     background-color: #b5838d; /* Slightly darker on hover */
     transform: scale(1.05); /* Gentle zoom on hover */
+}
+
+
+.form-group {
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center;     /* Centra la imagen verticalmente */
+    margin: 3% 0;          /* Espacio alrededor del contenedor */
+}
+
+.img-1 {
+    width: 110px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    
+    
 }
