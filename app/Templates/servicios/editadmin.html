@@ -1,0 +1,47 @@
+<html></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css')}}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Editar Servicios</title>
+</head>
+<body>
+    <header>
+        <h2>LunArt Beauty</h2>
+            <nav class="fondo">
+                <ul>
+                    <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                </ul>
+            </nav>
+    </header>  
+    <div class="main-container"> 
+        <aside class="sidebar">
+            <ul>
+                <li><a href="{{ url_for('estilistas.index') }}">ESTILISTAS</a></li>
+                <li><a href="#">PRODUCTOS</a></li>
+                <li><a href="{{ url_for('menu.ruta_perfil') }}">NOTIFICACIONES STOCK</a></li>
+                <li><a href="{{ url_for('menu.ruta_perfil') }}">CITAS</a></li>
+                <li><a href="{{ url_for('servicio.index_admin') }}">SERVICIOS</a></li>
+            </ul>
+        </aside>
+    </div>
+
+        <div class="content">
+            <h1>Editar Servicios</h1>
+            <form action="{{ url_for('servicio.edit', idservicio=servicio.idservicio) }}" method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="{{ servicio.nombre }}">
+            
+                <label for="name">Precio:</label>
+                <input type="number" id="precio" name="precio" value="{{ servicio.precio }}">
+            
+                <button type="submit">Guardar Cambios</button>
+            </form>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

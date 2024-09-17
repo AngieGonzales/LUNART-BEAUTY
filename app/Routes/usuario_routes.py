@@ -1,7 +1,10 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, logging
 from app.Models.usuario import Usuario
 from app import db
+<<<<<<< HEAD
 
+=======
+>>>>>>> ffea4090b45e6776c02230789346813722fd8e55
 from datetime import date
 
 
@@ -44,9 +47,13 @@ def registro():
             return redirect(url_for('usuario.registro'))
         
         try:
+<<<<<<< HEAD
             fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
+=======
+          fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
+>>>>>>> ffea4090b45e6776c02230789346813722fd8e55
         except ValueError:
-            flash('LA FECHA DEBE ESTAR EN FORMATO DD/MM/AAAA.')
+            flash('LA FECHA DEBE ESTAR EN FORMATO DD/MM/AAAA Y SEPARAD POR /')
             return redirect(url_for('usuario.registro'))
 
         if not nombre or not apellido or not celular or not correo or not contraseña or not rol:

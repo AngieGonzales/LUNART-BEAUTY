@@ -6,25 +6,6 @@ body {
     padding: 0;
     background-color: #f7f7f7; /* Soft, off-white background */
 }
-.flash-messages {
-    margin: 20px auto; /* Centrar los mensajes */
-    max-width: 600px; /* Ancho máximo del contenedor */
-    padding: 10px;
-    margin-left: 36%;
-}
-/* Estilo general para los mensajes flash */
-.flash {
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-/* Estilo para mensajes de éxito */
-.flash-success {
-    background-color: #f3bfd1;
-}
 header {
     background-color: #eaeaea; /* Light grey background */
     padding: 15px;
@@ -40,45 +21,12 @@ h1 {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-left: 10%;
 }
-.volver {
-    width: 24px;  /* Ancho ajustado de la imagen */
-    height: auto;  /* Mantener la proporción de aspecto */
-}
-table {
-    width: 55%;
-    margin: 40px auto;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid #535353;
-    margin-left: 30%;
-}
-
-th, td {
-    padding: 15px;
-    text-align: center; /* Centra el texto de las celdas */
-    border-bottom: 1px solid #868686;
-}
-
-th {
-    background-color: #f4f4f4;
-    color: #333;
-    font-weight: 600;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
 h2 {
     font-family: 'Arizonia', cursive;
     color: #000000; /* Soft muted rose color */
     margin: 0;
     font-size: 3.5em;
 }
-
 .fondo ul {
     display: flex;
     justify-content: center;
@@ -100,7 +48,6 @@ h2 {
 .fondo ul li a:hover {
     color: #b5838d; /* Matching soft rose on hover */
 }
-
 /* Sidebar */
 .sidebar {
     width: 250px; /* Ancho de la barra lateral */
@@ -136,77 +83,32 @@ h2 {
 .sidebar ul li a:hover {
     background-color: #1abc9c; /* Cambia a verde agua en hover */
 }
-
-/* Main Content */
-.main-container {
-    display: flex; /* Flexbox para disposición en línea */
+table {
+    width: 55%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #535353;
+    margin-left: 30%;
 }
 
+th, td {
+    padding: 15px;
+    text-align: center; /* Centra el texto de las celdas */
+    border-bottom: 1px solid #868686;
+}
 
-.content h1 {
-    font-size: 2rem;
+th {
+    background-color: #f4f4f4;
     color: #333;
-    margin-bottom: 20px;
-    font-family: 'Arizonia', cursive;
-    color: #b5838d;
-    margin-top: 5%;
-    text-align: left; /* Dejar el texto alineado a la izquierda */
-    transform: translateX(20%); /* Desplaza el texto hacia la derecha un 50% */
+    font-weight: 600;
 }
 
-
-form {
-    background-color: #c2bfbf7b;
-    padding: 70px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
-    width: 40%; /* Reduce el ancho si es necesario */
-    margin-left: 530px; /* Alinear hacia la izquierda */
-} 
-.input {
-    margin-left: 10%;
-}
-.label {
-    margin-left: 11%;
-}
-form select {
-    width: 80%; /* Same width as other input fields */
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9; /* Match the background of other inputs */
-}
-
-
-
-form select:focus {
-    border-color: #b5838d; /* Same focus style as the other inputs */
-    outline: none;
-}
- 
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #000000; /* Muted text */
-}
-
-form input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9; /* Soft, calming background for inputs */
-}
-
-form input:focus {
-    border-color: #b5838d; /* Soft rose on focus */
-    outline: none;
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 /* Contenedor centrado */
 .link-container {
@@ -232,5 +134,3 @@ form input:focus {
 .styled-link:hover {
     background-color: #e2669c;
 }
-
-

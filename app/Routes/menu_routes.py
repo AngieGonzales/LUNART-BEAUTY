@@ -1,13 +1,17 @@
+<<<<<<< HEAD
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from app.Models.usuario import Usuario
 from app import db
+=======
+from flask import Blueprint, render_template, redirect, url_for, request
+from app.Models.estilista import Estilista
+>>>>>>> ffea4090b45e6776c02230789346813722fd8e55
 
 bp = Blueprint('menu', __name__)
 
-@bp.route('/estilista')
-def index():
-    return render_template('estilistas/index.html')
-
+@bp.route('/add_estilista')
+def add_estilista():
+    return render_template('estilistas/add.html')
 
 @bp.route('/catalogo')
 def ruta_catalogo():
@@ -17,12 +21,6 @@ def ruta_catalogo():
 @bp.route('/contacto')
 def ruta_contacto():
     return render_template('contacto/index.html')
-
-
-@bp.route('/servicios')
-def ruta_servicios():
-    return render_template('servicios/index.html')
-
 
 @bp.route('/citas')
 def ruta_citas():
