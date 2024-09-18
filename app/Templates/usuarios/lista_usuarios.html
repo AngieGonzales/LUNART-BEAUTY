@@ -8,54 +8,60 @@
     <title>Perfil de Usuario</title>
 </head>
 <body>
-    <header>
-      <h2>LunArt Beauty - Perfil de Usuario</h2>
-        <nav class="fondo">
-            <ul>
-
-              
-                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
-                <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>  
-    
     <div class="main-container">
-        <aside class="sidebar">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/silueta.png') }}" alt="usuario">
+                </div>
+            </div>
             <ul>
-                
-                <li><a href="{{ url_for('usuario.logout') }}">Cerrar sesión</a></li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/perfil.png') }}" alt="Perfil">
+                        PERFIL
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.logout') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/cerrar.png') }}" alt="Cerrar Sesión">
+                        CERRAR SESIÓN
+                    </a>
+                </li>
             </ul>
-        </aside>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>LISTA DE CLIENTES</h1>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Celular</th>
+                    <th>Correo</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Acciones</th>
+                </tr>
+                {% for usuario in data %}
+                    <tr>
+                        <td>{{ usuario.id }}</td>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.apellido }}</td>
+                        <td>{{ usuario.celular }}</td>
+                        <td>{{ usuario.correo }}</td>
+                        <td>{{ usuario.fecha_nacimiento }}</td>
+                        <td>
+                            <a class="btn-edit" href="{{ url_for('usuario.edit', id=usuario.id) }}">Editar</a>
+                            <a class="btn-delete" href="{{ url_for('usuario.delete', id=usuario.id) }}">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
-
-    <h1>LISTA DE CLIENTES</h1>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Celular</th>
-            <th>Correo</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Acciones</th>
-        </tr>
-        {% for usuario in data %}
-            <tr>
-                <td>{{ usuario.id }}</td>
-                <td>{{ usuario.nombre }}</td>
-                <td>{{ usuario.apellido }}</td>
-                <td>{{ usuario.celular }}</td>
-                <td>{{ usuario.correo }}</td>
-                <td>{{ usuario.fecha_nacimiento }}</td>
-                <td>
-                    <a class="btn-edit" href="{{ url_for('usuario.edit', id=usuario.id) }}">Editar</a>
-                    <a class="btn-delete" href="{{ url_for('usuario.delete', id=usuario.id) }}">Eliminar</a>
-
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-    
 </body>
 </html>

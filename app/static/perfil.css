@@ -1,65 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
+    font-family: Arial, sans-serif;
     margin: 0;
+    background: #f0f0f0;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 330px; /* Asegura un ancho fijo */
+    background-color: rgba(230, 228, 228, 0.642);
+    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    padding: 50px;
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0; /* Añadir un borde para destacarlo */
+}
+
+.profile {
+    
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.3rem;
+    font-family: 'Arizonia';
+}
+
+.profile img {
+    width: 80; 
+    height: 80px; 
+    margin-top: 6%;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+
+
+
+.sidebar ul {
+    list-style: none;
     padding: 0;
-    background-color: #f7f7f7; /* Soft, off-white background */
+    margin-top: 90px; 
 }
-.flash-messages {
-    margin: 20px auto; /* Centrar los mensajes */
-    max-width: 600px; /* Ancho máximo del contenedor */
-    padding: 10px;
-    margin-left: 36%;
+
+
+.sidebar ul li {
+    margin: 30px 0;
 }
-/* Estilo general para los mensajes flash */
-.flash {
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-/* Estilo para mensajes de éxito */
-.flash-success {
-    background-color: #f3bfd1;
-}
-header {
-    background-color: #eaeaea; /* Light grey background */
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-h1 {
-    text-align: center;
+
+.sidebar ul li a {
+    text-decoration: none;
     color: #333;
-    margin-top: 4%;
-    font-size: 2.8em;
+    font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: flex-start; /* Cambia center a flex-start */
+    border-radius: 17px;
+    transition: background 0.3s, color 0.3s;
 }
-.volver {
-    width: 24px;  /* Ancho ajustado de la imagen */
-    height: auto;  /* Mantener la proporción de aspecto */
+
+.sidebar ul li a .icon {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px; /* Ajusta el tamaño del icono */
+    margin-right: 15px; /* Ajusta el espacio entre el icono y el texto */
 }
+.sidebar ul li a:hover {
+    background-color: #eed4ddde;
+    color: #000000;
+}
+
+
+.icon {
+    margin-right: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    overflow-y: auto;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
+    text-align: center; /* Centrar el texto horizontalmente */
+}
+
+
+.container{
+
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    overflow-y: auto;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
+    text-align: center; /* Centrar el texto horizontalmente */
+
+
+}
+
+.content h1{
+    margin-top: 13%;
+}
+
+
+.content .img-1 {
+    width: 520px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    margin: 20px 0; /* Espaciado superior e inferior para la imagen */
+}
+
 table {
-    width: 55%;
+    width: 80%;
     margin: 40px auto;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid #535353;
-    margin-left: 30%;
+    border: 2px solid #000000;
 }
 
 th, td {
     padding: 15px;
     text-align: center; /* Centra el texto de las celdas */
-    border-bottom: 1px solid #868686;
+    border-bottom: 1px solid #000000;
 }
 
 th {
@@ -72,156 +141,7 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-h2 {
-    font-family: 'Arizonia', cursive;
-    color: #000000; /* Soft muted rose color */
-    margin: 0;
-    font-size: 3.5em;
-}
-.fondo ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-.fondo ul li {
-    margin: 0 15px;
-}
-.fondo ul li a {
-    text-decoration: none;
-    color: #666; /* Muted text color */
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-.fondo ul li a:hover {
-    color: #b5838d; /* Matching soft rose on hover */
-}
-.sidebar {
-    width: 250px; /* Ancho de la barra lateral */
-    background-color: #f3dcd8; /* Very soft pink */
-    padding: 20px; /* Espaciado interno */
-    height: 100vh; /* Altura completa de la ventana */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
-    position: fixed; /* Fijar al costado izquierdo */
-    left: 0;
-}
-
-.sidebar ul {
-    list-style: none; /* Sin puntos de lista */
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 20px; /* Espacio entre los elementos de la lista */
-}
-
-.sidebar ul li a {
-    display: block;
-    color: white; /* Texto blanco */
-    background-color: #f2e8e6; /* Very soft pink */
-    padding: 10px 20px; /* Espaciado interno */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave en hover */
-    font-size: 16px; /* Tamaño de letra */
-    font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
-}
-
-.sidebar ul li a:hover {
-    background-color: #1abc9c; /* Cambia a verde agua en hover */
-}
-.main-container {
-    display: flex; /* Flexbox para disposición en línea */
-}
-
-
-.content h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-family: 'Arizonia', cursive;
-    color: #b5838d;
-    margin-top: 5%;
-    text-align: left; /* Dejar el texto alineado a la izquierda */
-    transform: translateX(20%); /* Desplaza el texto hacia la derecha un 50% */
-}
-
-
-form {
-    background-color: #c2bfbf7b;
-    padding: 70px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
-    width: 40%; /* Reduce el ancho si es necesario */
-    margin-left: 530px; /* Alinear hacia la izquierda */
-} 
-.input {
-    margin-left: 10%;
-}
-.label {
-    margin-left: 11%;
-}
-form select {
-    width: 80%; /* Same width as other input fields */
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9; /* Match the background of other inputs */
-}
-
-
-
-form select:focus {
-    border-color: #b5838d; /* Same focus style as the other inputs */
-    outline: none;
-}
- 
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #000000; /* Muted text */
-}
-form input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9; /* Soft, calming background for inputs */
-}
-form input:focus {
-    border-color: #b5838d; /* Soft rose on focus */
-    outline: none;
-}
-/* Contenedor centrado */
-.link-container {
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 6%;
-}
-
-/* Estilos de los enlaces */
-.styled-link {
-    display: inline-block;
-    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
-    color: white; /* Texto blanco */
-    padding: 10px 20px; /* Espaciado interno */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    margin: 10px 0; /* Espaciado entre enlaces */
-    font-size: 16px; /* Tamaño de fuente */
-    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-}
-
-/* Cambiar color al hacer hover */
-.styled-link:hover {
-    background-color: #e2669c;
-}
+/* Estilo para los botones de Editar y Eliminar */
 .btn-edit, .btn-delete {
     text-decoration: none;
     padding: 8px 15px;
@@ -231,273 +151,83 @@ form input:focus {
     color: white;
     transition: background-color 0.3s ease;
 }
+
+/* Botón Editar */
 .btn-edit {
     background: linear-gradient(to right, #d46e9a, #0a0a0a);
     margin-right: 20px;
 }
+
 .btn-edit:hover {
     background-color: #e0add2;
 }
+
+/* Botón Eliminar */
 .btn-delete {
     background: linear-gradient(to right, #d46e9a, #0a0a0a);
 }
+
 .btn-delete:hover {
     background-color: #e0add2;
-}@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7; /* Soft, off-white background */
 }
-.flash-messages {
-    margin: 20px auto; /* Centrar los mensajes */
-    max-width: 600px; /* Ancho máximo del contenedor */
-    padding: 10px;
-    margin-left: 36%;
-}
-/* Estilo general para los mensajes flash */
-.flash {
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-/* Estilo para mensajes de éxito */
-.flash-success {
-    background-color: #f3bfd1;
-}
-header {
-    background-color: #eaeaea; /* Light grey background */
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-h1 {
-    text-align: center;
-    color: #333;
-    margin-top: 4%;
-    font-size: 2.8em;
-    font-family: 'Times New Roman', Times, serif;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    margin-left: 10%;
-}
-.volver {
-    width: 24px;  /* Ancho ajustado de la imagen */
-    height: auto;  /* Mantener la proporción de aspecto */
-}
-table {
-    width: 55%;
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
     margin: 40px auto;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid #535353;
-    margin-left: 30%;
+    background-color: rgba(250, 247, 247, 0.167);
+    padding: 30px;
+    border-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(174, 22, 22, 0.231);
+    transition: transform 0.3s;
+    text-align: left;
 }
 
-th, td {
-    padding: 15px;
-    text-align: center; /* Centra el texto de las celdas */
-    border-bottom: 1px solid #868686;
+form:hover {
+    transform: scale(1.02);
 }
 
-th {
-    background-color: #f4f4f4;
-    color: #333;
-    font-weight: 600;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-h2 {
-    font-family: 'Arizonia', cursive;
-    color: #000000; /* Soft muted rose color */
-    margin: 0;
-    font-size: 3.5em;
-}
-
-.fondo ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-
-.fondo ul li {
-    margin: 0 15px;
-}
-
-.fondo ul li a {
-    text-decoration: none;
-    color: #666; /* Muted text color */
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.fondo ul li a:hover {
-    color: #b5838d; /* Matching soft rose on hover */
-}
-
-/* Sidebar */
-.sidebar {
-    width: 250px; /* Ancho de la barra lateral */
-    background-color: #f3dcd8; /* Very soft pink */
-    padding: 20px; /* Espaciado interno */
-    height: 100vh; /* Altura completa de la ventana */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
-    position: fixed; /* Fijar al costado izquierdo */
-    left: 0;
-}
-
-.sidebar ul {
-    list-style: none; /* Sin puntos de lista */
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 20px; /* Espacio entre los elementos de la lista */
-}
-
-.sidebar ul li a {
-    display: block;
-    color: white; /* Texto blanco */
-    background-color: #f2e8e6; /* Very soft pink */
-    padding: 10px 20px; /* Espaciado interno */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave en hover */
-    font-size: 16px; /* Tamaño de letra */
-    font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
-}
-
-.sidebar ul li a:hover {
-    background-color: #1abc9c; /* Cambia a verde agua en hover */
-}
-
-/* Main Content */
-.main-container {
-    display: flex; /* Flexbox para disposición en línea */
-}
-
-
-.content h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-family: 'Arizonia', cursive;
-    color: #b5838d;
-    margin-top: 5%;
-    text-align: left; /* Dejar el texto alineado a la izquierda */
-    transform: translateX(20%); /* Desplaza el texto hacia la derecha un 50% */
-}
-
-
-form {
-    background-color: #c2bfbf7b;
-    padding: 70px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
-    width: 40%; /* Reduce el ancho si es necesario */
-    margin-left: 530px; /* Alinear hacia la izquierda */
-} 
-.input {
-    margin-left: 10%;
-}
-.label {
-    margin-left: 11%;
-}
-form select {
-    width: 80%; /* Same width as other input fields */
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9; /* Match the background of other inputs */
-}
-
-
-
-form select:focus {
-    border-color: #b5838d; /* Same focus style as the other inputs */
-    outline: none;
-}
- 
 form label {
-    display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #000000; /* Muted text */
+    color: #0c0c0c;
 }
 
-form input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+form input[type="text"],
+form input[type="email"] {
+    padding: 15px;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9; /* Soft, calming background for inputs */
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-form input:focus {
-    border-color: #b5838d; /* Soft rose on focus */
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form input[type="time"]:focus,
+form select:focus {
+    border-color: #d46e9a;
     outline: none;
 }
-/* Contenedor centrado */
-.link-container {
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 6%;
-}
 
-/* Estilos de los enlaces */
-.styled-link {
-    display: inline-block;
+form button[type="submit"] {
     background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
-    color: white; /* Texto blanco */
-    padding: 10px 20px; /* Espaciado interno */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    margin: 10px 0; /* Espaciado entre enlaces */
-    font-size: 16px; /* Tamaño de fuente */
-    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-}
-
-/* Cambiar color al hacer hover */
-.styled-link:hover {
-    background-color: #e2669c;
-}
-.btn-edit, .btn-delete {
-    text-decoration: none;
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    font-weight: bold;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    display: block; 
     border-radius: 5px;
-    color: white;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-
-.btn-edit {
-    background: linear-gradient(to right, #d46e9a, #0a0a0a);
-    margin-right: 20px;
-}
-.btn-edit:hover {
-    background-color: #e0add2;
-}
-.btn-delete {
-    background: linear-gradient(to right, #d46e9a, #0a0a0a);
-}
-.btn-delete:hover {
-    background-color: #e0add2;
+form button[type="submit"]:hover {
+    background-color: #de6db7;
+    transform: scale(1.05);
 }
