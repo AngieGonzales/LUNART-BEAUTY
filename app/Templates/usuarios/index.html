@@ -8,30 +8,43 @@
     <title>Perfil de Usuario</title>
 </head>
 <body>
-    <header>
-      <h2>LunArt Beauty - Perfil de Usuario</h2>
-       
-    </header>  
-    
     <div class="main-container">
-        <aside class="sidebar">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/usuario.png') }}" alt="usuario">
+                </div>
+            </div>
             <ul>
-                <li><a href="{{ url_for('usuario.lista_usuarios') }}">Lista de clientes</a></li>
-                <li><a href="{{ url_for('usuario.logout') }}">Cerrar sesión</a></li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_inicio') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/casa.png') }}" alt="Inicio">
+
+                        INICIO
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Lista Clientes">
+                        LISTA CLIENTES
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.logout') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/cerrar.png') }}" alt="Cerrar Sesión">
+                        CERRAR SESION
+                    </a>
+                </li>
             </ul>
-        </aside>
+        </div>
+        
+        <div class="content">
+            <h1>Bienvenido a tu Perfil</h1>
+            <p>Aquí puedes encontrar información y opciones para gestionar tu perfil.</p>
+            <img class="img-1" src="{{ url_for('static', filename='img/cliente.png') }}" alt="usuario">
+        </div>
     </div>
-
-    <div class="form-group">
-        <img class="img-1" src="{{ url_for('static', filename='img/usuario.png') }}" alt="contra">
-    </div>
-    
-
-
-
-    
-
-    
-
 </body>
 </html>

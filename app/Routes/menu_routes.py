@@ -1,6 +1,5 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
-from app.Models.usuario import Usuario
-from app import db
+from flask import Blueprint, render_template, redirect, url_for, request
+from app.Models.estilista import Estilista
 
 bp = Blueprint('menu', __name__)
 

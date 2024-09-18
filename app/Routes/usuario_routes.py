@@ -43,7 +43,7 @@ def registro():
             return redirect(url_for('usuario.registro'))
         
         try:
-            fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
+          fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
         except ValueError:
             flash('LA FECHA DEBE ESTAR EN FORMATO DD/MM/AAAA Y SEPARAD POR /')
             return redirect(url_for('usuario.registro'))

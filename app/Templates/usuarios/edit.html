@@ -1,27 +1,30 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css') }}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
     <title>Actualizar Perfil</title>
 </head>
 <body>
-    <header>
-      <h2>LunArt Beauty</h2>
-        
-    </header>  
-    
     <div class="main-container">
-        <aside class="sidebar">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/usuario.png') }}" alt="usuario">
+                </div>
+            </div>
             <ul>
                 <li><a href="{{ url_for('menu.ruta_perfil') }}">Actualizar Perfil</a></li>
                 <li><a href="{{ url_for('menu.ruta_historial') }}">Historial</a></li>
                 <li><a href="#">Cerrar Sesión</a></li>
             </ul>
-        </aside>
-
+        </div>
+        
+        <!-- Content Section -->
         <div class="content">
             <h1>Actualizar Perfil</h1>
             <form action="{{ url_for('usuario.edit', id=usuario.id) }}" method="POST">
@@ -33,13 +36,9 @@
                 
                 <label for="celular">Celular:</label>
                 <input type="text" id="celular" name="celular" value="{{ usuario.celular }}" required><br><br>
-                
-               
 
                 <button type="submit">Actualizar</button>
             </form>
-            
-            
         </div>
     </div>
 </body>

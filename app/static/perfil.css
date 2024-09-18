@@ -1,149 +1,233 @@
 @import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f7f7f7; /* Soft, off-white background */
+    background: #f0f0f0;
 }
-header {
-    background-color: #eaeaea; /* Light grey background */
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-h2 {
-    font-family: 'Arizonia', cursive;
-    color: #000000; /* Soft muted rose color */
-    margin: 0;
-    font-size: 3.5em;
-}
-.fondo ul {
+
+.main-container {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
+    height: 100vh;
 }
-.fondo ul li {
-    margin: 0 15px;
-}
-.fondo ul li a {
-    text-decoration: none;
-    color: #666; /* Muted text color */
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-.fondo ul li a:hover {
-    color: #b5838d; /* Matching soft rose on hover */
-}
+
 .sidebar {
-    width: 250px; /* Ancho de la barra lateral */
-    background-color: #f3dcd8; /* Very soft pink */
-    padding: 20px; /* Espaciado interno */
-    height: 100vh; /* Altura completa de la ventana */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
-    position: fixed; /* Fijar al costado izquierdo */
-    left: 0;
+    width: 330px; /* Asegura un ancho fijo */
+    background-color: rgba(230, 228, 228, 0.642);
+    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    padding: 50px;
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0; /* Añadir un borde para destacarlo */
 }
+
+.profile {
+    
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.3rem;
+    font-family: 'Arizonia';
+}
+
+.profile img {
+    width: 80; 
+    height: 80px; 
+    margin-top: 6%;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+
+
 
 .sidebar ul {
-    list-style: none; /* Sin puntos de lista */
+    list-style: none;
     padding: 0;
+    margin-top: 90px; 
 }
 
+
 .sidebar ul li {
-    margin-bottom: 20px; /* Espacio entre los elementos de la lista */
+    margin: 30px 0;
 }
 
 .sidebar ul li a {
-    display: block;
-    color: white; /* Texto blanco */
-    background-color: #f2e8e6; /* Very soft pink */
-    padding: 10px 20px; /* Espaciado interno */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave en hover */
-    font-size: 16px; /* Tamaño de letra */
-    font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: flex-start; /* Cambia center a flex-start */
+    border-radius: 17px;
+    transition: background 0.3s, color 0.3s;
 }
 
+.sidebar ul li a .icon {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px; /* Ajusta el tamaño del icono */
+    margin-right: 15px; /* Ajusta el espacio entre el icono y el texto */
+}
 .sidebar ul li a:hover {
-    background-color: #1abc9c; /* Cambia a verde agua en hover */
+    background-color: #eed4ddde;
+    color: #000000;
 }
-.main-container {
-    margin-left: 510px;
-    padding: 20px;
+
+
+.icon {
+    margin-right: 10px;
 }
-.content h1 {
-    text-align: center;
-    color: #333;
-    margin-top: 4%;
-    font-size: 2.8em;
-    font-family: 'Times New Roman', Times, serif;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    width: 45%;
-    margin-left: 11%;
-}
+
 .content {
-    margin-left: 32%;
-    width: 60%;
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    overflow-y: auto;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
+    text-align: center; /* Centrar el texto horizontalmente */
 }
+
+
+.container{
+
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    overflow-y: auto;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
+    text-align: center; /* Centrar el texto horizontalmente */
+
+
+}
+
+.content h1{
+    margin-top: 13%;
+}
+
+
+.content .img-1 {
+    width: 520px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    margin: 20px 0; /* Espaciado superior e inferior para la imagen */
+}
+
+table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #000000;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center; /* Centra el texto de las celdas */
+    border-bottom: 1px solid #000000;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para los botones de Editar y Eliminar */
+.btn-edit, .btn-delete {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón Editar */
+.btn-edit {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    margin-right: 20px;
+}
+
+.btn-edit:hover {
+    background-color: #e0add2;
+}
+
+/* Botón Eliminar */
+.btn-delete {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+}
+
+.btn-delete:hover {
+    background-color: #e0add2;
+}
+
+
 form {
-    background-color: #c2bfbf7b;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
-    width: 60%; /* Reduce el ancho si es necesario */
-    margin-left: 0; /* Alinear hacia la izquierda */
-} 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: rgba(250, 247, 247, 0.167);
+    padding: 30px;
+    border-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(174, 22, 22, 0.231);
+    transition: transform 0.3s;
+    text-align: left;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
 form label {
-    display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #000000; /* Muted text */
+    color: #0c0c0c;
 }
-form input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+
+form input[type="text"],
+form input[type="email"] {
+    padding: 15px;
+    font-size: 1rem;
     border: 1px solid #ccc;
-    font-size: 16px;
-    background-color: #f9f9f9; /* Soft, calming background for inputs */
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
-form input:focus {
-    border-color: #b5838d; /* Soft rose on focus */
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form input[type="time"]:focus,
+form select:focus {
+    border-color: #d46e9a;
     outline: none;
 }
-form button {
+
+form button[type="submit"] {
     background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
-    color: white;
-    border: none;
+    color: #fff;
     padding: 10px 20px;
-    font-size: 16px;
+    border: none;
+    display: block; 
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: block;
-    margin: 0 auto; /* Centered button */
-}
-form button:hover {
-    background-color: #b5838d; /* Slightly darker on hover */
-    transform: scale(1.05); /* Gentle zoom on hover */
+    margin: 20px auto;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-
-.form-group {
-    display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center;     /* Centra la imagen verticalmente */
-    margin: 3% 0;          /* Espacio alrededor del contenedor */
-}
-
-.img-1 {
-    width: 110px; /* Ajusta el tamaño según lo necesites */
-    height: auto; /* Mantiene la proporción de la imagen */
-    
-    
+form button[type="submit"]:hover {
+    background-color: #de6db7;
+    transform: scale(1.05);
 }
