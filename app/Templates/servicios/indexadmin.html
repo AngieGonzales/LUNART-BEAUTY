@@ -11,7 +11,7 @@
         <h2>LunArt Beauty</h2>
             <nav class="fondo">
                 <ul>
-                    <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                    <li><a href="{{ url_for('usuario.admin_dashboard') }}">INICIO</a></li>
                 </ul>
             </nav>
     </header>  
@@ -34,14 +34,18 @@
             <tr>
                 <th>ID</th>
                 <th>NOMBRE</th>
-                <th>PRECIO</th>
+                <th>DESCRIPCION</th>
+                <th>IMAGEN</th>
                 <th>ACCIONES</th>
             </tr>
             {% for servicio in data %}
                 <tr>
                     <td>{{ servicio.idservicio }}</td>
                     <td>{{ servicio.nombre }}</td>
-                    <td>{{ servicio.precio }}</td>
+                    <td>{{ servicio.descripcion }}</td>
+                    <td>
+                        <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
+                    </td>
                     <td>
                         <a class="btn-edit" href="{{ url_for('servicio.edit', idservicio=servicio.idservicio) }}">Editar</a>
                         <a class="btn-delete" href="{{ url_for('servicio.delete', idservicio=servicio.idservicio) }}">Eliminar</a>

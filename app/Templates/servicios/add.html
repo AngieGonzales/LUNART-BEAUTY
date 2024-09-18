@@ -10,7 +10,7 @@
         <h2>LunArt Beauty</h2>
           <nav class="fondo">
             <ul>
-                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                <li><a href="{{ url_for('usuario.admin_dashboard') }}">INICIO</a></li>
             </ul>
         </nav>
     </header>
@@ -28,26 +28,17 @@
     <div>
         <h1>AGREGAR SERVICIOS</h1>
     </div>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <div class="flash-messages">
-                {% for category, message in messages %}
-                    <div class="flash flash-{{ category }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endwith %}
     <div>
-        <form action="{{ url_for('servicio.add') }}" method="post">
+        <form action="{{ url_for('servicio.add') }}" method="post" enctype="multipart/form-data">
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*" required>
             <label class="label" for="nombre">Nombre:</label>
             <input class="input" type="text" id="nombre" name="nombre" required>
-            <label class="label" for="precio">Precio:</label>
-            <input class="input" type="text" id="precio" name="precio" required>
+            <label class="label" for="descripcion">descripcion:</label>
+            <input class="input" type="text" id="descripcion" name="descripcion" required>
             
             <div class="link-container">
-                <button class="styled-link" type="submit">Agregar</button>
+                <button class="styled-link2" type="submit">Agregar</button>
             </div>
         </form>
     </div>

@@ -12,7 +12,7 @@
       <h2>LunArt Beauty</h2>
         <nav class="fondo">
             <ul>
-                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                <li><a href="{{ url_for('usuario.admin_dashboard') }}">INICIO</a></li>
             </ul>
         </nav>
         
@@ -27,6 +27,22 @@
                 <li><a href="{{ url_for('servicio.index_admin') }}">SERVICIOS</a></li>
             </ul>
         </aside>
+    </div>
+    <div>
+        <div class="form-group">
+            <img class="img-2" src="{{ url_for('static', filename='img/administrador.png') }}" alt="contra">
+        </div>
+        <br>
+        <div>
+            <h1>ADMINISTRADOR-LUNART BEAUTY</h1>
+        </div>
+        <div class="welcome-message">
+            <h1>Bienvenido</h1>
+            <p>¡Nos alegra verte de nuevo en el panel de control de <strong>Lunart Beauty</strong>  Aquí podrás gestionar de manera eficiente todos los aspectos de tu salón de belleza. Desde la administración de productos y servicios hasta la gestión de citas y clientes, este panel te proporciona todas las herramientas necesarias para mantener el negocio en funcionamiento y ofrecer la mejor experiencia a tus clientes.</p>
+            <p>No olvides revisar las últimas notificaciones y estar al tanto de las actualizaciones importantes. Si necesitas asistencia, no dudes en consultarnos en la sección de ayuda.</p>
+            <p>¡Que tengas un excelente día de trabajo!</p>
+        </div>
+        
     </div>
 </body>
 </html>

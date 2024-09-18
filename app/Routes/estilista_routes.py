@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from app.Models.estilista import Estilista
+from app.Models.servicio import Servicio
 from app import db
 
 bp = Blueprint('estilistas', __name__)
@@ -12,28 +13,24 @@ def index():
 @bp.route('/agregar-estilistas', methods=['GET', 'POST'])
 def add():  
     if request.method == 'POST':
-        # Recoger los datos del formulario
         nombre = request.form['nombre']
         telefono = request.form['telefono']
-        cargo = request.form['cargo']
+        id_servicio= request.form.get('id_servicio')
 
-        # Validar que no haya campos vacíos (opcional, pero recomendado)
-        if not nombre or not telefono or not cargo:
+        if not nombre or not telefono:
             return redirect(url_for('estilistas.add'))
+        
+        servicio = Servicio.query.get(id_servicio)
 
-        # Crear nuevo estilista y guardar en la base de datos
-        new_estilista = Estilista(nombre=nombre, telefono=telefono, cargo=cargo)
+        new_estilista = Estilista(nombre=nombre, telefono=telefono, servicio=servicio, id_servicio=id_servicio)
         db.session.add(new_estilista)
         db.session.commit()
 
-        # Mensaje de éxito
-        flash('Estilista agregado exitosamente.', 'success')
+        return redirect(url_for('estilistas.index'))
+    
+    data = data = Servicio.query.all()
 
-        # Redirigir al índice de estilistas
-        return redirect(url_for('estilistas.add'))
-
-    # Renderizar el formulario de adición
-    return render_template('estilistas/add.html')
+    return render_template('estilistas/add.html', data=data )
 
 @bp.route('/estilista/edit/<int:idEstilista>', methods=['GET', 'POST'])
 def edit(idEstilista):
@@ -42,15 +39,13 @@ def edit(idEstilista):
     if request.method == 'POST':
         nombre = request.form['nombre']
         telefono = request.form['telefono']
-        cargo = request.form['cargo']
 
-        if not nombre or not telefono or not cargo:
+        if not nombre or not telefono:
             flash('Todos los campos son requeridos.', 'error')
             return redirect(url_for('estilistas.edit', idEstilista=idEstilista))
 
         estilista.nombre = nombre
         estilista.telefono = telefono
-        estilista.cargo = cargo
 
         db.session.commit()
         flash('Estilista actualizado correctamente.', 'success')

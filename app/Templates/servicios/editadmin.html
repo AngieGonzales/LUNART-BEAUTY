@@ -12,7 +12,7 @@
         <h2>LunArt Beauty</h2>
             <nav class="fondo">
                 <ul>
-                    <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                    <li><a href="{{ url_for('usuario.admin_dashboard') }}">INICIO</a></li>
                 </ul>
             </nav>
     </header>  
@@ -31,11 +31,15 @@
         <div class="content">
             <h1>EDITAR SERVICIOS</h1>
             <form action="{{ url_for('servicio.edit', idservicio=servicio.idservicio) }}" method="POST">
+                <label for="imagen">Imagen</label>
+                <input type="file" name="imagen" id="imagen" accept="image/*">
+                {% if servicio.imagen %}
+                    <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
+                {% endif %}
                 <label for="name">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" value="{{ servicio.nombre }}">
-            
-                <label for="name">Precio:</label>
-                <input type="number" id="precio" name="precio" value="{{ servicio.precio }}">
+                <label for="name">Descripcion:</label>
+                <input type="text" id="descripcion" name="descripcion" value="{{ servicio.descripcion }}">
             
                 <button type="submit">Guardar Cambios</button>
             </form>

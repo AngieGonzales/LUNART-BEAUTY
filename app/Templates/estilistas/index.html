@@ -10,7 +10,7 @@
         <h2>LunArt Beauty</h2>
             <nav class="fondo">
                 <ul>
-                    <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
+                    <li><a href="{{ url_for('usuario.admin_dashboard') }}">INICIO</a></li>
                 </ul>
             </nav>   
     </header>  
@@ -42,7 +42,7 @@
                     <td>{{ estilista.idEstilista }}</td>
                     <td>{{ estilista.nombre }}</td>
                     <td>{{ estilista.telefono }}</td>
-                    <td>{{ estilista.cargo }}</td>
+                    <td>{{ estilista.servicio.nombre }}</td>
                     <td>
                         <a class="btn-edit" href="{{ url_for('estilistas.edit', idEstilista=estilista.idEstilista) }}">Editar</a>
                         <a class="btn-delete" href="{{ url_for('estilistas.delete', idEstilista=estilista.idEstilista) }}">Eliminar</a>
