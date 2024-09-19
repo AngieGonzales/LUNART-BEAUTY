@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <h1> CATEGORIAS </h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>                
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for categoria in data %}
+            <tr>
+                <td>{{ categoria.idCategoria }}</td>
+                <td>{{ categoria.nombre }}</td>
+                <td>{{ categoria.descripcion }}</td>               
+                <td>{{ categoria.imagen }}</td>
+                <td>
+                    <img src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
+                </td>
+                <td>
+                    <a href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">Editar</a> 
+                    <a href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">Eliminar</a>
+                    
+                
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('categoria.add') }}">Agregar</a>
+    <a href="{{ url_for('categoria.index_cliente') }}">Vista cliente</a>
+
+</body>
+</html>

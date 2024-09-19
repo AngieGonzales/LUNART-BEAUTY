@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <h1> Productos </h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>                
+                <th>Imagen</th>
+            
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in data %}
+            <tr>
+                <td>{{ producto.idproducto }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>               
+                <td>{{ producto.imagen }}</td>
+
+
+                <td>
+                    <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre  }}" width="100">
+                </td>
+                <td>
+                    <a href="{{ url_for('producto.edit', id=producto.idproducto) }}">Editar</a> 
+                    <a href="{{ url_for('producto.delete', id=producto.idproducto) }}">Eliminar</a>
+                    <a href="{{ url_for('producto.index_cliente', id=producto.categoria_id) }}">Vista cliente</a>
+
+
+                 
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('producto.add') }}">Agregar</a>
+   
+
+</body>
+</html>

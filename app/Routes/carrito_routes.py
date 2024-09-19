@@ -2,10 +2,7 @@ from flask import Blueprint, jsonify, request
 from app.Models.carrito import Carrito
 from app import db
 
-
-
 bp = Blueprint('carrito', __name__)
-
 
 @bp.route('/guardar_carrito', methods=['POST'])
 def guardar_carrito():

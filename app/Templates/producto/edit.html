@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Editar</title>
+</head>
+<body>
+    <h1>Editar</h1>
+    <form action="{{ url_for('producto.edit', id=producto.idproducto) }}" method="post" enctype="multipart/form-data">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" value="{{ producto.nombre }}" required>
+        
+        <label for="precio">Precio</label>
+        <input type="text" id="precio" name="precio" value="{{ producto.precio }}" required>
+
+        <label for="imagen">Imagen</label>
+        <input type="file" name="imagen" id="imagen" accept="image/*">
+
+        <!-- Mostrar la imagen actual -->
+        {% if producto.imagen %}
+            <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
+        {% endif %}
+
+        <!-- Lista de categorías -->
+        <label for="categoria">Categoría</label>
+        <select name="categoria" id="categoria" required>
+            {% for categoria in categorias %}
+                <option value="{{ categoria.idCategoria }}" {% if producto.categoria_id == categoria.idCategoria %}selected{% endif %}>
+                    {{ categoria.nombre }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

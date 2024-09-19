@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>LunArt Beauty</h2>
+            </div>
+            <nav class="menu">
+                <a href="#">INICIO</a>
+                <a href="#">SERVICIOS</a>
+                <a href="#">CATEGORÍAS</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <section class="menu-pl container">
+        <h1 class="header-content">Productos</h1>
+
+        <div class="general-content">
+            {% for producto in data %}
+            <div class="general-txt">
+                <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
+                <h3>{{ producto.nombre }}</h3>
+                <div class="prices">
+                    <samp>Precio: {{ producto.precio }}</samp>
+                </div>
+                <div class="actions">
+                    
+            </div>
+            {% endfor %}
+        </div>
+        
+
+    </section>
+</body>
+</html>

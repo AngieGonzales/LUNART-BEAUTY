@@ -130,3 +130,18 @@ h2 {
     background: linear-gradient(to right, #0f0d0a, #d46e9a);
     transform: scale(1.05); /* Agrandar un poco el botón */
 }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #0f0d0a, #d46e9a);
+    transform: scale(1.05); /* Agrandar un poco el botón */
+}
