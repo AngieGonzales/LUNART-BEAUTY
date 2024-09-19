@@ -1,0 +1,79 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='addservicio.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
+            <ul>
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+
+                        PRODUCTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
+
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>AGREGAR SERVICIOS</h1>
+        <form action="{{ url_for('servicio.add') }}" method="post" enctype="multipart/form-data">
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*" required>
+            <label class="label" for="nombre">Nombre:</label>
+            <input class="input" type="text" id="nombre" name="nombre" required>
+            <label class="label" for="descripcion">descripcion:</label>
+            <input class="input" type="text" id="descripcion" name="descripcion" required>
+            
+            <div class="link-container">
+                <button class="styled-link" type="submit">Agregar</button>
+            </div>
+        </form>
+    </div>
+</body>

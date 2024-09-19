@@ -3,63 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='estil.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estyleadmin.css') }}">
     <title>Servicios</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="Logo">
-                <h2>LunArt Beauty</h2>
-                
-            </div>
-
-            <nav class="menu">
-                <a href="{{ url_for('cita.index') }}">LISTA DE CITAS</a>
-                <a href="{{ url_for('menu.ruta_catalogo') }}">CATALOGOS</a>
+    <header>
+        <h2>LunArt Beauty</h2>
+            <nav class="fondo">
+                <ul>
+                    <li><a href="{{ url_for('usuario.index') }}">INICIO</a></li>
+                    <li><a href="{{ url_for('cita.index_user') }}">CITAS</a></li>
+                    <li><a href="{{ url_for('cita.index') }}">CATALOGOS</a></li>
+                    <li><a href="{{ url_for('contact.enviar_contacto') }}">CONTACTO</a></li>
+                </ul>
             </nav>
-        </div>    
-    </header>
-
-    <main>
-        <section id="services" class="services">
-            <h3>Nuestros Servicios</h3>
-            <div class="service-container">
-                <div class="service-item">
-                    <img class="img-1" src="{{ url_for('static', filename='img/23.jpg') }}" alt="shampos">
-                    <h3>Depilación</h3>
-                    <p><strong>Precio:</strong> $20.00</p>
-                    <p><strong>Duración:</strong> 30 minutos</p>
-                </div>
-                <div class="service-item">
-                    <img class="img-1" src="{{ url_for('static', filename='img/25.jpg') }}" alt="shampos">
-                    <h3>Cabello</h3>
-                    <p><strong>Precio:</strong> $50.00</p>
-                    <p><strong>Duración:</strong> 1 hora</p>
-                </div>
-                <div class="service-item">
-                    <img class="img-1" src="{{ url_for('static', filename='img/16.jpg') }}" alt="shampos">
-                    <h3>Tratamientos faciales</h3>
-                    <p><strong>Precio:</strong> $40.00</p>
-                    <p><strong>Duración:</strong> 45 minutos</p>
-                </div>
-                <div class="service-item">
-                    <img class="img-1" src="{{ url_for('static', filename='img/22.jpg') }}" alt="shampos">
-                    <h3>Lifting de pestañas</h3>
-                    <p><strong>Precio:</strong> $30.00</p>
-                    <p><strong>Duración:</strong> 40 minutos</p>
-                </div>
-                <div class="service-item">
-                    <img class="img-1" src="{{ url_for('static', filename='img/21.png') }}" alt="shampos">
-                    <h3>Masaje</h3>
-                    <p><strong>Precio:</strong> $60.00</p>
-                    <p><strong>Duración:</strong> 1 hora 30 minutos</p>
-                </div>
+    </header>  
+    
+    <div class="card-container">
+        {% for servicio in data %}
+        <div class="card">
+            <div class="card-body">
+                <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
+                <h3>{{ servicio.nombre }}</h3>
+                <p><strong>Descripcion:</strong>{{ servicio.descripcion }}</p>
             </div>
-        </section>
-        
-    </main>
-   
-
+        </div>
+        {% endfor %}
+    </div>
+    
+    </div>
 </body>
 </html>

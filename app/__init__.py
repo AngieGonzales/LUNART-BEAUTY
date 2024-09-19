@@ -15,13 +15,14 @@ def create_app():
     login_manager.init_app(app)
     login_manager.login_view = 'auth.login'
 
+    from app.Models.usuario import Usuario
+    # Definir user_loader
     @login_manager.user_loader
-    def load_user(cliente_idcliente):
-        
-        from .Models.cliente import Cliente
-        return Cliente.query.get(cliente_idcliente)
+    def load_user(id):
+        return Usuario.query.get(int(id))
 
     from app.Routes import cita_routes, servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes,  producto_routes, categoria_routes
+    from app.Routes import cita_routes, servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes, contacto_routes
 
     app.register_blueprint(cita_routes.bp)
     app.register_blueprint(servicio_routes.bp)
@@ -33,6 +34,7 @@ def create_app():
     app.register_blueprint(categoria_routes.bp)
     from app.Routes.auth import auth_bp
     app.register_blueprint (auth_bp)
+    app.register_blueprint(contacto_routes.bp)
 
 
     return app

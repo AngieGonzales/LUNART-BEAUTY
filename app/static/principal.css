@@ -1,351 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;   
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-
-
-header {
-    background: #cccccc;
-    color: #fff;
-    padding: 20px;
-    width: 100%;
     display: flex;
+    height: 100vh;
+    background: #f0f0f0;
 }
 
-
-
-.menu {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 200px; /* Altura de la pantalla completa */
-    text-align: center; /* Centra el texto si es necesario */
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* Estilos para el h1 */
-.menu h1 {
-    font-size: 3rem; /* Ajusta el tamaño del texto */
-    color: #333; /* Color del texto */
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center; /* Asegura que el texto esté centrado */
-    text-shadow: 1px 1px 4px rgba(177, 120, 152, 0.2); /* Sombra en el texto */
-    margin: 0; /* Quita los márgenes */
-}
-
-/* Si es necesario, puedes quitar el margen superior del h1 que estaba en 6% */
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 10px;
-}
-
-
-
-.header .fondo a {
-    color: #0f0f0f;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.header .fondo a:hover {
-    color: rgb(212, 110, 154);
-}
-.fondo {
-    width: 80%;
-}
-
-.fondo ul {
-    list-style-type: none; /* Quitar los puntos de la lista */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Alinear los elementos en fila */
-    gap: 20px; /* Espacio entre los elementos */
-    justify-content: flex-end;
-}
-.fondo li {
-    margin-right: 0; /* Quitar margen derecho adicional */
-}
-.fondo a {
-    text-decoration: none;
-    color: #000000; 
-    font-size: 15px;
-    font-family: Poppins;
-}
-
-.header .fondo a:hover {
-    color: rgb(232, 10, 106);
-}
 .sidebar {
-    position: fixed;
-    background-color: #f8f8f8;
-    width: 250px;
-    padding: 1rem;
-    position: fixed;
-    top: 25%;
-    margin-left: 1%;
-    max-height: 80vh; /* Altura máxima basada en la ventana */
-    overflow-y: auto; /* Agrega barra de desplazamiento vertical si el contenido excede */
-    z-index: 1000;
+    width: 300px;
+    background: linear-gradient(to bottom, rgba(255, 105, 180, 0.9), rgba(255, 182, 193, 0.9));
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    color: white;
 }
-.sidebar ul {
-    padding: 0; /* Elimina el padding de la lista */
-    margin: 0; /* Elimina el margen de la lista */
-    list-style: none; /* Elimina las viñetas de la lista */
-}
-.sidebar ul li {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-}
-.sidebar ul li:last-child {
-    border-bottom: none; /* Eliminar la línea del último elemento */
-}
-.sidebar ul li a {
-    color: #181717;
-    text-decoration: none;
+
+.sidebar .profile {
     display: flex;
-    padding: 10px;
     align-items: center;
-    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sidebar .profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .profile-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.sidebar .profile-info p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background: #c7c5c5;
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-h2 {
-    font-size: 2.2rem;
-    font-weight: bold;
-    font-family: 'Arizonia';
-    color: #000000; /* Color del texto de la marca */
-}
-h3 {
-    color: #302f2f;
-}
-.content {
-    margin-left: 220px;
-}
-.publicidad {
-    margin-top: 100%;
-}
-.product-container {
-    position: fixed;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    width: 75%;
-    height: 450px;
-    text-align: center; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: .4s;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    margin-left: 20%;
-    margin-top: 15px;
-    max-height: 100vh; /* Altura máxima basada en la ventana */
-    overflow-y: auto; /* Agrega barra de desplazamiento vertical si el contenido excede */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-.container {
-    width: 70%;
-    height: 275px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-top: 40px;
-    transition: .4s;
-}
-
-.container:hover {
-    border-color: rgb(124, 120, 120);
-    box-shadow: 4px 4px 4px rgba(158, 156, 156, 0.952);
-    transform: scale(1.1);
-    cursor: pointer;
-}
-.agregar-carrito {
-    background-color: #e70023;
-    color: #f8f8f8;
-    border-color: #e70023;
-    padding: 6px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 13px;
-}
 .icon {
-    width: 40px; 
-    height: auto;
-
-}
-.icon0 {
-    width: 70px; 
-    height: 70px;
-    margin-right: 10px;
-    margin-left: 3%;
-}
-.icon1 {
-    width: 30px; 
-    height: 30px;
     margin-right: 10px;
 }
-.img-hipinto {
-    width: 35px;
-    height: auto;
-}
-.img-gourmet {
-    width: 60px;
-    height: auto;
-}
-.img-manzana {
-    width: 100px;
-    height: auto;
-}
 
-.img-fresas {
-    width: 110px;
-    height: auto;
-    margin-top: 4%;
+.badge {
+    background-color: #ff69b4;
+    color: white;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 14px;
 }
-
-.img-sandia {
-    width: 120px;
-    height: auto;
-    margin-top: 4%;
-}
-
-.img-sandia {
-    width: 110px;
-    height: auto;
-}
-
-.img-banano {
-    width: 150px;
-    height: auto;
-}
-
-.img-uvas {
-    width: 100px;
-    height: auto;
-}
-
-.img-mango {
-    width: 140px;
-    height: auto;
-    padding-top: 10px;
-}
-.img-uchuvas {
-    width: 140px;
-    height: auto;
-}
-.img-piña {
-    width: 110px;
-    height: auto;
-}
-.img-aguacate {
-    width: 130px;
-    height: auto;
-}
-.img-coco {
-    width: 130px;
-    height: auto;
-}
-.img-lulo {
-    width: 150px;
-    height: auto;
-    padding-top: 10px;
-}
-.img-alqueria {
-    width: 80px;
-    height: auto;
-    padding-top: 10px;
-}
-.img-Alqueria {
-    width: 90px;
-    height: auto;
-    padding-top: 10px;
-}
-.img-Alqueria2 {
-    width: 65px;
-    height: auto;
-    padding-top: 10px;
-}
-.img-Rodeo {
-    width: 75px;
-    height: auto;
-    padding-top: 10px;
-}
-.name1 {
-    padding-top: 10px;
-}
-
-.name2 {
-    padding-top: 17px;
-}
-
-.name3 {
-    padding-top: 35px;
-}
-
-.name4 {
-    padding-top: 15px;
-}
-
-.name5 {
-    padding-top: 15px;
-}
-
-.name6 {
-    padding-top: 20px;
-}
-
-.name7 {
-    padding-top: 15px;
-}
-
-.name8 {
-    padding-top: 8px;
-}
-.name10 {
-    padding-top: 17px;
-}
-.name11 {
-    padding-top: 17px;
-}
-.name12 {
-    padding-top: 17px;
-}
-.name13 {
-    padding-top: 4px;
-}
-.name14 {
-    padding-top: 9px;
-}
-.name15 {
-    padding-top: 12px;
-}
-.name16 {
-    padding-top: 1px;
-}
-
-.footer-container {
+.form-group {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: #e70023;
+    height: 100px; /* Ajusta esta altura según tus necesidades */
+}
+
+.img-2 {
+    margin-top: 6%;
+    height: 100px; /* Mantén la relación de aspecto si es necesario */
+    object-fit: cover; /* Para asegurar que la imagen se ajuste sin distorsionarse */
+    margin-left: 19%;
+}
+.welcome-message {
+    background-color: #f4f4f9;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 32%;
+}
+.welcome-message h1 {
+    font-size: 2.5rem;
+    color: #1b1b1b;
+    margin-bottom: 15px;
+    margin-left: 0%;
+    font-family: 'Montserrat', 100;
+}
+.welcome-message p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.welcome-message strong {
+    color: #070707; /* Color destacado para el nombre del salón */
+    font-weight: bold;
+}
+.welcome-message p:last-of-type {
+    font-style: italic;
+    color: #777;
+}
+
+
+.content {
+    flex: 1;
+    padding: 20px;
 }

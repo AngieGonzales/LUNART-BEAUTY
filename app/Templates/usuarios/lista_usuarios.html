@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='usuarios.css')}}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
+            <ul>
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+
+                        PRODUCTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
+
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+        <div class="content">
+            <div class="titulo">
+        <h1>LISTA DE CLIENTES</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Celular</th>
+                    <th>Correo</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Acciones</th>
+                </tr>
+                {% for usuario in data %}
+                    <tr>
+                        <td>{{ usuario.id }}</td>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.apellido }}</td>
+                        <td>{{ usuario.celular }}</td>
+                        <td>{{ usuario.correo }}</td>
+                        <td>{{ usuario.fecha_nacimiento }}</td>
+                        <td>
+                            <a class="btn-edit" href="{{ url_for('usuario.edit', id=usuario.id) }}">EDITAR</a>
+                            <a class="btn-delete" href="{{ url_for('usuario.delete', id=usuario.id) }}">ELIMINAR</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

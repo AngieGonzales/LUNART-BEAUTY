@@ -4,5 +4,8 @@ class Servicio(db.Model):
     __tablename__='servicio'
     idservicio = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
+    descripcion=db.Column(db.String(255), nullable=False)
+    imagen=db.Column(db.String(255), nullable=False)
    
     cita = db.relationship('Cita', back_populates='servicio')
+    estilista = db.relationship('Estilista', back_populates='servicio')

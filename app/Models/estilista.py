@@ -1,10 +1,12 @@
 from app import db
 
-
 class Estilista(db.Model):
 
     __tablename__ = 'estilista'
     idEstilista = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
+    telefono =db.Column(db.String(255), nullable=False)
+    id_servicio = db.Column(db.Integer,  db.ForeignKey('servicio.idservicio'),nullable = True)
    
+    servicio = db.relationship("Servicio", back_populates="estilista")
     cita = db.relationship('Cita', back_populates='estilista')

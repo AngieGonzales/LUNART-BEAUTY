@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: 'Alex+Brush&display';
+    font-style: italic; /* Agregado para cursiva */
+    color: #050505;
+    background-color: #fbfafa;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.cart-icon {
+    font-size: 1.5em;
+    color: #df0505; 
+    margin-left: 20px;
+}
+
+
+.cart-icon:hover {
+    color: #f39c12;
+}
+header {
+    background-color: #eaeaea; /* Light grey background */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    display: flex;
+}
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+h2 {
+    font-family: 'Arizonia', cursive;
+    color: #000000; /* Soft muted rose color */
+    margin: 0;
+    font-size: 5.2em;
+    margin-left: 10%;
+}
+.fondo ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.fondo ul li {
+    margin: 0 15px;
+    display: inline-block;
+    margin-top: 3%;
+}
+
+.fondo ul li a {
+    text-decoration: none;
+    color: #444343; /* Muted text color */
+    font-size: 18px;
+    transition: color 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.fondo ul li a:hover {
+    color: #b5838d; 
+}
+.header-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    border-radius: 20px; /* Bordes redondeados */
+    margin-top: 10%;
+}
+.header-img {
+    flex: 1;
+    padding: 20px;
+}
+
+.header-img img {
+    max-width: 100%;
+    border-radius: 20px; /* Bordes redondeados para la imagen */
+    transition: transform 0.3s; /* Animación de transformación */
+}
+
+.header-img img:hover {
+    transform: scale(1.05); /* Agrandar un poco al pasar el ratón */
+}
+.header-txt {
+    text-align: center;
+    flex-basis: 50%;
+    padding: 20px; /* Espacio adicional para centrar el contenido */
+}
+
+.header-txt h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-family: 'Georgia', serif; /* Fuente elegante */
+    margin-bottom: 15px;
+    color: #d46e9a; /* Color más llamativo */
+}
+
+.header-txt p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.header-txt .btn-1 {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.header-txt .btn-1:hover {
+    background: linear-gradient(to right, #0f0d0a, #d46e9a);
+    transform: scale(1.05); /* Agrandar un poco el botón */
+}

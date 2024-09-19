@@ -1,41 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+.nerko-one-regular {
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+/* Estilos de mensajes flash */
+.flash {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    width: 100%; /* Se asegura de que ocupe todo el ancho del contenedor del formulario */
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
+.flash.success {
+    background-color: #ebcdd8;
+    color: #af668c;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #721c24;
+}
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f3f3f3;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    justify-content: center;
+
 }
 
 .container {
+    margin-top: 100px;
     background-color: white;
     border-radius: 10px;
     display: flex;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 800px;
-    width: 100%;
+    width: 70%;
+    top: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+@media (max-width: 440px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+    }
+
+    .contact-info {
+        padding: 0;
+    }
+
 }
 
 .contact-info {
     padding: 50px;
     background-color:#ebcdd8;
-    width: 50%;
+    border-radius: 4%;
 }
 
-.contact-info h2, .contact-form h2 {
+.contact-info h2 {
     color: #af668c;
     margin-bottom: 20px;
+    font-family: 'Arizonia';
+    font-size: 35px;
+    text-align: center;
 }
-
+.contact-form h2 {
+    color: #af668c;
+    margin-bottom: 20px;
+    font-family: 'Arizonia';
+    font-size: 35px;
+    margin-top: 1%;
+}
 .info-section {
     margin-bottom: 30px;
 }
 
 .info-section h3 {
-    color: #333;
+    color: #4e4d4d;
     margin-bottom: 10px;
+    font-family: "Nerko One", cursive;
+    font-size: 20px;
 }
 
 .info-section p {
@@ -57,7 +113,7 @@ body {
 .contact-form {
     padding: 50px;
     background: linear-gradient(135deg, #f5f7fa, #fafafa);
-    width: 50%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,24 +123,21 @@ body {
 .contact-form form {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
     align-items: center; /* Centra el formulario */
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #000000;
-    background-color: #f9f9f9;
-    font-size: 16px;
-    color: #333;
 }
 
 .contact-form textarea {
     resize: none;
-    height: 100px;
+    height: 200px;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 30px;
+    border: 1px solid #777676;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
 }
 
 .contact-form button {

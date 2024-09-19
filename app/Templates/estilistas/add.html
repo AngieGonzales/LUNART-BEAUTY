@@ -1,21 +1,73 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{url_for('static',filename='style.css')}}" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='addestilista.css')}}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Agregar Estilistas - LunArt Beauty</title>
 </head>
 <body>
-    <h1>AGREGAR EMPLEADO</h1>
-    <form action="{{ url_for('empleados.add') }}" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="telefono">Telefono:</label>
-        <input type="text" id="telefono" name="telefono" required>
-        <label for="cargo">Cargo:</label>
-        <input type="text" id="cargo" name="cargo" required>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/usuario.png') }}" alt="usuario">
+                </div>
+            </div>
+            <ul>
 
-        
-        <button type="submit">Agregar</button>
-    </form>
+                <li>
+                    <a href="#">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+
+                        PRODUCTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/notificaciones.png') }}" alt="Notificaciones Stock">
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.logout') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/cerrar.png') }}" alt="Cerrar Sesión">
+                        CERRAR SESIÓN
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>AGREGAR ESTILISTAS</h1>
+            <form action="{{ url_for('estilistas.add') }}" method="post">
+                <label class="label" for="nombre">Nombre y Apellido:</label>
+                <input class="input" type="text" id="nombre" name="nombre" required>
+                <label class="label" for="telefono">Telefono:</label>
+                <input class="input" type="text" id="telefono" name="telefono" required>
+                <label class="label" for="servicio">Servicio:</label>
+                <select id="servicio" name="id_servicio" required>
+                    {% for servicio in data %}
+                        <option value="{{ servicio.idservicio }}">{{ servicio.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <div class="link-container">
+                    <button class="styled-link" type="submit">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+</html>

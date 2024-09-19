@@ -3,42 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='principal.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
     <title>Primera Vista</title>
 </head>
 <body>
-    <header>
-      <h2>LunArt Beauty</h2>
-        <nav class="fondo">
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
             <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+
+                        PRODUCTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
+
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
             </ul>
-        </nav>
+            </div>
+        </div>
+    </div>
+    <div class="admin-info">
+        <div class="form-group">
+            <img class="img-2" src="{{ url_for('static', filename='img/administrador.png') }}" alt="contra">
+        </div>
+        <br>
+        <div>
+            <h1>ADMINISTRADOR-LUNART BEAUTY</h1>
+        </div>
+        <div class="welcome-message">
+            <h2 class="bien">Bienvenido</h2>
+            <p>¡Nos alegra verte de nuevo en el panel de control de <strong>Lunart Beauty</strong>  Aquí podrás gestionar de manera eficiente todos los aspectos de tu salón de belleza. Desde la administración de productos y servicios hasta la gestión de citas y clientes, este panel te proporciona todas las herramientas necesarias para mantener el negocio en funcionamiento y ofrecer la mejor experiencia a tus clientes.</p>
+            <p>No olvides revisar las últimas notificaciones y estar al tanto de las actualizaciones importantes. Si necesitas asistencia, no dudes en consultarnos en la sección de ayuda.</p>
+            <p>¡Que tengas un excelente día de trabajo!</p>
+        </div>
         
-    </header>  
-    <div> 
-        <aside class="sidebar">
-            <ul>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Verduras.png" alt="">Frutas y Verduras</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Lacteos.png" alt="">Lácteos y Huevos</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Carnes.png" alt="">Carnes</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Arroz.png" alt="">Arroz, granos y pastas</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Aceites.png" alt="">Aceites, sal y endulzantes</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Despensa.png" alt="">Despensa</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Bebidas.png" alt="">Bebidas</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Personal.png" alt="">Aseo Personal</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Hogar.png" alt="">Aseo del Hogar</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Mascotas.png" alt="">Mascotas</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Licores.png" alt="">Licores</a></li>
-                <li><a href="#"><img class="icon1" src="static/imagenes/Sazonadores.png" alt="">Salsas y Sazonadores</a></li>
-            </ul>
-        </aside>
     </div>
-    <div class="menu">
-        <h1>Administrador</h1>
-    </div>
-   
 </body>
 </html>

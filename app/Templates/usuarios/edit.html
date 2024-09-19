@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='actualizar.css') }}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
+    <title>Actualizar Perfil</title>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
+            <ul>
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+
+                        PRODUCTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
+
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+        <div class="content">
+            <div class="titulo">
+            <h1>ACTUALIZAR PERFIL</h1>
+            </div>
+            <form action="{{ url_for('usuario.edit', id=usuario.id) }}" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="{{ usuario.nombre }}" required><br><br>
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" value="{{ usuario.apellido }}" required><br><br>
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" value="{{ usuario.correo }}" required><br><br>
+                
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular" value="{{ usuario.celular }}" required><br><br>
+
+                <button class="boton" type="submit">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
