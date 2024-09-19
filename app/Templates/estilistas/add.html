@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='addestilista.css')}}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
     <title>Agregar Estilistas - LunArt Beauty</title>
 </head>
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                    <a href="{{ url_for('cita.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
 
                         CITAS
@@ -51,43 +51,20 @@
         <!-- Content -->
         <div class="content">
             <h1>AGREGAR ESTILISTAS</h1>
-            
-            <!-- Flash Messages -->
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    <div class="flash-messages">
-                        {% for category, message in messages %}
-                            <div class="flash flash-{{ category }}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endwith %}
-            
-            <!-- Form -->
             <form action="{{ url_for('estilistas.add') }}" method="post">
                 <label class="label" for="nombre">Nombre y Apellido:</label>
                 <input class="input" type="text" id="nombre" name="nombre" required>
                 <label class="label" for="telefono">Telefono:</label>
                 <input class="input" type="text" id="telefono" name="telefono" required>
-                <label class="label" for="cargo">Cargo:</label>
-                <select class="input" id="cargo" name="cargo" required>
-                    <option value="" disabled selected>Selecciona el cargo</option>
-                    <option value="Depilacion">Depilacion</option>
-                    <option value="Tratamientos faciales">Tratamientos faciales</option>
-                    <option value="Lifting Pestañas">Lifting de pestañas</option>
-                    <option value="Manicurista">Masaje</option>
-                    <option value="Cabello">Cabello</option>
+                <label class="label" for="servicio">Servicio:</label>
+                <select id="servicio" name="id_servicio" required>
+                    {% for servicio in data %}
+                        <option value="{{ servicio.idservicio }}">{{ servicio.nombre }}</option>
+                    {% endfor %}
                 </select>
                 <br>
                 <div class="link-container">
                     <button class="styled-link" type="submit">Agregar</button>
-                </div>
-                <div class="link-container">
-                    <a href="{{ url_for('estilistas.index') }}">
-                        <img class="volver" src="{{ url_for('static', filename='img/volver.png') }}" alt="Volver">
-                    </a>
                 </div>
             </form>
         </div>

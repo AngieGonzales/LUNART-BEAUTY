@@ -2,24 +2,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='lista.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexcita.css') }}">
     <title>Citas</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="Logo">
-                <h2>LunArt Beauty</h2>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
             </div>
+            <div class="campos">
+            <ul>
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
 
-            <nav class="menu">
-                <a href="{{ url_for('menu.ruta_citas') }}">AGENDAR</a>
-                <a href="{{ url_for('menu.ruta_catalogo') }}">CATALOGOS</a>
-            </nav>
-        </div>    
-    </header>
+                        PRODUCTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
 
-    <h1>LISTA DE CITAS</h1>
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor">
+    <div class="titulo">
+        <h1>LISTA DE CITAS</h1>
+    </div>
     <table>
         <tr>
             <th>ID</th>
@@ -27,7 +72,6 @@
             <th>Hora</th>
             <th>Servicio</th>
             <th>Estilista</th>
-            <th>Acciones</th>
         </tr>
         {% for cita in data %}
             <tr>
@@ -36,12 +80,9 @@
                 <td>{{ cita.hora }}</td>
                 <td>{{ cita.servicio.nombre }}</td>
                 <td>{{ cita.estilista.nombre }}</td>
-                <td>
-                    <a class="btn-edit" href="{{ url_for('cita.edit', idcita=cita.idcita) }}">Editar</a>
-                    <a class="btn-delete" href="{{ url_for('cita.delete', idcita=cita.idcita) }}">Eliminar</a>
-                </td>
             </tr>
         {% endfor %}
     </table>
+    </div>
 </body>
 </html>

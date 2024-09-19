@@ -16,11 +16,6 @@ def ruta_catalogo():
 def ruta_contacto():
     return render_template('contacto/index.html')
 
-@bp.route('/citas')
-def ruta_citas():
-    return redirect(url_for('cita.add'))
-
-
 @bp.route('/inicio')
 def ruta_inicio():
     return render_template('menu/index.html')

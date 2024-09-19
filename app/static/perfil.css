@@ -8,6 +8,7 @@ body {
 .main-container {
     display: flex;
     height: 100vh;
+    position: fixed
 }
 
 .sidebar {
@@ -34,20 +35,14 @@ body {
     border-radius: 10%;
     margin-bottom: 10px;
 }
-
-
-
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin-top: 90px; 
 }
-
-
 .sidebar ul li {
     margin: 30px 0;
 }
-
 .sidebar ul li a {
     text-decoration: none;
     color: #333;
@@ -60,7 +55,6 @@ body {
     border-radius: 17px;
     transition: background 0.3s, color 0.3s;
 }
-
 .sidebar ul li a .icon {
     width: 30px; /* Ajusta el tamaño del icono */
     height: 30px; /* Ajusta el tamaño del icono */
@@ -70,12 +64,9 @@ body {
     background-color: #eed4ddde;
     color: #000000;
 }
-
-
 .icon {
     margin-right: 10px;
 }
-
 .content {
     flex: 1;
     padding: 20px;
@@ -86,10 +77,7 @@ body {
     box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
     text-align: center; /* Centrar el texto horizontalmente */
 }
-
-
 .container{
-
     flex: 1;
     padding: 20px;
     background: #fff;
@@ -98,22 +86,16 @@ body {
     overflow-y: auto;
     box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
     text-align: center; /* Centrar el texto horizontalmente */
-
-
 }
-
 .content h1{
     margin-top: 13%;
 }
-
-
 .content .img-1 {
     width: 520px; /* Ajusta el ancho de la imagen */
     height: auto; /* Mantiene la proporción de la imagen */
     max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
     margin: 20px 0; /* Espaciado superior e inferior para la imagen */
 }
-
 table {
     width: 80%;
     margin: 40px auto;
@@ -230,4 +212,38 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: #de6db7;
     transform: scale(1.05);
+}
+.admin-info {
+    margin-left: 61%;
+    top: 50px; /* Ajusta la distancia desde el borde superior */
+    transform: translateX(-50%); /* Para centrar horizontalmente */
+    padding: 20px; /* Espacio interno */
+    width: 60%; /* Ancho del contenedor, ajusta según sea necesario */
+    z-index: 2; /* Para que quede frente a otros elementos */
+    text-align: center; /* Centra el contenido */
+    font-family: 'Arial', sans-serif; /* Fuente limpia y profesional */
+}
+.img-2 {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 50%; /* Hace la imagen circular */
+    margin-bottom: 10px; /* Espaciado debajo de la imagen */
+}
+.admin-info h1 {
+    font-size: 2.8em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px; /* Espaciado debajo del título */
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+}
+.bien {
+    font-family: 2.4em;
+}
+.admin-info .welcome-message {
+    font-size: 15px; /* Tamaño de fuente del subtítulo */
+    color: #1d1c1c; /* Color ligeramente más suave */
+    background-color: #f1eded; /* Color de fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 7%;
 }

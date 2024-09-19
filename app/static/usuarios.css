@@ -1,0 +1,131 @@
+.sidebar {
+    position: fixed; /* Hace que el aside quede fijo al lado izquierdo de la pantalla */
+    left: 0; /* Asegura que se alinee al borde izquierdo */
+    top: 0; /* Asegura que se alinee al borde superior */
+    width: 330px; /* Asegura un ancho fijo */
+    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la pantalla */
+    background-color: rgba(230, 228, 228, 0.642);
+    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    padding: 50px;
+    padding-top: 3%;
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0; /* Añadir un borde para destacarlo */
+}
+
+.profile {
+    text-align: center;
+}
+.profile h3 {
+    font-size: 2.9rem;
+    font-family: 'Arizonia';
+}
+.profile img {
+    width: 80; 
+    height: 80px; 
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+.campos {
+    top: 0%;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 90px; 
+}
+.sidebar ul li {
+    margin: 30px 0;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: flex-start; /* Cambia center a flex-start */
+    border-radius: 17px;
+    transition: background 0.3s, color 0.3s;
+}
+.sidebar ul li a .icon {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px; /* Ajusta el tamaño del icono */
+    margin-right: 15px; /* Ajusta el espacio entre el icono y el texto */
+}
+.sidebar ul li a:hover {
+    background-color: #eed4ddde;
+    color: #000000;
+}
+.content {
+    width: 65%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 28%;
+    margin-left: 27%;
+}
+table {
+    width: 100%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #535353;
+    
+}
+
+th, td {
+    padding: 15px;
+    text-align: center; /* Centra el texto de las celdas */
+    border-bottom: 1px solid #868686;
+    font-size: 15px;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.titulo {
+    text-align: center; /* Centra el título */
+    margin: 0 auto; /* Ajusta el margen */
+    margin-top: 2%; /* Espacio superior */
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    margin-left: 3%;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px; /* Espaciado debajo del título */
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn-edit, .btn-delete {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.btn-edit {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    margin-right: 20px;
+}
+.btn-edit:hover {
+    background-color: #e0add2;
+}
+.btn-delete {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+}
+.btn-delete:hover {
+    background-color: #e0add2;
+}

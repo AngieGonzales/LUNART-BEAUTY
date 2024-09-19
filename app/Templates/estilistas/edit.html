@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='editestilista.css') }}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
     <title>Editar Estilistas - LunArt Beauty</title>
 </head>
@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                    <a href="{{ url_for('cita.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
 
                         CITAS
@@ -73,10 +73,16 @@
                 <label for="name">Telefono:</label>
                 <input type="number" id="telefono" name="telefono" value="{{ estilista.telefono }}">
             
-                <label for="text">Cargo:</label>
-                <input type="text" id="id_servicio" name="id_servicio" value="{{ estilista.id_servicio }}">
+                <label for="id_servicio">Servicio</label>
+                <select id="id_servicio" name="id_servicio" required>
+                    {% for servicio in servicios %}
+                        <option value="{{ servicio.idservicio }}" {% if servicio.idservicio == estilista.id_servicio %}selected{% endif %}>
+                            {{ servicio.nombre }}
+                        </option>
+                    {% endfor %}
+                </select>
             
-                <button type="submit">Guardar Cambios</button>
+                <button class="boton" type="submit">GUARDAR</button>
             </form>
         </div>
     </div>

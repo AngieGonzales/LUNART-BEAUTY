@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
     <title>Primera Vista</title>
 </head>
@@ -17,6 +17,7 @@
                     <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
                 </div>
             </div>
+            <div class="campos">
             <ul>
                 <li>
                     <a href="{{ url_for('estilistas.index') }}">
@@ -39,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                    <a href="{{ url_for('cita.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
 
                         CITAS
@@ -52,10 +53,17 @@
                         SERVICIOS
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
             </ul>
+            </div>
         </div>
     </div>
-    <div>
+    <div class="admin-info">
         <div class="form-group">
             <img class="img-2" src="{{ url_for('static', filename='img/administrador.png') }}" alt="contra">
         </div>
@@ -64,7 +72,7 @@
             <h1>ADMINISTRADOR-LUNART BEAUTY</h1>
         </div>
         <div class="welcome-message">
-            <h1>Bienvenido</h1>
+            <h2 class="bien">Bienvenido</h2>
             <p>¡Nos alegra verte de nuevo en el panel de control de <strong>Lunart Beauty</strong>  Aquí podrás gestionar de manera eficiente todos los aspectos de tu salón de belleza. Desde la administración de productos y servicios hasta la gestión de citas y clientes, este panel te proporciona todas las herramientas necesarias para mantener el negocio en funcionamiento y ofrecer la mejor experiencia a tus clientes.</p>
             <p>No olvides revisar las últimas notificaciones y estar al tanto de las actualizaciones importantes. Si necesitas asistencia, no dudes en consultarnos en la sección de ayuda.</p>
             <p>¡Que tengas un excelente día de trabajo!</p>

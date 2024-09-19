@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f0f0f0;
+}
+.sidebar {
+    width: 330px; /* Asegura un ancho fijo */
+    background-color: rgba(230, 228, 228, 0.642);
+    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    padding: 50px;
+    padding-top: 3%;
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0; /* Añadir un borde para destacarlo */
+}
+
+.profile {
+    text-align: center;
+}
+.profile h3 {
+    font-size: 2.9rem;
+    font-family: 'Arizonia';
+}
+.profile img {
+    width: 80; 
+    height: 80px; 
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+.campos {
+    top: 0%;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 90px; 
+}
+.sidebar ul li {
+    margin: 30px 0;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: flex-start; /* Cambia center a flex-start */
+    border-radius: 17px;
+    transition: background 0.3s, color 0.3s;
+}
+.sidebar ul li a .icon {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px; /* Ajusta el tamaño del icono */
+    margin-right: 15px; /* Ajusta el espacio entre el icono y el texto */
+}
+.sidebar ul li a:hover {
+    background-color: #eed4ddde;
+    color: #000000;
+}
+.main-container {
+    display: flex;
+    height: 100vh;
+    position: fixed
+}
+.admin-info {
+    margin-left: 61%;
+    top: 50px; /* Ajusta la distancia desde el borde superior */
+    transform: translateX(-50%); /* Para centrar horizontalmente */
+    padding: 20px; /* Espacio interno */
+    width: 60%; /* Ancho del contenedor, ajusta según sea necesario */
+    z-index: 2; /* Para que quede frente a otros elementos */
+    text-align: center; /* Centra el contenido */
+    font-family: 'Arial', sans-serif; /* Fuente limpia y profesional */
+}
+.img-2 {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 50%; /* Hace la imagen circular */
+    margin-bottom: 10px; /* Espaciado debajo de la imagen */
+}
+.admin-info h1 {
+    font-size: 2.8em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px; /* Espaciado debajo del título */
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+}
+.bien {
+    font-family: 2.4em;
+}
+.admin-info .welcome-message {
+    font-size: 15px; /* Tamaño de fuente del subtítulo */
+    color: #1d1c1c; /* Color ligeramente más suave */
+    background-color: #f1eded; /* Color de fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 7%;
+}

@@ -3,70 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='perfil.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexestilista.css')}}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
     <title>Lista de Estilistas</title>
 </head>
 <body>
-    <header>
-        <h2>LunArt Beauty</h2>
-            <nav class="fondo">
-                <ul>
-                    <li><a href="{{ url_for('usuario.admin_dashboard') }}">INICIO</a></li>
-                </ul>
-            </nav>   
-    </header>  
-        <div class="main-container"> 
-            <aside class="sidebar">
-                <ul>
-                    <li><a href="{{ url_for('estilistas.index') }}">ESTILISTAS</a></li>
-                    <li><a href="#">PRODUCTOS</a></li>
-                    <li><a href="{{ url_for('menu.ruta_perfil') }}">NOTIFICACIONES STOCK</a></li>
-                    <li><a href="{{ url_for('menu.ruta_perfil') }}">CITAS</a></li>
-                    <li><a href="{{ url_for('servicio.index_admin') }}">SERVICIOS</a></li>
-                </ul>
-            </aside>
-        </div>
-    <div>
-        <h1>LISTA DE ESTILISTAS</h1>
-    </div>
-    <div>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>TELEFONO</th>
-                <th>CARGO</th>
-                <th>ACCIONES</th>
-            </tr>
-            {% for estilista in dataE %}
-                <tr>
-                    <td>{{ estilista.idEstilista }}</td>
-                    <td>{{ estilista.nombre }}</td>
-                    <td>{{ estilista.telefono }}</td>
-                    <td>{{ estilista.servicio.nombre }}</td>
-                    <td>
-                        <a class="btn-edit" href="{{ url_for('estilistas.edit', idEstilista=estilista.idEstilista) }}">Editar</a>
-                        <a class="btn-delete" href="{{ url_for('estilistas.delete', idEstilista=estilista.idEstilista) }}">Eliminar</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-    </div>
-
+    <div class="main-container"></div>
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
+            <ul>
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
                         PRODUCTOS
                     </a>
                 </li>
                 <li>
                     <a href="{{ url_for('menu.ruta_perfil') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/notificaciones.png') }}" alt="Notificaciones Stock">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
                         NOTIFICACIONES STOCK
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                    <a href="{{ url_for('cita.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
-
                         CITAS
                     </a>
                 </li>
@@ -76,42 +48,45 @@
                         SERVICIOS
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
             </ul>
+            </div>
         </div>
-
-        <!-- Content -->
-        <div class="content">
-     
-            
+    </div>
+    <div class="contenedor">
+        <div class="titulo">
             <h1>LISTA DE ESTILISTAS</h1>
-            <table>
+        </div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>TELEFONO</th>
+                <th>SERVICIO</th>
+                <th>ACCIONES</th>
+            </tr>
+            {% for estilista in dataE %}
                 <tr>
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>TELEFONO</th>
-                    <th>CARGO</th>
-                    <th>ACCIONES</th>
+                    <td>{{ estilista.idEstilista }}</td>
+                    <td>{{ estilista.nombre }}</td>
+                    <td>{{ estilista.telefono }}</td>
+                    <td>{{ estilista.servicio.nombre }}</td>
+                    <td>
+                        <a class="btn-edit" href="{{ url_for('estilistas.edit', idEstilista=estilista.idEstilista) }}">EDITAR</a>
+                        <a class="btn-delete" href="{{ url_for('estilistas.delete', idEstilista=estilista.idEstilista) }}">ELIMINAR</a>
+                    </td>
                 </tr>
-                {% for estilista in dataE %}
-                    <tr>
-                        <td>{{ estilista.idEstilista }}</td>
-                        <td>{{ estilista.nombre }}</td>
-                        <td>{{ estilista.telefono }}</td>
-                        <td>{{ estilista.cargo }}</td>
-                        <td>
-                            <a class="btn-edit" href="{{ url_for('estilistas.edit', idEstilista=estilista.idEstilista) }}">Editar</a>
-                            <a class="btn-delete" href="{{ url_for('estilistas.delete', idEstilista=estilista.idEstilista) }}">Eliminar</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
-
-            
-
-            
-                <a class="btn-edit" href="{{ url_for('estilistas.add') }}" class="styled-link">Agregar Estilista</a>
+            {% endfor %}
+        </table>
+        <a href="{{ url_for('estilistas.add') }}" class="styled-link">AGREGAR</a>
             
         </div>
+    </div>
     </div>
 </body>
 </html>
