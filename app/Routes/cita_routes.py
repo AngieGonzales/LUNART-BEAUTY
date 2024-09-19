@@ -14,6 +14,14 @@ def index():
 
     return render_template('citas/index.html', data=data, servicio=servicio, estilista=estilista)
 
+@bp.route('/citas_usuarios')
+def index_user():
+    data = Cita.query.all()
+    servicio = Servicio.query.all()
+    estilista = Estilista.query.all()
+
+    return render_template('citas/indesuser.html', data=data, servicio=servicio, estilista=estilista)
+
 @bp.route('/add', methods=['GET', 'POST'])
 def add():  
     if request.method == 'POST':
@@ -33,7 +41,7 @@ def add():
         db.session.add(new_Cita)
         db.session.commit()
 
-        return redirect(url_for('cita.index'))
+        return redirect(url_for('cita.index_user'))
     
     data = Servicio.query.all()
     data1 = Estilista.query.all()
@@ -82,4 +90,4 @@ def delete(idcita):
     db.session.commit()
 
     flash('Cita eliminada correctamente.', 'success')
-    return redirect(url_for('cita.index'))
+    return redirect(url_for('cita.index_user'))

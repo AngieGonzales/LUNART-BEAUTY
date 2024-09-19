@@ -17,7 +17,6 @@ body {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    
 }
 
 .cart-icon {
@@ -30,40 +29,53 @@ body {
 .cart-icon:hover {
     color: #f39c12;
 }
-
-.header {
-    background-color: #cccccc;
-    color: #050505;
-    padding: 20px 0;
-}
-
-.header .container {
+header {
+    background-color: #eaeaea; /* Light grey background */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
 }
- h2 {
-    font-size: 2.3rem;
-    font-weight: bold;
-    font-family: 'Arizonia';
-    color: #000000; /* Color del texto de la marca */
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+h2 {
+    font-family: 'Arizonia', cursive;
+    color: #000000; /* Soft muted rose color */
+    margin: 0;
+    font-size: 5.2em;
+    margin-left: 10%;
+}
+.fondo ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 }
 
-.header .menu a {
-    color: #050505;
-    text-decoration: none;
+.fondo ul li {
     margin: 0 15px;
-    font-size: 1rem;
-    transition: color 0.3s;
+    display: inline-block;
+    margin-top: 3%;
 }
 
-.header .menu a:hover {
-    color: rgb(212, 110, 154);
+.fondo ul li a {
+    text-decoration: none;
+    color: #444343; /* Muted text color */
+    font-size: 18px;
+    transition: color 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
 }
 
+.fondo ul li a:hover {
+    color: #b5838d; 
+}
 .header-content {
     display: flex;
     flex-wrap: wrap;
@@ -74,8 +86,8 @@ body {
     background-color: #fff;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     border-radius: 20px; /* Bordes redondeados */
+    margin-top: 10%;
 }
-
 .header-img {
     flex: 1;
     padding: 20px;
@@ -90,7 +102,6 @@ body {
 .header-img img:hover {
     transform: scale(1.05); /* Agrandar un poco al pasar el ratón */
 }
-
 .header-txt {
     text-align: center;
     flex-basis: 50%;
@@ -125,19 +136,4 @@ body {
 .header-txt .btn-1:hover {
     background: linear-gradient(to right, #0f0d0a, #d46e9a);
     transform: scale(1.05); /* Agrandar un poco el botón */
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-    .header .container {
-        flex-direction: column;
-    }
-
-    .header-content {
-        flex-direction: column;
-    }
-
-    .header-txt h1 {
-        font-size: 36px; /* Reducir el tamaño en pantallas más pequeñas */
-    }
 }

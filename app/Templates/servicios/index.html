@@ -12,13 +12,11 @@
             <nav class="fondo">
                 <ul>
                     <li><a href="{{ url_for('usuario.index') }}">INICIO</a></li>
+                    <li><a href="{{ url_for('cita.index_user') }}">CITAS</a></li>
+                    <li><a href="{{ url_for('cita.index') }}">CATALOGOS</a></li>
+                    <li><a href="{{ url_for('contact.enviar_contacto') }}">CONTACTO</a></li>
                 </ul>
             </nav>
-            <div>
-                <li><a href="{{ url_for('cita.index') }}">CITAS</a></li>
-                <li><a href="{{ url_for('cita.index') }}">CATALOGOS</a></li>
-                <li><a href="{{ url_for('contact.enviar_contacto') }}">CONTACTO</a></li>
-            </div>
     </header>  
     
     <div class="card-container">
