@@ -32,8 +32,8 @@ def create_app():
     app.register_blueprint(usuario_routes.bp)
     app.register_blueprint(producto_routes.bp)
     app.register_blueprint(categoria_routes.bp)
-    from app.Routes.auth import auth_bp
-    app.register_blueprint (auth_bp)
+    
+
     app.register_blueprint(contacto_routes.bp)
 
 

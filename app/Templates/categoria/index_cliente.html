@@ -30,11 +30,11 @@
                 <td>{{ categoria.descripcion }}</td>
                 <p>{{ categoria.precio }}</p>
                 <a href="{{ url_for('producto.index', id=categoria.idCategoria) }}">Ver mas</a>
-
+                
             </div>
             {% endfor %}
         </div>
-        
+        <a href="{{ url_for('categoria.add') }}">Agregar</a>
     </section>
 </body>
 </html>
