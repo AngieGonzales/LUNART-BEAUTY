@@ -46,10 +46,10 @@ body {
 }
 
 .sidebar {
-    width: 330px; /* Asegura un ancho fijo */
+    width: 350px; /* Asegura un ancho fijo */
     background-color: rgba(230, 228, 228, 0.642);
-    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
-    padding: 50px;
+    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
+    padding: 80px;
     box-sizing: border-box;
     border-right: 1px solid #e0e0e0; /* Añadir un borde para destacarlo */
 }
@@ -101,15 +101,26 @@ body {
 .icon {
     margin-right: 10px;
 }
-.content {
-    flex: 1;
-    padding: 20px;
-    background: #fff;
+.img-2 {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+ 
+}
+.admin-info h2 {
+    font-size: 2.8em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px; /* Espaciado debajo del título */
     color: #333;
     font-family: 'Times New Roman', Times, serif;
-    overflow-y: auto;
-    box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
-    text-align: center; /* Centrar el texto horizontalmente */
+}
+.bien {
+    font-family: 2.4em;
+}
+.admin-info .welcome-message {
+    font-size: 15px; /* Tamaño de fuente del subtítulo */
+    color: #1d1c1c; /* Color ligeramente más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 7%;
 }
 .container{
     flex: 1;
@@ -258,7 +269,7 @@ form button[type="submit"]:hover {
     font-family: 'Arial', sans-serif; /* Fuente limpia y profesional */
 }
 .img-2 {
-    width: 100px; /* Ajusta el tamaño de la imagen */
+    width: 00px; /* Ajusta el tamaño de la imagen */
     height: auto;
     border-radius: 50%; /* Hace la imagen circular */
     margin-bottom: 10px; /* Espaciado debajo de la imagen */

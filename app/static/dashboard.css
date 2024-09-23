@@ -7,7 +7,7 @@ body {
 .sidebar {
     width: 330px; /* Asegura un ancho fijo */
     background-color: rgba(230, 228, 228, 0.642);
-    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
     padding: 50px;
     padding-top: 3%;
     box-sizing: border-box;
