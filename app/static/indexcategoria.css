@@ -130,7 +130,7 @@ h2 {
 
 
 .menu-pl.container {
-    max-width: 810px;
+    max-width: 1200px;
     margin: 60px auto;
     padding: 0 30px;
 }
@@ -151,7 +151,7 @@ h2 {
 }
 
 .general-txt img {
-    width: 90%;
+    width: 100%;
     height: 300px; /* Ajusta la altura de las imágenes */
     object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
     border-bottom: 1px solid #070707;

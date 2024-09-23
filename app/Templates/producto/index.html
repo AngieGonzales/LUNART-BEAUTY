@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='indexproductos.css') }}">
-    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -18,8 +17,7 @@
             <nav class="menu">
                 <a href="">INICIO</a>
                 <a href="">SERVICIOS</a>
-                <a href=""><i class="fa-solid fa-cart-shopping fa-lg" style="color: #050505;"></i></a>
-                <a href=""><i class="fa-solid fa-house"></i></a>
+                
             </nav>
         </div>
     </header>
@@ -52,8 +50,7 @@
                         <td>
                             <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">Editar</a>
                             <a class="btn-delete" href="{{ url_for('producto.delete', id=producto.idproducto) }}">Eliminar</a>
-                            <button class="btn-add-cart" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al carrito</button>
-                        </td>
+                            
                     </tr>
                     {% endfor %}
                 </tbody>
