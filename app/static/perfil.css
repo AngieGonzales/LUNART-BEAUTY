@@ -4,6 +4,40 @@ body {
     margin: 0;
     background: #f0f0f0;
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f0f0f0;
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    width: 100vw;  /* Asegura que ocupe todo el ancho de la pantalla */
+    position: fixed;
+}
+
+.sidebar {
+    width: 330px; /* Asegura un ancho fijo */
+    background-color: rgba(230, 228, 228, 0.642);
+    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    padding: 50px;
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0; /* Añadir un borde para destacarlo */
+}
+
+.content {
+    flex: 1; /* Asegura que el contenido principal ocupe todo el espacio restante */
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    overflow-y: auto;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.1); /* Sombra para separar del sidebar */
+    text-align: center; /* Centrar el texto horizontalmente */
+}
+
 
 .main-container {
     display: flex;
@@ -88,7 +122,7 @@ body {
     text-align: center; /* Centrar el texto horizontalmente */
 }
 .content h1{
-    margin-top: 13%;
+    margin-top: 9%;
 }
 .content .img-1 {
     width: 520px; /* Ajusta el ancho de la imagen */

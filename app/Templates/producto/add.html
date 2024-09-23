@@ -3,28 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='addproductos.css') }}">
+    <title>Agregar Productos</title>
 </head>
 <body>
-    <h1>Agregar  </h1>
-    <form action="{{ url_for('producto.add') }}" method="post" enctype="multipart/form-data">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required>
+    <div class="main-container"></div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
+            <ul>
+                
+                <li>
+                    <a href="{{ url_for('categoria.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+
+                        CATEGORIAS
+                    </a>
+                </li>
+               
+                
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        LISTA CLIENTES
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Agregar Productos </h1>
+        <form action="{{ url_for('producto.add') }}" method="post" enctype="multipart/form-data">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
 
 
-        <label for="precio">Precio</label>
-        <input type="text" id="precio" name="precio" required>
+            <label for="precio">Precio</label>
+            <input type="text" id="precio" name="precio" required>
 
-        <label for="imagen">Imagen</label>
-        <input type="file" name="imagen" id="imagen" accept="image/*" required>
-        <label for="categoria">Categoría</label>
-        <select id="categoria" name="categoria" required>
-            {% for categoria in categorias %}
-                <option value="{{ categoria.idCategoria }}">{{ categoria.nombre }}</option>
-            {% endfor %}
-        </select>
-        
-        <button type="submit">Agregar</button>
-    </form>
+            <label for="imagen">Imagen</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*" required>
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria" required>
+                {% for categoria in categorias %}
+                    <option value="{{ categoria.idCategoria }}">{{ categoria.nombre }}</option>
+                {% endfor %}
+            </select>
+
+            <div class="link-container"></div>
+                <button class="styled-link" type="submit">Agregar</button>
+            </div>
+            
+    
+        </form>
+
+    </div>
+
+</div>
 </body>
 </html>

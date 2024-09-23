@@ -60,10 +60,10 @@
 .titulo {
     text-align: center; /* Centra el título */
     margin: 0 auto; /* Ajusta el margen */
-    margin-top: 2%; /* Espacio superior */
+    margin-top: 13%; /* Espacio superior */
     width: 100%; /* Asegura que el título ocupe todo el ancho */
     margin-left: 17%;
-    font-size: 1.8em;
+    font-size: 1.4em;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px; /* Espaciado debajo del título */
     color: #333;
@@ -82,7 +82,7 @@ table {
     overflow: hidden;
     border: 2px solid #535353;
     margin-left: 37%;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 th, td {

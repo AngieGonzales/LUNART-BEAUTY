@@ -132,7 +132,7 @@ form:hover {
 form label {
     margin-bottom: 8px;
     font-weight: bold;
-    color: #0c0c0c;
+    color: #b65f8c; /* Color de texto más oscuro */
 }
 
 form input[type="text"],

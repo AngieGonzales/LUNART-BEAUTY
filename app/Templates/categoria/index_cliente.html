@@ -5,36 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="Logo">
-                <h2> LunArt Beauty </h2>
-            </div>
-            <nav class="menu">
-                <a href="#">INICIO</a>
-                <a href="#">SERVICIOS</a>
-                <a href="#">CATEGORÍAS</a>
-            </nav>
-        </div>
+    <header>
+        <h2>LunArt Beauty</h2>
+            <nav class="fondo">
+                <ul>
+                    <li><a href="{{ url_for('servicio.index') }}">SERVICIOS</a></li>
+                    <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
+                </ul>
+            </nav>    
     </header>
+
+    <!-- Header Content -->
+    <div class="header-content container">
+        <div class="header-txt">
+            <h1>CATEGORÍAS</h1>
+        </div>
+    </div>  
+
+    <!-- Categorías Section -->
     <section class="menu-pl container">
-        <h1 class="header-content">CATEGORÍAS</h1>
         <div class="general-content">
             {% for categoria in data %}
             <div class="general-txt">
-                <img class="img-1" src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
+                <img class="img-1" src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}">
                 <h3>{{ categoria.nombre }}</h3>
-                <td>{{ categoria.descripcion }}</td>
-                <p>{{ categoria.precio }}</p>
-                <a href="{{ url_for('producto.index', id=categoria.idCategoria) }}">Ver mas</a>
-                
+                <p>{{ categoria.descripcion }}</p>
+                <div class="prices">
+                    <samp>{{ categoria.precio }}</samp>
+                </div>
+                <div class="link-container">
+                    <a href="{{ url_for('producto.index', id=categoria.idCategoria) }}" class="styled-link">INFORMACION</a>
+                </div>
             </div>
             {% endfor %}
         </div>
-        <a href="{{ url_for('categoria.add') }}">Agregar</a>
     </section>
 </body>
 </html>

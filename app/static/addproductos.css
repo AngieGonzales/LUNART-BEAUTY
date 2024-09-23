@@ -64,7 +64,6 @@
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-   
     margin-left: 28%;
     margin-left: 27%;
 }
@@ -74,18 +73,18 @@
     margin-top: 10%; /* Espacio superior */
     width: 100%; /* Asegura que el título ocupe todo el ancho */
     margin-left: 2%;
-    font-size: 2.3em;
+    font-size: 2.4em;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px; /* Espaciado debajo del título */
     color: #333;
     font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 4%;
 }
 .content form {
     width: 100%;
     max-width: 500px; /* Define el tamaño máximo del formulario */
     margin: 0 auto; /* Centra el formulario en su contenedor */
     padding: 20px;
-    margin-top: 7%;
     background-color: #a0a3a338; /* Fondo claro para el formulario */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
@@ -96,8 +95,9 @@
     margin-bottom: 8px;
     display: block;
     color: #b65f8c; /* Color de texto más oscuro */
+
 }
-.input, select {
+.content input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -107,17 +107,11 @@
     box-sizing: border-box;
     background-color: #fff;
 }
-.input:focus, select:focus {
-    border-color: #f19ecf; /* Color del borde al enfocar */
-    outline: none;
-    box-shadow: 0px 0px 5px rgba(193, 73, 247, 0.5); /* Sombra para indicar enfoque */
-}
+
 .link-container {
     text-align: center;
     margin-top: 20px;
 }
-
-/* Estilos de los enlaces */
 .styled-link {
     display: inline-block;
     background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
@@ -130,9 +124,4 @@
     transition: background-color 0.3s ease; /* Transición suave al hacer hover */
     margin-left: 8%;
     text-align: center;
-}
-
-/* Cambiar color al hacer hover */
-.styled-link:hover {
-    background-color: #e2669c;
 }

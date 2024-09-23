@@ -1,0 +1,239 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Estilos para el cuerpo y contenedores principales */
+body {
+    background-color: #f5f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Estilo del encabezado */
+.header {
+    background: #cccccc;
+    color: #030303;
+    padding: 20px 0;
+}
+
+.header .Logo h2 {
+    float: left;
+    margin-top: 10px;
+}
+
+.header .menu {
+    float: right;
+    margin-top: 15px;
+}
+
+.header .menu a {
+    color: #050505;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-size: 17px;
+}
+
+/* Estilo de contenido del encabezado */
+.header-content {
+    height: 300px;
+    text-align: center;
+    color: #080808;
+    padding: 10px 0;
+}
+
+.header-content .header-txt h1 {
+    padding-top: 100px;
+    font-size: 50px;
+}
+
+/* Estilo de contenido general */
+.general-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.general-txt {
+    background: #fff;
+    padding: 20px;
+    width: calc(33% - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 9px;
+}
+
+.general-txt img {
+    width: 100%;
+    height: auto; /* Mantener la proporción de la imagen */
+    max-height: 400px; /* Establecer una altura máxima consistente */
+    object-fit: cover; /* Recortar las imágenes para que se ajusten al contenedor */
+    border-radius: 9px;
+}
+
+.general-txt h3 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #333;
+}
+
+.general-txt p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Estilo de los precios y botones */
+.prices {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.prices button {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    border: none;
+    color: #f6f5f5;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.prices button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+.prices button:active {
+    background-color: #c2185b;
+    transform: scale(1);
+}
+
+/* Responsividad */
+@media(max-width: 768px) {
+    .general-txt {
+        width: calc(50% - 40px);
+    }
+}
+
+@media(max-width: 500px) {
+    .header-content .header-txt h1 {
+        font-size: 30px;
+    }
+
+    .general-txt {
+        width: 100%;
+    }
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile h3 {
+    font-size: 2.9rem;
+    font-family: 'Arizonia';
+}
+
+.profile img {
+    width: 80px; /* Asegúrate de que esté en píxeles */
+    height: 80px; 
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+
+.campos {
+    top: 0%;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 90px; 
+}
+
+.sidebar ul li {
+    margin: 30px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    justify-content: flex-start; /* Cambia center a flex-start */
+    border-radius: 17px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a .icon {
+    width: 30px; /* Ajusta el tamaño del icono */
+    height: 30px; /* Ajusta el tamaño del icono */
+    margin-right: 15px; /* Ajusta el espacio entre el icono y el texto */
+}
+
+.sidebar ul li a:hover {
+    background-color: #eed4ddde;
+    color: #000000;
+}
+
+.titulo {
+    text-align: center; /* Centra el título */
+    margin: 0 auto; /* Ajusta el margen */
+    margin-top: 13%; /* Espacio superior */
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    margin-left: 0; /* Ajusta el margen */
+    font-size: 1.4em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px; /* Espaciado debajo del título */
+    color: #333;
+}
+
+.contenedor {
+    width: 85%;
+}
+
+table {
+    width: 80%; /* Cambiado a 80% para que no esté tan estrecho */
+    margin: 40px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #535353;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center; /* Centra el texto de las celdas */
+    border-bottom: 1px solid #868686;
+    font-size: 15px;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

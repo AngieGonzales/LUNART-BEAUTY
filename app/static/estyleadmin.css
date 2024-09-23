@@ -25,17 +25,46 @@ h1 {
     text-align: center;
     color: #333;
     margin-top: 10%;
-    font-size: 2.8em;
+    font-size: 2.3em;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-left: 35%;
     width: 50%;
 }
+.header-content {
+    display: flex;
+    max-width: 1800px;
+    margin: 30px auto;
+    align-items: center; /* Alinear verticalmente */
+    padding: 0; /* Eliminar padding para que no haya espacio extra */
+    background-color: transparent; /* Hacer el fondo transparente */
+    box-shadow: none; /* Sin sombra */
+    border-radius: 0; /* Sin bordes redondeados */
+    margin-top: 100px; /* Ajustar según la altura del header */
+}
+.header-txt {
+    margin-top: 5%;
+    margin-left: 40%; /* Ajusta el porcentaje según lo que necesites */
+}
+
+
+.menu-pl.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 30px;
+}
+
+.general-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
 h2 {
     font-family: 'Arizonia', cursive;
     color: #000000; /* Soft muted rose color */
     margin: 0;
-    font-size: 5.2em;
+    font-size: 2.8em;
     margin-left: 10%;
 }
 .fondo ul {
@@ -82,7 +111,7 @@ h2 {
     max-width: 270px;
     text-align: center;
     transition: transform 0.3s ease;
-    margin-top: 70%;
+    margin-top: 9%;
 }
 .card-body img {
     width: 270px;

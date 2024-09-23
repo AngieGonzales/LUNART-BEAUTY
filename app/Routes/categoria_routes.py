@@ -9,7 +9,7 @@ bp = Blueprint('categoria', __name__)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']
 
-@bp.route('/')
+@bp.route('/categoria/admin')
 def index():
     # Corregido: uso de query.all() para obtener todas las categorías
     data = Categoria.query.all()
