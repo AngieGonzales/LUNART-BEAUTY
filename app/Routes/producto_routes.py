@@ -9,6 +9,10 @@ bp = Blueprint('producto', __name__, url_prefix='/producto')
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']
+@bp.route('/')
+def indexproductos():
+    productos = Producto.query.all()
+    return render_template('producto/index.html', data=productos)
 
 @bp.route('/<int:id>')
 def index(id):

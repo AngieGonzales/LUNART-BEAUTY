@@ -26,45 +26,33 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('categoria.add') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
-
-                        AGREGAR CATEGORIAS
-                    </a>
-                </li>
-                <li>
                     <a href="{{ url_for('categoria.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
-
-                        categorias
                         CATEGORIAS
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('producto.add') }}">
+                    <a href="{{ url_for('producto.indexproductos') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
-
-                        AGREGAR PRODUCTOS
+                        PRODUCTOS
                     </a>
                 </li>
                 <li>
                     <a href="{{ url_for('cita.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
-
                         CITAS
                     </a>
                 </li>
                 <li>
                     <a href="{{ url_for('servicio.index_admin') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
-
                         SERVICIOS
                     </a>
                 </li>
                 <li>
                     <a href="{{ url_for('usuario.lista_usuarios') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
-                        LISTA CLIENTES
+                        CLIENTES
                     </a>
                 </li>
             </ul>

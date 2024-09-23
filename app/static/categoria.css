@@ -62,20 +62,16 @@ body {
     background-color: #eed4ddde;
     color: #000000;
 }
-
 h1 {
     text-align: center;
     color: #000000;
-    margin-top: 8%;
+    margin-top: 6%;
     font-size: 2.8em;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-left: 35%;
     width: 50%;
 }
-
-
-
 table {
     width: 60%;
     margin: 40px auto;
@@ -87,7 +83,6 @@ table {
     border: 2px solid #535353;
     margin-left: 30%;
 }
-
 tr:nth-child(odd) {
     background-color: #d6d5d599; /* Color intercalado para filas impares */
 }
@@ -114,9 +109,24 @@ td img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
 }
+.styled-link {
+    display: inline-block;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px 0; /* Espaciado entre enlaces */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+    margin-left: 55%;
+    text-align: center;
+}
 
-
-
+/* Cambiar color al hacer hover */
+.styled-link:hover {
+    background-color: #e2669c;
+}
 .btn-edit, .btn-delete {
     text-decoration: none;
     padding: 8px 15px;

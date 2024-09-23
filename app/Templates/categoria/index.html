@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='categoria.css') }}">
 </head>
 <body>
-    <div class="main-container"></div>
+    <div class="main-container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="profile">
@@ -18,39 +18,40 @@
             </div>
             <div class="campos">
             <ul>
-              
                 <li>
-                    <a href="{{ url_for('categoria.add') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
-
-                        AGREGAR
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                    <a href="{{ url_for('categoria.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+                        CATEGORIAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('producto.indexproductos') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
-
-                        NOTIFICACIONES STOCK
+                        PRODUCTOS
                     </a>
                 </li>
                 <li>
                     <a href="{{ url_for('cita.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
-
                         CITAS
                     </a>
                 </li>
                 <li>
                     <a href="{{ url_for('servicio.index_admin') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
-
                         SERVICIOS
                     </a>
                 </li>
                 <li>
                     <a href="{{ url_for('usuario.lista_usuarios') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
-                        LISTA CLIENTES
+                        CLIENTES
                     </a>
                 </li>
             </ul>
@@ -80,15 +81,12 @@
                     <td>
                         <a class ="btn-edit" href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">Editar</a> 
                         <a  class= "btn-delete "href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">Eliminar</a>
-                        
-                    
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-       
-        <a  href="{{ url_for('categoria.index_cliente') }}">VISTA CLIENTE</a>
+        <a href="{{ url_for('categoria.add') }}" class="styled-link">AGREGAR</a>
     </div>
 </body>
 </html>
