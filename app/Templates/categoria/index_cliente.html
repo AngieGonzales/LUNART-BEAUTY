@@ -29,7 +29,7 @@
                 <h3>{{ categoria.nombre }}</h3>
                 <td>{{ categoria.descripcion }}</td>
                 <p>{{ categoria.precio }}</p>
-                <a href="{{ url_for('producto.index', id=categoria.idCategoria) }}">Ver mas</a>
+                <a href="{{ url_for('producto.index_cliente', id=categoria.idCategoria) }}">Ver mas</a>
                 
             </div>
             {% endfor %}
