@@ -77,7 +77,12 @@
                         <td>{{ producto.nombre }}</td>
                         <td>{{ producto.precio }}</td>
                         <td>
-                            <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre  }}" width="100">
+                            <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
+                        </td>
+                        <td>
+                            <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">Editar</a>
+                            <a class="btn-delete" href="{{ url_for('producto.delete', id=producto.idproducto) }}">Eliminar</a>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al carrito</button>
                         </td>
                         <td>
                             <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">EDITAR</a>
@@ -92,7 +97,7 @@
     <script>
         function agregarAlCarrito(nombre, precio) {
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            carrito.push({ nombre: nombre, precio: precio });
+            carrito.push({ nombre: nombre, precio: parseFloat(precio) });
             localStorage.setItem('carrito', JSON.stringify(carrito));
             alert(`${nombre} ha sido agregado al carrito`);
         }
