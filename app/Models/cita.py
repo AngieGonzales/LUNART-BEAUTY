@@ -5,7 +5,7 @@ class Cita(db.Model):
     idcita = db.Column(db.Integer, primary_key=True)
     fecha = db.Column(db.Date, nullable=False)
     hora = db.Column(db.Time, nullable=False)
-    estilista = db.Column(db.String(255), nullable=False)
+    cliente = db.Column(db.String(50), nullable=False)
     servicio_id = db.Column(db.Integer,  db.ForeignKey('servicio.idservicio'),nullable = True)
     estilista_id = db.Column(db.Integer,  db.ForeignKey('estilista.idEstilista'),nullable = True)
   

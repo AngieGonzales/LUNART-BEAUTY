@@ -8,4 +8,3 @@ class Servicio(db.Model):
     imagen=db.Column(db.String(255), nullable=False)
    
     cita = db.relationship('Cita', back_populates='servicio')
-    estilista = db.relationship('Estilista', back_populates='servicio')
