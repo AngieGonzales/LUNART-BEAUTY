@@ -12,7 +12,8 @@ def allowed_file(filename):
 @bp.route('/')
 def indexproductos():
     productos = Producto.query.all()
-    return render_template('producto/index.html', data=productos)
+    productos_bajo_stock = [p for p in productos if p.stock < 5]
+    return render_template('producto/index.html', data=productos, productos_bajo_stock=productos_bajo_stock)
 
 @bp.route('/<int:id>')
 def index(id):
@@ -32,7 +33,8 @@ def add():
     if request.method == 'POST':
         nombre = request.form['nombre']
         precio = request.form['precio']
-        categoria_id = request.form['categoria']  # Capturar la categoría seleccionada
+        categoria_id = request.form['categoria'] 
+        stock = request.form['stock']
 
         if 'imagen' not in request.files:
             return "No se ha seleccionado ninguna imagen", 400
@@ -52,12 +54,12 @@ def add():
             file.save(filepath)
 
             # Crear el nuevo producto incluyendo la categoría seleccionada
-            new_producto = Producto(nombre=nombre, precio=precio, imagen=filename, categoria_id=categoria_id)
+            new_producto = Producto(nombre=nombre, precio=precio, imagen=filename, categoria_id=categoria_id, stock=stock)
             db.session.add(new_producto)
             db.session.commit() 
 
             # Redirigir al índice del cliente con el 'id' de la categoría
-            return redirect(url_for('producto.index_cliente', id=categoria_id))
+            return redirect(url_for('producto.index', id=categoria_id))
 
     categorias = Categoria.query.all()
     return render_template('producto/add.html', categorias=categorias)
@@ -69,6 +71,7 @@ def edit(id):
         producto.nombre = request.form.get('nombre')
         producto.precio = request.form.get('precio')
         producto.categoria_id = request.form.get('categoria')
+        producto.stock = request.form.get('stock')
 
         if 'imagen' in request.files:
             file = request.files['imagen']
@@ -88,7 +91,7 @@ def edit(id):
 
         db.session.commit()
         # Redirigir al índice del cliente con el 'id' de la categoría
-        return redirect(url_for('producto.index_cliente', id=producto.categoria_id))
+        return redirect(url_for('producto.index', id=producto.categoria_id))
 
     categorias = Categoria.query.all()
     return render_template('producto/edit.html', producto=producto, categorias=categorias)
@@ -101,4 +104,4 @@ def delete(id):
     db.session.commit()
 
     # Redirigir al índice del cliente con el 'id' de la categoría
-    return redirect(url_for('producto.index_cliente', id=categoria_id))
+    return redirect(url_for('producto.index', id=categoria_id))

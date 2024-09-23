@@ -158,3 +158,53 @@ tr:nth-child(even) {
 .btn-delete:hover {
     background-color: #e0add2;
 }
+/* Estilos generales para la alerta */
+.stock-alert {
+    background-color: #eeece7; /* Fondo amarillo suave */
+    border: 1px solid #d3d2cd; /* Borde amarillo más oscuro */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    margin-left: 50%;
+}
+
+.alert-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #302f2f; /* Color de texto de advertencia */
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilos de la lista de productos con bajo stock */
+.stock-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.stock-item {
+    background-color: #f58bb7; /* Fondo de cada producto */
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-name {
+    font-weight: bold;
+    color: #111111; /* Color de advertencia */
+}
+
+.product-stock {
+    font-size: 14px;
+    font-style: italic;
+    color: #6c757d; /* Color gris claro para el texto del stock */
+}
+
