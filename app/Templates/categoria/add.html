@@ -3,21 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='addcategorias.css') }}">
     <title>Agregar Categoría</title>
 </head>
 <body>
-    <h1>Agregar Categoría</h1>
-    <form action="{{ url_for('categoria.add') }}" method="post" enctype="multipart/form-data">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+    <div class="main-container"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/editar.png') }}" alt="usuario">
+                </div>
+            </div>
+            <ul>
 
-        <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" required>
-        
-        <label for="imagen">Imagen:</label>
-        <input type="file" name="imagen" id="imagen" accept="image/*" required>
+                <li>
+                    <a href="{{ url_for('menu.ruta_inicio') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/casa.png') }}" alt="Inicio">
 
-        <button type="submit">Agregar</button>
-    </form>
+                        INICIO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/notificaciones.png') }}" alt="Notificaciones Stock">
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.logout') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/cerrar.png') }}" alt="Cerrar Sesión">
+                        CERRAR SESIÓN
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    <div class="content">
+        <h1>Agregar Categoría</h1>
+        <form action="{{ url_for('categoria.add') }}" method="post" enctype="multipart/form-data">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+            
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*" required>
+            <div class="link-container">
+                <button class="styled-link" type="submit">Agregar</button>
+            </div>
+
+        </form>
+    </div>
 </body>
 </html>

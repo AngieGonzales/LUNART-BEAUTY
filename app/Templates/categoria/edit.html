@@ -3,26 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='editcategorias.css') }}" rel="stylesheet">
     <title>Editar </title>
 </head>
 <body>
-    <h1>Editar</h1>
-    <form action="{{ url_for('categoria.edit', id=categoria.idCategoria) }}" method="post" enctype="multipart/form-data">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" value="{{ categoria.nombre }}" required>
-        <label for="descripcion">Descripción</label>
-        <input type="text" id="descripcion" name="descripcion" value="{{ categoria.descripcion }}" required>
+    <div class="main-container"></div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
+            <ul>
+              
+                <li>
+                    <a href="{{ url_for('menu.ruta_perfil') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
 
-        <label for="imagen">Imagen</label>
-        <input type="file" name="imagen" id="imagen" accept="image/*">
+                        NOTIFICACIONES STOCK
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
 
-        <!-- Mostrar la imagen actual -->
-        {% if categoria.imagen %}
-            <img src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
-        {% endif %}
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
 
-        <button type="submit">Actualizar</button>
-    </form>
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.logout') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/cerrar.png') }}" alt="Cerrar Sesión">
+                        CERRAR SESION
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Editar Categoria</h1>
+        <form action="{{ url_for('categoria.edit', id=categoria.idCategoria) }}" method="post" enctype="multipart/form-data">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" value="{{ categoria.nombre }}" required>
+            <label for="descripcion">Descripción</label>
+            <input type="text" id="descripcion" name="descripcion" value="{{ categoria.descripcion }}" required>
+
+            <label for="imagen">Imagen</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*">
+
+            <!-- Mostrar la imagen actual -->
+            {% if categoria.imagen %}
+                <img src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
+            {% endif %}
+
+            <button class="boton" type="submit">Actualizar</button>
+        </form>
+    </div>
 </body>
 </html>

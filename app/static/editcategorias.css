@@ -5,7 +5,7 @@
     width: 330px; /* Asegura un ancho fijo */
     height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la pantalla */
     background-color: rgba(230, 228, 228, 0.642);
-    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
+    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
     padding: 50px;
     padding-top: 3%;
     box-sizing: border-box;
@@ -70,12 +70,11 @@
 .content h1 {
     text-align: center; /* Centra el título */
     margin: 0 auto; /* Ajusta el margen */
-    margin-top: 7%; /* Espacio superior */
+    margin-top: 6%; /* Espacio superior */
     width: 90%; /* Asegura que el título ocupe todo el ancho */
     margin-left: 2%;
-    font-size: 2.4em;
+    font-size: 3.1em;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px; /* Espaciado debajo del título */
     color: #333;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 4%;
@@ -85,7 +84,7 @@
     max-width: 500px; /* Define el tamaño máximo del formulario */
     margin: 0 auto; /* Centra el formulario en su contenedor */
     padding: 20px;
-    margin-top: 6%;
+    margin-top: 5%;
     background-color: #a0a3a338; /* Fondo claro para el formulario */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
@@ -96,9 +95,18 @@
     margin-bottom: 8px;
     display: block;
     color: #b65f8c; /* Color de texto más oscuro */
-
 }
 .content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.content select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -117,7 +125,7 @@
     margin: 10px 0; /* Espaciado entre enlaces */
     font-size: 16px; /* Tamaño de fuente */
     transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-    margin-left: 35%;
+    margin-left: 40%;
     text-align: center;
     display: inline-block;
 

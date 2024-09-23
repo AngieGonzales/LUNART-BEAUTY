@@ -5,7 +5,7 @@
     width: 330px; /* Asegura un ancho fijo */
     height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la pantalla */
     background-color: rgba(230, 228, 228, 0.642);
-    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
+    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
     padding: 50px;
     padding-top: 3%;
     box-sizing: border-box;
@@ -70,8 +70,8 @@
 .content h1 {
     text-align: center; /* Centra el título */
     margin: 0 auto; /* Ajusta el margen */
-    margin-top: 7%; /* Espacio superior */
-    width: 90%; /* Asegura que el título ocupe todo el ancho */
+    margin-top: 10%; /* Espacio superior */
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
     margin-left: 2%;
     font-size: 2.4em;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
@@ -85,7 +85,6 @@
     max-width: 500px; /* Define el tamaño máximo del formulario */
     margin: 0 auto; /* Centra el formulario en su contenedor */
     padding: 20px;
-    margin-top: 6%;
     background-color: #a0a3a338; /* Fondo claro para el formulario */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
@@ -108,7 +107,13 @@
     box-sizing: border-box;
     background-color: #fff;
 }
-.boton {
+
+.link-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.styled-link {
+    display: inline-block;
     background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
     color: white; /* Texto blanco */
     padding: 10px 20px; /* Espaciado interno */
@@ -117,8 +122,6 @@
     margin: 10px 0; /* Espaciado entre enlaces */
     font-size: 16px; /* Tamaño de fuente */
     transition: background-color 0.3s ease; /* Transición suave al hacer hover */
-    margin-left: 35%;
+    margin-left: 8%;
     text-align: center;
-    display: inline-block;
-
 }

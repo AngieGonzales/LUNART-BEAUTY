@@ -16,7 +16,7 @@ body {
     width: 330px; /* Asegura un ancho fijo */
     height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la pantalla */
     background-color: rgba(230, 228, 228, 0.642);
-    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
     padding: 50px;
     padding-top: 3%;
     box-sizing: border-box;
@@ -71,10 +71,10 @@ body {
 .titulo {
     text-align: center; /* Centra el título */
     margin: 0 auto; /* Ajusta el margen */
-    margin-top: 2%; /* Espacio superior */
+    margin-top: 12%; /* Espacio superior */
     width: 100%; /* Asegura que el título ocupe todo el ancho */
     margin-left: 17%;
-    font-size: 1.8em;
+    font-size: 1.4em;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px; /* Espaciado debajo del título */
     color: #333;
@@ -86,6 +86,7 @@ body {
 table {
     width: 60%;
     margin: 40px auto;
+    margin-top: 5%;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;

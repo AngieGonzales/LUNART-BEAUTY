@@ -7,7 +7,7 @@ body {
 .sidebar {
     width: 330px; /* Asegura un ancho fijo */
     background-color: rgba(230, 228, 228, 0.642);
-    box-shadow: 2px 0 5px rgba(156, 50, 50, 0.1);
+    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
     padding: 50px;
     padding-top: 3%;
     box-sizing: border-box;
@@ -85,6 +85,7 @@ body {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px; /* Espaciado debajo del título */
     color: #333;
+    margin-top: 19%;
     font-family: 'Times New Roman', Times, serif;
 }
 .bien {
@@ -97,4 +98,5 @@ body {
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     padding: 7%;
+    margin-top: 9%;
 }

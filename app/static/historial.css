@@ -52,7 +52,8 @@ nav ul li a:hover {
     top: 15%;
     left: 0;
     padding-top: 100px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
+
 }
 
 .sidebar ul {

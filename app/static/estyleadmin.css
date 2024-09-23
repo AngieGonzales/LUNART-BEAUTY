@@ -25,17 +25,46 @@ h1 {
     text-align: center;
     color: #333;
     margin-top: 10%;
-    font-size: 2.8em;
+    font-size: 2.3em;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-left: 35%;
     width: 50%;
 }
+.header-content {
+    display: flex;
+    max-width: 1800px;
+    margin: 30px auto;
+    align-items: center; /* Alinear verticalmente */
+    padding: 0; /* Eliminar padding para que no haya espacio extra */
+    background-color: transparent; /* Hacer el fondo transparente */
+    box-shadow: none; /* Sin sombra */
+    border-radius: 0; /* Sin bordes redondeados */
+    margin-top: 100px; /* Ajustar según la altura del header */
+}
+.header-txt {
+    margin-top: 5%;
+    margin-left: 40%; /* Ajusta el porcentaje según lo que necesites */
+}
+
+
+.menu-pl.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 30px;
+}
+
+.general-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
 h2 {
     font-family: 'Arizonia', cursive;
     color: #000000; /* Soft muted rose color */
     margin: 0;
-    font-size: 5.2em;
+    font-size: 2.8em;
     margin-left: 10%;
 }
 .fondo ul {
@@ -53,7 +82,11 @@ h2 {
 
 .fondo ul li a {
     text-decoration: none;
+<<<<<<< Updated upstream
     color: #444343; /* Muted text color */
+=======
+    color: #666; 
+>>>>>>> Stashed changes
     font-size: 18px;
     transition: color 0.3s ease;
     font-family: 'Times New Roman', Times, serif;
@@ -61,8 +94,120 @@ h2 {
 }
 
 .fondo ul li a:hover {
-    color: #b5838d; /* Matching soft rose on hover */
+    color: #b5838d; 
 }
+<<<<<<< Updated upstream
+=======
+/* Sidebar */
+.sidebar {
+    width: 250px; 
+    background-color: #f3dcd8; 
+    padding: 20px; 
+    height: 100vh; 
+    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
+    position: fixed; 
+    left: 0;
+    margin-top: 2px;
+}
+
+.sidebar ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px; 
+}
+
+.sidebar ul li a {
+    display: block;
+    color: white; /* Texto blanco */
+    background-color: #f2e8e6; /* Very soft pink */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave en hover */
+    font-size: 16px; /* Tamaño de letra */
+    font-family: 'Arial', sans-serif; /* Fuente limpia y legible */
+}
+
+.sidebar ul li a:hover {
+    background-color: #1abc9c; /* Cambia a verde agua en hover */
+}
+table {
+    width: 65%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #535353;
+    margin-left: 28%;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center; /* Centra el texto de las celdas */
+    border-bottom: 1px solid #868686;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+/* Contenedor centrado */
+.link-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-left:19%;
+}
+
+/* Estilos de los enlaces */
+.styled-link {
+    display: inline-block;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px 0; /* Espaciado entre enlaces */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+}
+
+/* Cambiar color al hacer hover */
+.styled-link:hover {
+    background-color: #e2669c;
+}
+.btn-edit, .btn-delete {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.btn-edit {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    margin-right: 20px;
+}
+.btn-edit:hover {
+    background-color: #e0add2;
+}
+.btn-delete {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+}
+.btn-delete:hover {
+    background-color: #e0add2;
+}
+>>>>>>> Stashed changes
 .card {
     display: flex;
     flex-wrap: wrap;
@@ -82,7 +227,7 @@ h2 {
     max-width: 270px;
     text-align: center;
     transition: transform 0.3s ease;
-    margin-top: 70%;
+    margin-top: 9%;
 }
 .card-body img {
     width: 270px;

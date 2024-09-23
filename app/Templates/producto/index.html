@@ -4,48 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexproductos.css') }}">
+    <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1> Productos </h1>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Precio</th>                
-                <th>Imagen</th>
-            
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for producto in data %}
-            <tr>
-                <td>{{ producto.idproducto }}</td>
-                <td>{{ producto.nombre }}</td>
-                <td>{{ producto.precio }}</td>               
-                <td>{{ producto.imagen }}</td>
 
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="Logo">
+                <h2>LunArt Beauty</h2>
+            </div>
+            <nav class="menu">
+                <a href="">INICIO</a>
+                <a href="">SERVICIOS</a>
+                <a href=""><i class="fa-solid fa-cart-shopping fa-lg" style="color: #050505;"></i></a>
+                <a href=""><i class="fa-solid fa-house"></i></a>
+            </nav>
+        </div>
+    </header>
 
-                <td>
-                    <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre  }}" width="100">
-                </td>
-                <td>
-                    <a href="{{ url_for('producto.edit', id=producto.idproducto) }}">Editar</a> 
-                    <a href="{{ url_for('producto.delete', id=producto.idproducto) }}">Eliminar</a>
-                    <a href="{{ url_for('producto.index_cliente', id=producto.categoria_id) }}">Vista cliente</a>
+    <!-- Main content -->
+    <div class="main-container">
+        <div class="content">
+            <div class="titulo">
+                <h1>PRODUCTOS</h1>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in data %}
+                    <tr>
+                        <td>{{ producto.idproducto }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>
+                            <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre  }}" width="100">
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{ url_for('producto.add') }}">Agregar</a>
+        </div>
+    </div>
 
-
-                 
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="{{ url_for('producto.add') }}">Agregar</a>
-   
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push({ nombre: nombre, precio: precio });
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(`${nombre} ha sido agregado al carrito`);
+        }
+    </script>
 
 </body>
 </html>

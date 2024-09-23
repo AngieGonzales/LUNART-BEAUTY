@@ -92,7 +92,8 @@
     font-weight: bold;
     margin-bottom: 8px;
     display: block;
-    color: #333; /* Color de texto más oscuro */
+    color: #b65f8c; /* Color de texto más oscuro */
+
 }
 .content input {
     width: 100%;

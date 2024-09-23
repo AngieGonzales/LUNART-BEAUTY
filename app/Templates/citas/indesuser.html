@@ -12,10 +12,8 @@
             <nav class="fondo">
                 <ul>
                     <li><a href="{{ url_for('usuario.index') }}">INICIO</a></li>
-                    <li><a href="{{ url_for('cita.index') }}">CITAS</a></li>
-                    <li><a href="{{ url_for('cita.index') }}">CATALOGOS</a></li>
+                    <li><a href="{{ url_for('categoria.index_cliente') }}">CATALOGOS</a></li>
                     <li><a href="{{ url_for('contact.enviar_contacto') }}">CONTACTO</a></li>
-                    <li><a href="{{ url_for('cita.add') }}">AGENDAR</a></li>
                 </ul>
             </nav>
     </header>
@@ -44,6 +42,6 @@
                 </tr>
             {% endfor %}
         </table>
-        <a href="{{ url_for('cita.add') }}" class="styled-link">AGREGAR</a>
+        <a href="{{ url_for('cita.add') }}" class="styled-link">AGENDAR</a>
 </body>
 </html>

@@ -13,24 +13,37 @@
                 <ul>
                     <li><a href="{{ url_for('usuario.index') }}">INICIO</a></li>
                     <li><a href="{{ url_for('cita.index_user') }}">CITAS</a></li>
-                    <li><a href="{{ url_for('cita.index') }}">CATALOGOS</a></li>
                     <li><a href="{{ url_for('contact.enviar_contacto') }}">CONTACTO</a></li>
                 </ul>
             </nav>
     </header>  
-    
-    <div class="card-container">
-        {% for servicio in data %}
-        <div class="card">
-            <div class="card-body">
-                <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
-                <h3>{{ servicio.nombre }}</h3>
-                <p><strong>Descripcion:</strong>{{ servicio.descripcion }}</p>
-            </div>
+
+    <div class="header-content container">
+        <div class="header-txt">
+            <h1>SERVICIOS</h1>
         </div>
-        {% endfor %}
-    </div>
+    </div>  
+
+
+    <section class="menu-pl container">
+        <div class="card-container">
+            {% for servicio in data %}
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
+                    <h3>{{ servicio.nombre }}</h3>
+                    <p><strong>Descripcion:</strong>{{ servicio.descripcion }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+                
+    </section>
+
+
+
     
-    </div>
+    
+    
 </body>
 </html>
