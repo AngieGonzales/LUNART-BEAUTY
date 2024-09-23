@@ -24,21 +24,70 @@
 
     <!-- Main content -->
     <div class="main-container">
-        <div class="content">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <h3>LunArt Beauty</h3>
+                <div class="form-group">
+                    <img class="img-1" src="{{ url_for('static', filename='img/estilistaa.png') }}" alt="usuario">
+                </div>
+            </div>
+            <div class="campos">
+            <ul>
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('categoria.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+                        CATEGORIAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('producto.indexproductos') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
+                        PRODUCTOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cita.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+                        CITAS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('servicio.index_admin') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+                        SERVICIOS
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('usuario.lista_usuarios') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                        CLIENTES
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+
+        <div class="contenedor">
             <div class="titulo">
-                <h1>PRODUCTOS</h1>
+                <h1>LISTA DE PRODUCTOS</h1>
             </div>
             <table>
-                <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Imagen</th>
-                        <th>Acciones</th>
+                        <th>NOMBRE</th>
+                        <th>PRECIO</th>
+                        <th>IMAGEN</th>
+                        <th>STOCK</th>
+                        <th>ACCIONES</th>
                     </tr>
-                </thead>
-                <tbody>
                     {% for producto in data %}
                     <tr>
                         <td>{{ producto.idproducto }}</td>
@@ -47,17 +96,34 @@
                         <td>
                             <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
                         </td>
+                        <td>{{ producto.stock }}
+                            {% if producto.stock < 5 %}
+                                <span style="color: red;">¡Stock bajo!</span>
+                            {% endif %}
+                        </td>
                         <td>
-                            <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">Editar</a>
-                            <a class="btn-delete" href="{{ url_for('producto.delete', id=producto.idproducto) }}">Eliminar</a>
-                            
+                            <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">EDITAR</a>
+                            <a class="btn-delete" href="{{ url_for('producto.delete', id=producto.idproducto) }}">ELIMINAR</a>
+                        </td>
                     </tr>
                     {% endfor %}
-                </tbody>
+                    {% if productos_bajo_stock %}
+                        <div class="alert alert-warning stock-alert">
+                            <strong class="alert-title">¡Atención!</strong> Los siguientes productos tienen bajo stock:
+                            <ul class="stock-list">
+                                {% for producto in productos_bajo_stock %}
+                                    <li class="stock-item">
+                                        <span class="product-name">{{ producto.nombre }}</span> - 
+                                        <span class="product-stock">Stock: {{ producto.stock }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+
             </table>
-            <a href="{{ url_for('producto.add') }}" class="btn-add">Agregar Producto</a>
+            <a href="{{ url_for('producto.add') }}" class="styled-link">Agregar</a>
         </div>
-    </div>
 
     <script>
         function agregarAlCarrito(nombre, precio) {

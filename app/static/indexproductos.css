@@ -1,175 +1,51 @@
-/* Reset de estilos básicos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* Estilos para el cuerpo y contenedores principales */
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
 body {
-    background-color: #f5f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #ffffff;
+    height: 100vh;
 }
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Estilo del encabezado */
-.header {
-    background: #cccccc;
-    color: #030303;
-    padding: 20px 0;
-}
-
-.header .Logo h2 {
-    float: left;
-    margin-top: 10px;
-}
-
-.header .menu {
-    float: right;
-    margin-top: 15px;
-}
-
-.header .menu a {
-    color: #050505;
-    text-decoration: none;
-    padding: 5px 20px;
-    font-size: 17px;
-}
-
-/* Estilo de contenido del encabezado */
-.header-content {
-    height: 300px;
-    text-align: center;
-    color: #080808;
-    padding: 10px 0;
-}
-
-.header-content .header-txt h1 {
-    padding-top: 100px;
-    font-size: 50px;
-}
-
-/* Estilo de contenido general */
-.general-content {
+.main-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
+    flex-grow: 1;
 }
-
-.general-txt {
-    background: #fff;
-    padding: 20px;
-    width: calc(33% - 60px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 9px;
+.sidebar {
+    position: fixed; /* Hace que el aside quede fijo al lado izquierdo de la pantalla */
+    left: 0; /* Asegura que se alinee al borde izquierdo */
+    top: 0; /* Asegura que se alinee al borde superior */
+    width: 330px; /* Asegura un ancho fijo */
+    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la pantalla */
+    background-color: rgba(230, 228, 228, 0.642);
+    box-shadow: 5px 0 5px rgba(156, 50, 50, 0.1);
+    padding: 50px;
+    padding-top: 3%;
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0; /* Añadir un borde para destacarlo */
 }
-
-.general-txt img {
-    width: 100%;
-    height: auto; /* Mantener la proporción de la imagen */
-    max-height: 400px; /* Establecer una altura máxima consistente */
-    object-fit: cover; /* Recortar las imágenes para que se ajusten al contenedor */
-    border-radius: 9px;
-}
-
-.general-txt h3 {
-    margin-top: 15px;
-    font-size: 22px;
-    color: #333;
-}
-
-.general-txt p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #666;
-}
-
-/* Estilo de los precios y botones */
-.prices {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.prices button {
-    background: linear-gradient(to right, #d46e9a, #0a0a0a);
-    border: none;
-    color: #f6f5f5;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.prices button:hover {
-    background-color: #d81b60;
-    transform: scale(1.05);
-}
-
-.prices button:active {
-    background-color: #c2185b;
-    transform: scale(1);
-}
-
-/* Responsividad */
-@media(max-width: 768px) {
-    .general-txt {
-        width: calc(50% - 40px);
-    }
-}
-
-@media(max-width: 500px) {
-    .header-content .header-txt h1 {
-        font-size: 30px;
-    }
-
-    .general-txt {
-        width: 100%;
-    }
-}
-
 .profile {
     text-align: center;
 }
-
 .profile h3 {
     font-size: 2.9rem;
     font-family: 'Arizonia';
 }
-
 .profile img {
-    width: 80px; /* Asegúrate de que esté en píxeles */
+    width: 80; 
     height: 80px; 
     border-radius: 10%;
     margin-bottom: 10px;
 }
-
 .campos {
     top: 0%;
 }
-
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin-top: 90px; 
 }
-
 .sidebar ul li {
     margin: 30px 0;
 }
-
 .sidebar ul li a {
     text-decoration: none;
     color: #333;
@@ -182,43 +58,41 @@ body {
     border-radius: 17px;
     transition: background 0.3s, color 0.3s;
 }
-
 .sidebar ul li a .icon {
     width: 30px; /* Ajusta el tamaño del icono */
     height: 30px; /* Ajusta el tamaño del icono */
     margin-right: 15px; /* Ajusta el espacio entre el icono y el texto */
 }
-
 .sidebar ul li a:hover {
     background-color: #eed4ddde;
     color: #000000;
 }
-
 .titulo {
     text-align: center; /* Centra el título */
     margin: 0 auto; /* Ajusta el margen */
-    margin-top: 13%; /* Espacio superior */
+    margin-top: 6%; /* Espacio superior */
     width: 100%; /* Asegura que el título ocupe todo el ancho */
-    margin-left: 0; /* Ajusta el margen */
+    margin-left: 17%;
     font-size: 1.4em;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px; /* Espaciado debajo del título */
     color: #333;
+    font-family: 'Times New Roman', Times, serif;
 }
-
 .contenedor {
     width: 85%;
 }
-
 table {
-    width: 80%; /* Cambiado a 80% para que no esté tan estrecho */
+    width: 60%;
     margin: 40px auto;
+    margin-top: 5%;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
     border: 2px solid #535353;
+    margin-left: 37%;
 }
 
 th, td {
@@ -237,3 +111,100 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+.link-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-left:30%;
+}
+
+/* Estilos de los enlaces */
+.styled-link {
+    display: inline-block;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px 0; /* Espaciado entre enlaces */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave al hacer hover */
+    margin-left: 63%;
+    text-align: center;
+}
+
+/* Cambiar color al hacer hover */
+.styled-link:hover {
+    background-color: #e2669c;
+}
+.btn-edit, .btn-delete {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.btn-edit {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+    margin-right: 20px;
+}
+.btn-edit:hover {
+    background-color: #e0add2;
+}
+.btn-delete {
+    background: linear-gradient(to right, #d46e9a, #0a0a0a);
+}
+.btn-delete:hover {
+    background-color: #e0add2;
+}
+/* Estilos generales para la alerta */
+.stock-alert {
+    background-color: #eeece7; /* Fondo amarillo suave */
+    border: 1px solid #d3d2cd; /* Borde amarillo más oscuro */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    margin-left: 50%;
+}
+
+.alert-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #302f2f; /* Color de texto de advertencia */
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilos de la lista de productos con bajo stock */
+.stock-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.stock-item {
+    background-color: #f58bb7; /* Fondo de cada producto */
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-name {
+    font-weight: bold;
+    color: #111111; /* Color de advertencia */
+}
+
+.product-stock {
+    font-size: 14px;
+    font-style: italic;
+    color: #6c757d; /* Color gris claro para el texto del stock */
+}
+

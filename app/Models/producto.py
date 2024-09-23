@@ -8,6 +8,7 @@ class Producto(db.Model):
     precio = db.Column(db.String(255), nullable=False)
     imagen=db.Column(db.String(255), nullable=False)
     categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.idCategoria'))
+    stock = db.Column(db.Integer, default=0)
 
     categorias = db.relationship("Categoria", back_populates="productoss")
     
