@@ -28,6 +28,7 @@ def add():
         servicio_id = request.form.get('servicio_id')
         fecha = request.form.get('fecha')
         hora = request.form.get('hora')
+        cliente = request.form.get('cliente')
         estilista_id = request.form.get('estilista_id')
         
         if not all([servicio_id, fecha, hora, estilista_id]):
@@ -36,7 +37,7 @@ def add():
         servicio = Servicio.query.get(servicio_id)
         estilista = Estilista.query.get(estilista_id)
         
-        new_Cita = Cita(fecha=fecha, hora=hora, estilista=estilista, estilista_id=estilista_id, servicio=servicio, servicio_id=servicio_id)
+        new_Cita = Cita(fecha=fecha, hora=hora, estilista=estilista, cliente=cliente, estilista_id=estilista_id, servicio=servicio, servicio_id=servicio_id)
         
         db.session.add(new_Cita)
         db.session.commit()
@@ -56,6 +57,7 @@ def edit(idcita):
     if request.method == 'POST':
         fecha = request.form['fecha']
         hora = request.form['hora']
+        cliente = request.form.get['cliente']
         servicio_id = request.form['servicio']
         estilista_id = request.form['estilista']
 
@@ -66,6 +68,7 @@ def edit(idcita):
 
         cita.fecha = fecha
         cita.hora = hora
+        cita.cliente = cliente
         cita.servicio_id = servicio_id
         cita.servicio = Servicio.query.get(servicio_id)
         cita.estilista_id = estilista_id

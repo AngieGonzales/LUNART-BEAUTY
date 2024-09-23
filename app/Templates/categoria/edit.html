@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="content">
-        <h1>Editar Categoria</h1>
+        <h1>EDITAR CATEGORIA</h1>
         <form action="{{ url_for('categoria.edit', id=categoria.idCategoria) }}" method="post" enctype="multipart/form-data">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" value="{{ categoria.nombre }}" required>
@@ -74,7 +74,7 @@
                 <img src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
             {% endif %}
 
-            <button class="boton" type="submit">Actualizar</button>
+            <button class="boton" type="submit">ACTUALIZAR</button>
         </form>
     </div>
 </body>

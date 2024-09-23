@@ -66,15 +66,8 @@
                 <input class="input" type="text" id="nombre" name="nombre" required>
                 <label class="label" for="telefono">Telefono:</label>
                 <input class="input" type="text" id="telefono" name="telefono" required>
-                <label class="label" for="servicio">Servicio:</label>
-                <select id="servicio" name="id_servicio" required>
-                    {% for servicio in data %}
-                        <option value="{{ servicio.idservicio }}">{{ servicio.nombre }}</option>
-                    {% endfor %}
-                </select>
-                <br>
                 <div class="link-container">
-                    <button class="styled-link" type="submit">Agregar</button>
+                    <button class="styled-link" type="submit">AGREGAR</button>
                 </div>
             </form>
         </div>

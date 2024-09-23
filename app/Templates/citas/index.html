@@ -64,16 +64,18 @@
     <table>
         <tr>
             <th>ID</th>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Servicio</th>
-            <th>Estilista</th>
+            <th>FECHA</th>
+            <th>HORA</th>
+            <th>CLIENTE</th>
+            <th>SERVICIO</th>
+            <th>ESTILISTA</th>
         </tr>
         {% for cita in data %}
             <tr>
                 <td>{{ cita.idcita }}</td>
                 <td>{{ cita.fecha }}</td>
                 <td>{{ cita.hora }}</td>
+                <td>{{ cita.cliente }}</td>
                 <td>{{ cita.servicio.nombre }}</td>
                 <td>{{ cita.estilista.nombre }}</td>
             </tr>

@@ -63,10 +63,10 @@
         <table>
             <tr>
                 <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>                
-                <th>Imagen</th>
-                <th>Acciones</th>
+                <th>NOMBRE</th>
+                <th>DESCRIPCION</th>                
+                <th>IMAGEN</th>
+                <th>ACCIONES</th>
 
             </tr>
             <tbody>
@@ -79,8 +79,8 @@
                         <img src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
                     </td>
                     <td>
-                        <a class ="btn-edit" href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">Editar</a> 
-                        <a  class= "btn-delete "href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">Eliminar</a>
+                        <a class ="btn-edit" href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">EDITAR</a> 
+                        <a  class= "btn-delete "href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">ELIMINAR</a>
                     </td>
                 </tr>
                 {% endfor %}
