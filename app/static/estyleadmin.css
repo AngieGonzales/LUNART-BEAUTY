@@ -82,11 +82,7 @@ h2 {
 
 .fondo ul li a {
     text-decoration: none;
-<<<<<<< Updated upstream
-    color: #444343; /* Muted text color */
-=======
     color: #666; 
->>>>>>> Stashed changes
     font-size: 18px;
     transition: color 0.3s ease;
     font-family: 'Times New Roman', Times, serif;
@@ -96,8 +92,6 @@ h2 {
 .fondo ul li a:hover {
     color: #b5838d; 
 }
-<<<<<<< Updated upstream
-=======
 /* Sidebar */
 .sidebar {
     width: 250px; 
@@ -207,7 +201,6 @@ tr:nth-child(even) {
 .btn-delete:hover {
     background-color: #e0add2;
 }
->>>>>>> Stashed changes
 .card {
     display: flex;
     flex-wrap: wrap;

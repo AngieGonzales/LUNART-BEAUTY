@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexcategoria.css') }}">
     <script src="https://kit.fontawesome.com/f98b44af14.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -48,6 +48,7 @@
                 </div>
                 <div class="link-container">
                     <a href="{{ url_for('producto.index_cliente', id=categoria.idCategoria) }}" class="styled-link"> VER MAS</a>
+                    <a href="{{ url_for('producto.index_cliente', id=categoria.idCategoria) }}" class="styled-link">INFORMACION</a>
                 </div>
             </div>
           

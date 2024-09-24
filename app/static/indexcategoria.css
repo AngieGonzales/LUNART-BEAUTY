@@ -144,20 +144,18 @@ h2 {
 
 .general-txt {
     box-shadow: 0 2px 8px rgba(193, 144, 178, 0.765);
+
     flex: 1;
     min-width: 280px;
-    min-height: 500px; /* Ajusta esta altura según lo que necesites */
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     text-align: center;
-    display: flex; /* Para alinear el contenido */
-    flex-direction: column; /* Ordena el contenido de arriba hacia abajo */
-    justify-content: space-between; /* Separa el contenido de arriba y abajo */
 }
 
 .general-txt img {
     width: 100%;
     height: 300px; /* Ajusta la altura de las imágenes */
     object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
+    border-bottom: 1px solid #070707;
     border-radius: 5px;
 }
 
@@ -175,6 +173,7 @@ h2 {
 
 .prices samp {
     font-size: 1.2rem;
+    color: #0e0d0d;
     font-weight: bold;
     margin-right: 10px; /* Añade espacio entre el texto y el botón */
 }
@@ -194,6 +193,7 @@ h2 {
 .general-txt p {
     font-size: 1rem;
     margin: 5px 0; /* Reduce el margen inferior para subir el botón */
+    color: #666;
 }
 
 .prices {
@@ -217,7 +217,6 @@ h2 {
     transition: background 0.3s, transform 0.3s;
     position: relative;
     top: -10px; /* Sube el botón ligeramente más */
-    border: none; /* Elimina el borde */
 }
 
 .styled-link:hover {
