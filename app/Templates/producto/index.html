@@ -125,14 +125,6 @@
             <a href="{{ url_for('producto.add') }}" class="styled-link">AGREGAR</a>
         </div>
 
-    <script>
-        function agregarAlCarrito(nombre, precio) {
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            carrito.push({ nombre: nombre, precio: parseFloat(precio) });
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            alert(`${nombre} ha sido agregado al carrito`);
-        }
-    </script>
 
 </body>
 </html>
