@@ -45,7 +45,9 @@
                 <div class="prices">
                     <samp>Precio: {{ producto.precio }}</samp>
                 </div>
-                <button class="btn-add" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</button>
+                <div class="link-container"></div>
+                    <a class="styled-link" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</a>
+                </div>
             </div>
             {% endfor %}
         </div>
