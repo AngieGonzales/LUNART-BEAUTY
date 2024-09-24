@@ -21,6 +21,17 @@
         </div>
     </header>
 
+    <!-- Mensajes Flash -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
     <!-- Contenido principal -->
     <section class="menu-pl container">
         <h1 class="header-content">Productos</h1>
@@ -33,12 +44,19 @@
                 <div class="prices">
                     <samp>Precio: {{ producto.precio }}</samp>
                 </div>
-                    
+                <button class="btn-add" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</button>
+                
             </div>
             {% endfor %}
         </div>
-        
-
+        <script>
+            function agregarAlCarrito(nombre, precio) {
+                const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.push({ nombre: nombre, precio: precio });
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                alert(`${nombre} ha sido agregado al carrito`);
+            }
+        </script>
     </section>
 </body>
 </html>

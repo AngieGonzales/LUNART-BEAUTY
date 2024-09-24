@@ -11,13 +11,20 @@
     <!-- Header -->
     <header>
         <h2>LunArt Beauty</h2>
-            <nav class="fondo">
-                <ul>
-                    <li><a href="{{ url_for('servicio.index') }}">SERVICIOS</a></li>
-                    <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
-                </ul>
-            </nav>    
+        <nav class="fondo">
+            <ul>
+                <li><a href="#">SERVICIOS</a></li>
+                <li><a href="{{ url_for('menu.ruta_contacto') }}">CONTACTO</a></li>
+                <li>
+                    <a href="{{ url_for('carrito.ruta_carrito') }}" class="cart-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>    
     </header>
+    
+    
 
     <!-- Header Content -->
     <div class="header-content container">
@@ -35,12 +42,12 @@
                 <h3>{{ categoria.nombre }}</h3>
                 <td>{{ categoria.descripcion }}</td>
                 <p>{{ categoria.precio }}</p>
-                <a href="{{ url_for('producto.index_cliente', id=categoria.idCategoria) }}">Ver mas</a>
+            
                 <div class="prices">
                     <samp>{{ categoria.precio }}</samp>
                 </div>
                 <div class="link-container">
-                    <a href="{{ url_for('producto.index', id=categoria.idCategoria) }}" class="styled-link">INFORMACION</a>
+                    <a href="{{ url_for('producto.index_cliente', id=categoria.idCategoria) }}" class="styled-link"> VER MAS</a>
                 </div>
             </div>
           

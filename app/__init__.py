@@ -32,6 +32,7 @@ def create_app():
     app.register_blueprint(usuario_routes.bp)
     app.register_blueprint(producto_routes.bp)
     app.register_blueprint(categoria_routes.bp)
+   
     
 
     app.register_blueprint(contacto_routes.bp)

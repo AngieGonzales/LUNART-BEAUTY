@@ -60,64 +60,67 @@
         </div>
     </div>
 
-        <div class="contenedor">
-            <div class="titulo">
-                <h1>LISTA DE PRODUCTOS</h1>
-            </div>
-            <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>PRECIO</th>
-                        <th>IMAGEN</th>
-                        <th>STOCK</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                    {% for producto in data %}
-                    <tr>
-                        <td>{{ producto.idproducto }}</td>
-                        <td>{{ producto.nombre }}</td>
-                        <td>{{ producto.precio }}</td>
-                        <td>
-                            <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
-                        </td>
-                        <td>{{ producto.stock }}
-                            {% if producto.stock < 5 %}
-                                <span style="color: red;">¡Stock bajo!</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">EDITAR</a>
-                            <a class="btn-delete" href="{{ url_for('producto.delete', id=producto.idproducto) }}">ELIMINAR</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                    {% if productos_bajo_stock %}
-                        <div class="alert alert-warning stock-alert">
-                            <strong class="alert-title">¡Atención!</strong> Los siguientes productos tienen bajo stock:
-                            <ul class="stock-list">
-                                {% for producto in productos_bajo_stock %}
-                                    <li class="stock-item">
-                                        <span class="product-name">{{ producto.nombre }}</span> - 
-                                        <span class="product-stock">Stock: {{ producto.stock }}</span>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% endif %}
-
-            </table>
-            <a href="{{ url_for('producto.add') }}" class="styled-link">AGREGAR</a>
+    <div class="contenedor">
+        <div class="titulo">
+            <h1>LISTA DE PRODUCTOS</h1>
         </div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>PRECIO</th>
+                <th>IMAGEN</th>
+                <th>STOCK</th>
+                <th>ACCIONES</th>
+            </tr>
+            {% for producto in data %}
+            <tr>
+                <td>{{ producto.idproducto }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>
+                    <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
+                </td>
+                <td>{{ producto.stock }}
+                    {% if producto.stock < 5 %}
+                        <span style="color: red;">¡Stock bajo!</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">EDITAR</a>
+                    <a class="btn-delete" href="{{ url_for('producto.delete', id=producto.idproducto) }}">ELIMINAR</a>
+                    <button class="btn-add" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</button>
 
+                </td>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% if productos_bajo_stock %}
+            <div class="alert alert-warning stock-alert">
+                <strong class="alert-title">¡Atención!</strong> Los siguientes productos tienen bajo stock:
+                <ul class="stock-list">
+                    {% for producto in productos_bajo_stock %}
+                        <li class="stock-item">
+                            <span class="product-name">{{ producto.nombre }}</span> - 
+                            <span class="product-stock">Stock: {{ producto.stock }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <a href="{{ url_for('producto.add') }}" class="styled-link">Agregar</a>
+    </div>
+    
     <script>
         function agregarAlCarrito(nombre, precio) {
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            carrito.push({ nombre: nombre, precio: parseFloat(precio) });
+            carrito.push({ nombre: nombre, precio: precio });
             localStorage.setItem('carrito', JSON.stringify(carrito));
             alert(`${nombre} ha sido agregado al carrito`);
         }
     </script>
-
 </body>
 </html>

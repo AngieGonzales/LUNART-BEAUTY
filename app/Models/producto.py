@@ -11,4 +11,6 @@ class Producto(db.Model):
     stock = db.Column(db.Integer, default=0)
 
     categorias = db.relationship("Categoria", back_populates="productoss")
+    carritos = db.relationship('Carrito', back_populates='producto')
+
     
