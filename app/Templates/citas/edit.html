@@ -19,7 +19,7 @@
         </div>    
     </header>
 
-    <h1>Editar Cita</h1>
+    <h1>EDITAR CITAS</h1>
 
     <form action="{{ url_for('cita.edit', idcita=cita.idcita) }}" method="POST">
         <div class="form-group">
@@ -31,7 +31,12 @@
             <label for="hora">Hora</label>
             <input type="time" id="hora" name="hora" value="{{ cita.hora }}" required>
         </div>
-    
+
+        <div class="form-group">
+        <label for="cliente">Nombre Cliente:</label>
+        <input type="text" id="cliente" name="cliente" value="{{ cita.cliente }}" required>
+        </div>
+
         <div class="form-group">
             <label for="servicio">Servicio</label>
             <select id="servicio" name="servicio" required>
@@ -55,7 +60,7 @@
         </div>
     
         <div class="form-group">
-            <button type="submit">Guardar Cambios</button>
+            <button type="submit">ACTUALIZAR</button>
         </div>
     </form>
     

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='carrito.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Carrito de Compras</h1>
+        <div id="carrito-container"></div>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    </div>
+    <script>
+        function agregarAlCarrito(id, nombre, precio) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            
+            // Verificar si el producto ya está en el carrito
+            const productoExistente = carrito.find(item => item.id === id);
+            
+            if (productoExistente) {
+                // Si ya está, solo aumenta la cantidad
+                productoExistente.cantidad += 1;
+            } else {
+                // Si no está, lo agregamos con cantidad 1
+                carrito.push({ id: id, nombre: nombre, precio: parseFloat(precio), cantidad: 1 });
+            }
+    
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(`${nombre} ha sido agregado al carrito`);
+        }
+    
+        function mostrarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let carritoHtml = '<h2>Carrito de compras</h2><ul>';
+            
+            carrito.forEach(item => {
+                carritoHtml += `<li>${item.nombre} - Precio: €${item.precio} - Cantidad: ${item.cantidad}</li>`;
+            });
+            
+            carritoHtml += '</ul>';
+            document.getElementById('carrito-container').innerHTML = carritoHtml;
+        }
+    
+        function vaciarCarrito() {
+            localStorage.removeItem('carrito');
+            mostrarCarrito();
+            alert('El carrito ha sido vaciado');
+        }
+    
+        // Mostrar carrito al cargar la página
+        window.onload = mostrarCarrito;
+    </script>
+    
+    <script>
+        mostrarCarrito();
+    </script>
+</body>
+</html>

@@ -68,7 +68,6 @@
                 <th>ID</th>
                 <th>NOMBRE</th>
                 <th>TELEFONO</th>
-                <th>SERVICIO</th>
                 <th>ACCIONES</th>
             </tr>
             {% for estilista in dataE %}
@@ -76,7 +75,6 @@
                     <td>{{ estilista.idEstilista }}</td>
                     <td>{{ estilista.nombre }}</td>
                     <td>{{ estilista.telefono }}</td>
-                    <td>{{ estilista.servicio.nombre }}</td>
                     <td>
                         <a class="btn-edit" href="{{ url_for('estilistas.edit', idEstilista=estilista.idEstilista) }}">EDITAR</a>
                         <a class="btn-delete" href="{{ url_for('estilistas.delete', idEstilista=estilista.idEstilista) }}">ELIMINAR</a>

@@ -8,31 +8,27 @@ bp = Blueprint('estilistas', __name__)
 @bp.route('/estilista')
 def index():
     dataE = Estilista.query.all()
-    servicio = Servicio.query.all()
-    return render_template('estilistas/index.html' ,dataE=dataE, servicio=servicio)
+    return render_template('estilistas/index.html' ,dataE=dataE)
 
 @bp.route('/agregar-estilistas', methods=['GET', 'POST'])
 def add():  
     if request.method == 'POST':
         nombre = request.form['nombre']
         telefono = request.form['telefono']
-        id_servicio= request.form.get('id_servicio')
 
 
-        if not nombre or not telefono or not id_servicio:
+        if not nombre or not telefono:
             return redirect(url_for('estilistas.add'))
         
-        servicio = Servicio.query.get(id_servicio)
 
-        new_estilista = Estilista(nombre=nombre, telefono=telefono, servicio=servicio, id_servicio=id_servicio)
+        new_estilista = Estilista(nombre=nombre, telefono=telefono)
         db.session.add(new_estilista)
         db.session.commit()
 
         return redirect(url_for('estilistas.index'))
     
-    data =Servicio.query.all()
 
-    return render_template('estilistas/add.html', data=data )
+    return render_template('estilistas/add.html')
 
 @bp.route('/estilista/edit/<int:idEstilista>', methods=['GET', 'POST'])
 def edit(idEstilista):
@@ -41,25 +37,20 @@ def edit(idEstilista):
     if request.method == 'POST':
         nombre = request.form['nombre']
         telefono = request.form['telefono']
-        id_servicio = request.form['id_servicio']
 
-        if not nombre or not telefono or not id_servicio:
+        if not nombre or not telefono:
             flash('Todos los campos son requeridos.', 'error')
             return redirect(url_for('estilistas.edit', idEstilista=idEstilista))
 
         estilista.nombre = nombre
         estilista.telefono = telefono
-        estilista.id_servicio = id_servicio
-        estilista.servicio = Servicio.query.get(id_servicio)
 
         db.session.commit()
         flash('Estilista actualizado correctamente.', 'success')
         return redirect(url_for('estilistas.index'))
     
-    servicios = Servicio.query.all()
-    print(f"Servicios disponibles: {[s.idservicio for s in servicios]}")
     
-    return render_template('estilistas/edit.html', estilista=estilista, servicios=servicios)
+    return render_template('estilistas/edit.html', estilista=estilista)
 
 @bp.route('/estilista/delete/<int:idEstilista>')
 def delete(idEstilista):

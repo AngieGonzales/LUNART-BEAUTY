@@ -79,15 +79,15 @@
                         <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
                     </td>
                     <td>
-                        <a class="btn-edit" href="{{ url_for('servicio.edit', idservicio=servicio.idservicio) }}">Editar</a>
-                        <a class="btn-delete" href="{{ url_for('servicio.delete', idservicio=servicio.idservicio) }}">Eliminar</a>
+                        <a class="btn-edit" href="{{ url_for('servicio.edit', idservicio=servicio.idservicio) }}">EDITAR</a>
+                        <a class="btn-delete" href="{{ url_for('servicio.delete', idservicio=servicio.idservicio) }}">ELIMINAR</a>
                     </td>
                 </tr>
             {% endfor %}
         </table>
     </div>
     <div class="link-container">
-        <a href="{{ url_for('servicio.add') }}" class="styled-link">Agregar Servicio</a>
+        <a href="{{ url_for('servicio.add') }}" class="styled-link">AGREGAR</a>
     </div>
 </body>
 </html>

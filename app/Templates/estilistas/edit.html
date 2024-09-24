@@ -73,16 +73,7 @@
                 <label for="name">Telefono:</label>
                 <input type="number" id="telefono" name="telefono" value="{{ estilista.telefono }}">
             
-                <label for="id_servicio">Servicio</label>
-                <select id="id_servicio" name="id_servicio" required>
-                    {% for servicio in servicios %}
-                        <option value="{{ servicio.idservicio }}" {% if servicio.idservicio == estilista.id_servicio %}selected{% endif %}>
-                            {{ servicio.nombre }}
-                        </option>
-                    {% endfor %}
-                </select>
-            
-                <button class="boton" type="submit">GUARDAR</button>
+                <button class="boton" type="submit">ACTUALIZAR</button>
             </form>
         </div>
     </div>
