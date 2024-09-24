@@ -13,11 +13,10 @@
         <h2>LunArt Beauty</h2>
         <nav class="fondo">
             <ul>
-                <li><a href="#">INICIO</a></li>
+                <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
                 <li><a href="#">SERVICIOS</a></li>
                 <li><a href="#">CATEGORÍAS</a></li>
                 <li><a href="{{ url_for('menu.ruta_carrito') }}"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #000000;"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
             </ul>
         </nav>
     </header>
