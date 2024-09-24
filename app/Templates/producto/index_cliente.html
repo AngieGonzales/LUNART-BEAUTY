@@ -35,15 +35,8 @@
     <!-- Contenido principal -->
     <section class="menu-pl container">
         <h1 class="header-content">Productos</h1>
-    <!-- Header Content -->
-    <div class="header-content container">
-        <div class="header-txt">
-            <h1>Productos</h1>
-        </div>
-    </div>
 
-    <!-- Productos Section -->
-    <section class="menu-pl container">
+        <!-- Productos Section -->
         <div class="general-content">
             {% for producto in data %}
             <div class="general-txt">
@@ -53,21 +46,6 @@
                     <samp>Precio: {{ producto.precio }}</samp>
                 </div>
                 <button class="btn-add" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</button>
-                
-            </div>
-            {% endfor %}
-        </div>
-        <script>
-            function agregarAlCarrito(nombre, precio) {
-                const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-                carrito.push({ nombre: nombre, precio: precio });
-                localStorage.setItem('carrito', JSON.stringify(carrito));
-                alert(`${nombre} ha sido agregado al carrito`);
-            }
-        </script>
-                <div class="link-container">
-                    <button class="styled-link" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar</button>
-                </div>
             </div>
             {% endfor %}
         </div>
