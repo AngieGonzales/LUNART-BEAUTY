@@ -16,7 +16,11 @@
                 <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
                 <li><a href="#">SERVICIOS</a></li>
                 <li><a href="#">CATEGORÍAS</a></li>
-                <li><a href="{{ url_for('menu.ruta_carrito') }}"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #000000;"></i></a></li>
+                <li>
+                    <a href="{{ url_for('menu.ruta_carrito') }}" class="cart-icon">
+                        <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -33,10 +37,13 @@
     {% endwith %}
 
     <!-- Contenido principal -->
-    <section class="menu-pl container">
-        <h1 class="header-content">Productos</h1>
+    <div class="header-content container">
+        <div class="header-txt">
+            <h1>Productos</h1>
+        </div>
+    </div>
 
-        <!-- Productos Section -->
+    <section class="menu-pl container">
         <div class="general-content">
             {% for producto in data %}
             <div class="general-txt">
@@ -45,7 +52,9 @@
                 <div class="prices">
                     <samp>Precio: {{ producto.precio }}</samp>
                 </div>
-                <button class="btn-add" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</button>
+                <div class="link-container">
+                    <a class="styled-link" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</a>
+                </div>
             </div>
             {% endfor %}
         </div>
