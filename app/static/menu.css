@@ -11,24 +11,19 @@ body {
     color: #050505;
     background-color: #fbfafa;
 }
-
 .cart-icon {
     font-size: 1.5em;
     color: #df0505; 
     margin-left: 20px;
 }
-
-
 .cart-icon:hover {
     color: #f39c12;
 }
-
 .header {
     background-color: #cccccc;
     color: #050505;
     padding: 20px 0;
 }
-
 .header .container {
     display: flex;
     justify-content: space-between;
