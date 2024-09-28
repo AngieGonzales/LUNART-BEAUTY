@@ -17,7 +17,7 @@
                 <li><a href="#">SERVICIOS</a></li>
                 <li><a href="#">CATEGORÍAS</a></li>
                 <li>
-                    <a href="{{ url_for('menu.ruta_carrito') }}" class="cart-icon">
+                    <a href="{{ url_for('carrito.ruta_carrito') }}" class="cart-icon">
                         <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
                     </a>
                 </li>
@@ -62,12 +62,20 @@
 
     <!-- JavaScript -->
     <script>
-        function agregarAlCarrito(nombre, precio) {
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            carrito.push({ nombre: nombre, precio: precio });
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            alert(`${nombre} ha sido agregado al carrito`);
-        }
+      function agregarAlCarrito(nombre, precio, cantidad = 1) {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    const productoExistente = carrito.find(item => item.nombre === nombre);
+    if (productoExistente) {
+        productoExistente.cantidad += cantidad; // Incrementar la cantidad
+    } else {
+        carrito.push({ nombre: nombre, precio: precio, cantidad: cantidad });
+    }
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(`${nombre} ha sido agregado al carrito`);
+}
+
     </script>
 </body>
 </html>

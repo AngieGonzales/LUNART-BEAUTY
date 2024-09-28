@@ -217,6 +217,7 @@ h2 {
     transition: background 0.3s, transform 0.3s;
     position: relative;
     top: -7px; /* Sube el botón ligeramente más */
+    cursor: pointer; /* Cambiar el cursor a mano */
 }
 
 .styled-link:hover {

@@ -220,6 +220,5 @@ h2 {
 }
 
 .styled-link:hover {
-    background: darkred;
     transform: scale(1.05);
 }
