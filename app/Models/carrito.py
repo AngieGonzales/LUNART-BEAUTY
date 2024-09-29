@@ -10,8 +10,8 @@ class Carrito(db.Model):
     precio = db.Column(db.Float, nullable=False)
     subtotal = db.Column(db.Float, nullable=False)
 
-    producto = db.relationship('Producto', back_populates='carritos')
-    usuario = db.relationship('Usuario', back_populates='carritos')
+    producto = db.relationship('Producto', back_populates='carrito')
+    usuario = db.relationship('Usuario', back_populates='carrito')
 
     def __init__(self, usuario_id, producto_id, cantidad, precio):
         self.usuario_id = usuario_id

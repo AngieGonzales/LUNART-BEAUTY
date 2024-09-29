@@ -16,7 +16,7 @@ class Usuario(db.Model, UserMixin):
     
     
     
-    carritos = db.relationship('Carrito', back_populates='usuario')
+    carrito  = db.relationship('Carrito', back_populates='usuario')
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
