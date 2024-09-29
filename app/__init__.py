@@ -1,10 +1,13 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from apscheduler.schedulers.background import BackgroundScheduler
 from flask_login import LoginManager
 import os
+from datetime import datetime
 
 db = SQLAlchemy()
 login_manager = LoginManager()
+scheduler = BackgroundScheduler()
 
 def create_app():
     app = Flask(__name__)
@@ -21,10 +24,17 @@ def create_app():
     def load_user(id):
         return Usuario.query.get(int(id))
 
-    from app.Routes import cita_routes, servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes,  producto_routes, categoria_routes
-    from app.Routes import cita_routes, servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes, contacto_routes
-
+    from app.Routes import cita_routes
     app.register_blueprint(cita_routes.bp)
+
+    with app.app_context():
+        schedule_cita_cleanup()
+
+    scheduler.start()
+
+
+    from app.Routes import servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes,  producto_routes, categoria_routes, contacto_routes
+
     app.register_blueprint(servicio_routes.bp)
     app.register_blueprint(menu_routes.bp)
     app.register_blueprint(carrito_routes.bp)
@@ -32,10 +42,19 @@ def create_app():
     app.register_blueprint(usuario_routes.bp)
     app.register_blueprint(producto_routes.bp)
     app.register_blueprint(categoria_routes.bp)
-   
-    
-
     app.register_blueprint(contacto_routes.bp)
 
 
     return app
+
+def eliminar_citas_vencidas():
+    with create_app().app_context():
+        fecha_actual = datetime.now().date()
+        citas_vencidas = Cita.query.filter(Cita.fecha < fecha_actual).all()
+        for cita in citas_vencidas:
+            db.session.delete(cita)
+        db.session.commit()
+        print(f"Se eliminaron {len(citas_vencidas)} citas vencidas.")
+
+def schedule_cita_cleanup():
+    scheduler.add_job(eliminar_citas_vencidas, 'interval', hours=24)

@@ -1,4 +1,5 @@
 from app import db
+from datetime import datetime
 
 class Cita(db.Model):
     __tablename__='cita'
@@ -12,6 +13,14 @@ class Cita(db.Model):
     servicio = db.relationship("Servicio", back_populates="cita")
     estilista= db.relationship("Estilista", back_populates="cita")
 
+    def __init__(self, fecha, hora, cliente, servicio_id, estilista_id, servicio, estilista):
+        self.fecha = datetime.strptime(fecha, '%Y-%m-%d').date()
+        self.hora = datetime.strptime(hora, '%H:%M').time()
+        self.cliente = cliente
+        self.servicio_id = servicio_id
+        self.estilista_id = estilista_id
+        self.servicio = servicio
+        self.estilista = estilista
 
     
     

@@ -9,13 +9,32 @@ body {
     background-size: cover;
 }
 
-.header {
-    background: #cccccc;
-    color: #050505;
-    padding: 5px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
+header {
+    background-color: #cccccc;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%;
+    height: 100px;
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    z-index: 1000; /* Asegura que el header quede por encima del contenido */
+    display: flex;
+    align-items: center;
+}
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+header h2 {
+    font-size: 3.4em;
+    font-weight: bold;
+}
 .header .container {
     display: flex;
     justify-content: space-between;
@@ -24,24 +43,38 @@ body {
     margin: auto;
     padding: 0 20px;
 }
-
 h2 {
-    font-size: 2.2rem;
-    font-weight: bold;
-    font-family: 'Arizonia';
-    color: #000000;
+    font-family: 'Arizonia', cursive;
+    color: #000000; /* Color suave */
+    margin: 0;
+    font-size: 2.8em;
+    margin-left: 10%;
 }
 
-.header .menu a {
-    color: #0f0f0f;
-    text-decoration: none;
+.fondo ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.fondo ul li {
     margin: 0 15px;
-    font-size: 1rem;
-    transition: color 0.3s;
+    display: inline-block;
+    margin-top: 3%;
 }
 
-.header .menu a:hover {
-    color: rgb(212, 110, 154);
+.fondo ul li a {
+    text-decoration: none;
+    color: #444343; /* Color de texto apagado */
+    font-size: 18px;
+    transition: color 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.fondo ul li a:hover {
+    color: #b5838d; 
 }
 
 h1 {
@@ -124,13 +157,11 @@ form {
     box-shadow: 0 0 10px rgba(174, 22, 22, 0.231);
     transition: transform 0.3s;
 }
-
 form:hover {
     transform: scale(1.02);
 }
-
 form label {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-weight: bold;
     color: #b65f8c; /* Color de texto más oscuro */
 }
@@ -140,7 +171,7 @@ form input[type="date"],
 form input[type="time"],
 form select {
     width: 100%;
-    padding: 10px;
+    padding: 13px;
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;

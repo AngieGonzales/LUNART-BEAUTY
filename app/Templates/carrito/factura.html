@@ -58,40 +58,63 @@
         // Llamar a la función para cargar los datos al cargar la página
         cargarFacturaEnTabla();
 
-        // Función para generar el PDF de la factura
+        // Función para generar el PDF de la factura y guardar el carrito en la base de datos
         function generarFacturaPDF() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
-            doc.setFontSize(18);
-            doc.text('Factura de Compra', 20, 20);
+            // Guardar el carrito en la base de datos
+            fetch('/guardar_carrito', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(carrito),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al guardar el carrito');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert(data.mensaje); // Mensaje de éxito al guardar
 
-            doc.setFontSize(12);
-            doc.text(`Fecha: ${new Date().toLocaleString()}`, 20, 30);
+                // Generar el PDF
+                doc.setFontSize(18);
+                doc.text('Factura de Compra', 20, 20);
+                doc.setFontSize(12);
+                doc.text(`Fecha: ${new Date().toLocaleString()}`, 20, 30);
 
-            let y = 50;
-            doc.text('Producto', 20, y);
-            doc.text('Cantidad', 80, y);
-            doc.text('Precio', 120, y);
-            doc.text('Subtotal', 160, y);
-            y += 10;
-
-            carrito.forEach(item => {
-                const subtotal = item.precio * item.cantidad;
-                doc.text(item.nombre, 20, y);
-                doc.text(item.cantidad.toString(), 80, y);
-                doc.text(`$${item.precio}`, 120, y);
-                doc.text(`$${subtotal}`, 160, y);
+                let y = 50;
+                doc.text('Producto', 20, y);
+                doc.text('Cantidad', 80, y);
+                doc.text('Precio', 120, y);
+                doc.text('Subtotal', 160, y);
                 y += 10;
+
+                carrito.forEach(item => {
+                    const subtotal = item.precio * item.cantidad;
+                    doc.text(item.nombre, 20, y);
+                    doc.text(item.cantidad.toString(), 80, y);
+                    doc.text(`$${item.precio}`, 120, y);
+                    doc.text(`$${subtotal}`, 160, y);
+                    y += 10;
+                });
+
+                // Agregar el total
+                const total = document.getElementById('totalFactura').innerText;
+                doc.text(`Total: $${total}`, 20, y + 10);
+
+                // Descargar el PDF
+                doc.save('factura_compra.pdf');
+            })
+            .catch(error => {
+                console.error('Error al guardar el carrito:', error);
+                alert('Error al guardar la compra en la base de datos.');
             });
-
-            // Agregar el total
-            const total = document.getElementById('totalFactura').innerText;
-            doc.text(`Total: $${total}`, 20, y + 10);
-
-            // Descargar el PDF
-            doc.save('factura_compra.pdf');
         }
     </script>
 </body>
 </html>
+
