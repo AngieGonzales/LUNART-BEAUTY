@@ -34,7 +34,7 @@ def create_app():
     scheduler.start()
 
 
-    from app.Routes import servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes,  producto_routes, categoria_routes, contacto_routes
+    from app.Routes import servicio_routes, menu_routes, estilista_routes, carrito_routes, usuario_routes,  producto_routes, categoria_routes, contacto_routes, cita_routes
 
     app.register_blueprint(servicio_routes.bp)
     app.register_blueprint(menu_routes.bp)
@@ -44,6 +44,10 @@ def create_app():
     app.register_blueprint(producto_routes.bp)
     app.register_blueprint(categoria_routes.bp)
     app.register_blueprint(contacto_routes.bp)
+    app.register_blueprint(cita_routes.bp)
+    
+    with app.app_context():
+        db.create_all()
 
     app.config['SQLALCHEMY_ECHO'] = True
 
