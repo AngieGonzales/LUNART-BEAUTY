@@ -5,6 +5,7 @@ from flask_login import LoginManager
 import os
 from datetime import datetime
 
+
 db = SQLAlchemy()
 login_manager = LoginManager()
 scheduler = BackgroundScheduler()
