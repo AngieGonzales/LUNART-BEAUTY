@@ -11,8 +11,7 @@
     <!-- Header -->
     <header>
         <h2>LunArt Beauty</h2>
-        <div class="menu-toggle" id="menuToggle">☰</div>
-        <nav class="fondo" id="menu">
+        <nav class="fondo">
             <ul>
                 <li><a href="{{ url_for('menu.ruta_inicio') }}">INICIO</a></li>
                 <li><a href="#">SERVICIOS</a></li>
@@ -51,7 +50,7 @@
                 <img class="img-1" src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
                 <h3>{{ producto.nombre }}</h3>
                 <div class="prices">
-                    <samp>Precio: {{ producto.precio|format_price }}</samp>
+                    <samp>Precio: {{ producto.precio }}</samp>
                 </div>
                 <div class="link-container">
                     <a class="styled-link" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</a>
@@ -66,37 +65,17 @@
       function agregarAlCarrito(nombre, precio, cantidad = 1) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     
-    // Convertir el precio a número y quitar el formato
-    const precioNumerico = parseFloat(precio.replace(/[^\d.]/g, ''));
-
     const productoExistente = carrito.find(item => item.nombre === nombre);
     if (productoExistente) {
         productoExistente.cantidad += cantidad; // Incrementar la cantidad
     } else {
-        carrito.push({ nombre: nombre, precio: precioNumerico, cantidad: cantidad });
+        carrito.push({ nombre: nombre, precio: precio, cantidad: cantidad });
     }
-        document.addEventListener('DOMContentLoaded', function() {
-            var menuToggle = document.getElementById('menuToggle');
-            var menu = document.getElementById('menu');
 
-            menuToggle.addEventListener('click', function() {
-                menu.classList.toggle('show');
-            });
-        });
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(`${nombre} ha sido agregado al carrito`);
+}
 
-        function agregarAlCarrito(nombre, precio, cantidad = 1) {
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            
-            const productoExistente = carrito.find(item => item.nombre === nombre);
-            if (productoExistente) {
-                productoExistente.cantidad += cantidad; // Incrementar la cantidad
-            } else {
-                carrito.push({ nombre: nombre, precio: precio, cantidad: cantidad });
-            }
-
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            alert(`${nombre} ha sido agregado al carrito`);
-        }
     </script>
 </body>
 </html>
