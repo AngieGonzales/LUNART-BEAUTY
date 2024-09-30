@@ -6,17 +6,17 @@
     <title>Editar Cita</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="Logo">
-                <h2>LunArt Beauty</h2>
-            </div>
-
-            <nav class="menu">
-                <a href="{{ url_for('cita.add') }}">AGENDAR</a>
-                <a href="{{ url_for('menu.ruta_catalogo') }}">CATÁLOGO</a>
-            </nav>
-        </div>    
+    <header>
+        <h2>LunArt Beauty</h2>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav class="fondo">
+            <ul id="nav-menu">
+                <li><a href="{{ url_for('cita.add') }}">AGENDAR</a></li>
+                <li><a href="{{ url_for('servicio.index') }}">SERVICIOS</a></li>
+                <li><a href="{{ url_for('menu.ruta_catalogo') }}">CATÁLOGO</a></li>
+                <li><a href="{{ url_for('contact.enviar_contacto') }}">CONTACTO</a></li>
+            </ul>
+        </nav>    
     </header>
 
     <h1>EDITAR CITAS</h1>
@@ -64,6 +64,11 @@
         </div>
     </form>
     
-
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("nav-menu");
+            menu.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
