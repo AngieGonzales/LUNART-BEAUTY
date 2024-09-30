@@ -27,13 +27,16 @@ def registro():
         
         if rol == 'Administrador':
             admin_key = request.form.get('admin_key')
+            if not admin_key:
+                flash('Se requiere la clave de administrador.')
+                return redirect(url_for('usuario.registro'))
             if admin_key != current_app.config['ADMIN_SECRET_KEY']:
                 flash('Clave de administrador incorrecta.')
                 return redirect(url_for('usuario.registro'))
             contraseña = admin_key  # Usa la clave de administrador como contraseña
         else:
             contraseña = request.form.get('contraseña')
-            if len(contraseña) <= 4:
+            if not contraseña or len(contraseña) <= 4:
                 flash('LA CONTRASEÑA DEBE CONTENER MAS DE 4 CARACTERES.')
                 return redirect(url_for('usuario.registro'))
 

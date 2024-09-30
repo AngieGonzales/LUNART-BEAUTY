@@ -67,7 +67,7 @@ body {
     letter-spacing: 2px; /* Espaciado entre letras para una apariencia más refinada */
     font-weight: 800; /* Usa un peso de fuente más grueso para darle fuerza al texto */
     margin-top: 10px; /* Ajusta el margen superior según sea necesario */
-    padding-left: 200px;
+    padding-left: 50px;
     position: absolute;
     top: 43%; /* Ajusta la posición vertical */
     left: 30%;

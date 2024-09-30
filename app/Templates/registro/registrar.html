@@ -17,7 +17,7 @@
 
     <div class="registro">
         <div class="registro-titulo">
-            <h1>Registro de Usuario</h1>
+            <h1>REGISTRO DE USUARIO</h1>
         </div>
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}             
@@ -27,7 +27,7 @@
             {% endif %}
         {% endwith %}
         <div class="registro-formulario">
-            <form method="post" action="{{ url_for('usuario.registro')}}">
+            <form method="post" action="{{ url_for('usuario.registro')}}" id="registroForm">
                 <div class="registro-txt">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Solo admite letras" required><br><br>
@@ -64,9 +64,9 @@
 
                 <div class="registro-txt" id="password-container">
                     <label for="contraseña">Contraseña:</label>
-                    <input type="password" id="contraseña" name="contraseña" placeholder="Mínimo 4 caracteres" required><br><br>
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Mínimo 4 caracteres"><br><br>
                 </div>
-                
+
                 <div id="admin-key-container" style="display: none;">
                     <div class="registro-txt">
                         <label for="admin_key">Clave de Administrador:</label>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
 
-                <button type="submit">Registrar</button>
+                <button type="submit">REGISTRAR</button>
             </form>
         </div>
     </div>
@@ -85,15 +85,36 @@
         var rol = document.getElementById('rol').value;
         var adminKeyContainer = document.getElementById('admin-key-container');
         var passwordContainer = document.getElementById('password-container');
+        var contraseñaInput = document.getElementById('contraseña');
+        var adminKeyInput = document.getElementById('admin_key');
         
         if (rol === 'Administrador') {
             adminKeyContainer.style.display = 'block';
             passwordContainer.style.display = 'none';
+            contraseñaInput.removeAttribute('required');
+            adminKeyInput.setAttribute('required', '');
         } else {
             adminKeyContainer.style.display = 'none';
             passwordContainer.style.display = 'block';
+            contraseñaInput.setAttribute('required', '');
+            adminKeyInput.removeAttribute('required');
         }
     }
+
+    document.getElementById('registroForm').addEventListener('submit', function(event) {
+        var rol = document.getElementById('rol').value;
+        var contraseña = document.getElementById('contraseña').value;
+        var adminKey = document.getElementById('admin_key').value;
+
+        if (rol === 'Administrador' && !adminKey) {
+            event.preventDefault();
+            alert('Por favor, ingrese la clave de administrador.');
+        } else if (rol === 'Usuario' && (!contraseña || contraseña.length <= 4)) {
+            event.preventDefault();
+            alert('La contraseña debe contener más de 4 caracteres.');
+        }
+    });
     </script>
 </body>
 </html>
+

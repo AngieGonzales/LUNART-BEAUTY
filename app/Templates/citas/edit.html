@@ -2,21 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='etil.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estil.css') }}">
     <title>Editar Cita</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="Logo">
-                <h2>LunArt Beauty</h2>
-            </div>
-
-            <nav class="menu">
-                <a href="{{ url_for('cita.add') }}">AGENDAR</a>
-                <a href="{{ url_for('menu.ruta_catalogo') }}">CATÁLOGO</a>
-            </nav>
-        </div>    
+    <header>
+        <h2>LunArt Beauty</h2>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav class="fondo">
+            <ul id="nav-menu">
+                <li><a href="{{ url_for('categoria.index_cliente') }}">CATALOGOS</a></li>
+                <li><a href="{{ url_for('contact.enviar_contacto') }}">CONTACTO</a></li>
+                <li><a href="{{ url_for('servicio.index') }}">SERVICIOS</a></li>
+                <li><a href="{{ url_for('cita.index_user') }}">CITAS</a></li>
+                <li><a href="{{ url_for('menu.ruta_perfil') }}"><label class="letra" for="user1"><img class="icon" src="static/img/user.svg" alt=""></label></a></li>
+            </ul>
+        </nav>    
     </header>
 
     <h1>EDITAR CITAS</h1>
