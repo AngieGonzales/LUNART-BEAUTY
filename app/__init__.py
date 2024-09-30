@@ -44,6 +44,7 @@ def create_app():
     app.register_blueprint(categoria_routes.bp)
     app.register_blueprint(contacto_routes.bp)
 
+    app.config['SQLALCHEMY_ECHO'] = True
 
     return app
 
