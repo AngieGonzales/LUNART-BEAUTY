@@ -8,6 +8,7 @@ class Config:
     UPLOAD_FOLDER = 'app/static/uploads'  # Carpeta donde se guardarán las imágenes subidas
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # Tamaño máximo de archivo (16 MB)
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}  # Extensiones permitidas
+    ADMIN_SECRET_KEY = os.environ.get('ADMIN_SECRET_KEY') or 'admin123'
 
     @staticmethod
     def init_app(app):
