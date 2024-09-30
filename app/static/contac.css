@@ -222,3 +222,79 @@ body {
 .contact-form button:hover {
     background-color: #9f6a86;
 }
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .fondo ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #cccccc;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .fondo ul.show {
+        display: flex;
+    }
+
+    .fondo ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .fondo ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 90%;
+        margin-top: 120px;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .contact-form form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2em;
+        margin-left: 5%;
+    }
+
+    .container {
+        margin-top: 100px;
+    }
+}
+
+/* ... (resto de los estilos sin cambios) ... */

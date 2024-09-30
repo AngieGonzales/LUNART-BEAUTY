@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, session, logging
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session, logging, current_app
 from app.Models.usuario import Usuario
 from app import db
 from datetime import date
@@ -22,9 +22,20 @@ def registro():
         apellido = request.form.get('apellido')
         celular = request.form.get('celular')
         correo = request.form.get('correo')
-        contraseña = request.form.get('contraseña')
         rol = request.form.get('rol')
         fecha_nacimiento = request.form.get('fecha_nacimiento')
+        
+        if rol == 'Administrador':
+            admin_key = request.form.get('admin_key')
+            if admin_key != current_app.config['ADMIN_SECRET_KEY']:
+                flash('Clave de administrador incorrecta.')
+                return redirect(url_for('usuario.registro'))
+            contraseña = admin_key  # Usa la clave de administrador como contraseña
+        else:
+            contraseña = request.form.get('contraseña')
+            if len(contraseña) <= 4:
+                flash('LA CONTRASEÑA DEBE CONTENER MAS DE 4 CARACTERES.')
+                return redirect(url_for('usuario.registro'))
 
         if not nombre.replace(" ", "").isalpha() or not apellido.replace(" ", "").isalpha():
             flash('NOMBRE Y APELLIDO SOLO DEBEN CONTENER LETRAS.')
@@ -38,10 +49,6 @@ def registro():
             flash('EL CORREO DEBE CONTENER UN @.')
             return redirect(url_for('usuario.registro'))
         
-        if len(contraseña) <= 4:
-            flash('LA CONTRASEÑA DEBE CONTENER MAS DE 4 CARACTERES.')
-            return redirect(url_for('usuario.registro'))
-        
         try:
           fecha_nacimiento = date.fromisoformat(fecha_nacimiento)
         except ValueError:
@@ -52,7 +59,6 @@ def registro():
             flash('NO PUEDEN HABER CAMPOS VACIOS.')
             return redirect(url_for('usuario.registro'))
 
-        
         nuevo_usuario = Usuario(
             nombre=nombre,
             apellido=apellido,

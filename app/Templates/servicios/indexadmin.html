@@ -8,8 +8,11 @@
 </head>
 <body>
     <div class="main-container">
+        <!-- Botón de menú para móviles -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="profile">
                 <h3>LunArt Beauty</h3>
                 <div class="form-group">
@@ -58,36 +61,45 @@
             </div>
         </div>
     </div>
-    <div class="tabla">
-        <div class="listas">
-            <h1>LISTA DE SERVICIOS</h1>
-        </div>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>DESCRIPCION</th>
-                <th>IMAGEN</th>
-                <th>ACCIONES</th>
-            </tr>
-            {% for servicio in data %}
+    <div class="content">
+        <div class="tabla">
+            <div class="listas">
+                <h1>LISTA DE SERVICIOS</h1>
+            </div>
+            <table>
                 <tr>
-                    <td>{{ servicio.idservicio }}</td>
-                    <td>{{ servicio.nombre }}</td>
-                    <td>{{ servicio.descripcion }}</td>
-                    <td>
-                        <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
-                    </td>
-                    <td>
-                        <a class="btn-edit" href="{{ url_for('servicio.edit', idservicio=servicio.idservicio) }}">EDITAR</a>
-                        <a class="btn-delete" href="{{ url_for('servicio.delete', idservicio=servicio.idservicio) }}">ELIMINAR</a>
-                    </td>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCION</th>
+                    <th>IMAGEN</th>
+                    <th>ACCIONES</th>
                 </tr>
-            {% endfor %}
-        </table>
+                {% for servicio in data %}
+                    <tr>
+                        <td>{{ servicio.idservicio }}</td>
+                        <td>{{ servicio.nombre }}</td>
+                        <td>{{ servicio.descripcion }}</td>
+                        <td>
+                            <img src="{{ url_for('static', filename='uploads/' ~ servicio.imagen) }}" alt="{{ servicio.nombre }}" width="100">
+                        </td>
+                        <td>
+                            <a class="btn-edit" href="{{ url_for('servicio.edit', idservicio=servicio.idservicio) }}">EDITAR</a>
+                            <a class="btn-delete" href="{{ url_for('servicio.delete', idservicio=servicio.idservicio) }}">ELIMINAR</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="link-container">
+            <a href="{{ url_for('servicio.add') }}" class="styled-link">AGREGAR</a>
+        </div>
     </div>
-    <div class="link-container">
-        <a href="{{ url_for('servicio.add') }}" class="styled-link">AGREGAR</a>
-    </div>
+
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
