@@ -8,8 +8,11 @@
 </head>
 <body>
     <div class="main-container">
+        <!-- Botón de menú para móviles -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="profile">
                 <h3>LunArt Beauty</h3>
                 <div class="form-group">
@@ -89,5 +92,12 @@
         <a href="{{ url_for('categoria.add') }}" class="styled-link">AGREGAR</a>
     </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>

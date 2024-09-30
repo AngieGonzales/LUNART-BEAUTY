@@ -9,8 +9,11 @@
 </head>
 <body>
     <div class="main-container">
+        <!-- Botón de menú para móviles -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="profile">
                 <h3>LunArt Beauty</h3>
                 <div class="form-group">
@@ -18,47 +21,47 @@
                 </div>
             </div>
             <div class="campos">
-            <ul>
-                <li>
-                    <a href="{{ url_for('estilistas.index') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
-                        ESTILISTAS
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('categoria.index') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
-                        CATEGORIAS
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('producto.indexproductos') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
-                        PRODUCTOS
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('cita.index') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
-                        CITAS
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('servicio.index_admin') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
-                        SERVICIOS
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url_for('usuario.lista_usuarios') }}">
-                        <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
-                        CLIENTES
-                    </a>
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('estilistas.index') }}">
+                            <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                            ESTILISTAS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('categoria.index') }}">
+                            <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
+                            CATEGORIAS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('producto.indexproductos') }}">
+                            <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
+                            PRODUCTOS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('cita.index') }}">
+                            <img class="icon" src="{{ url_for('static', filename='img/calendario.png') }}" alt="Inicio">
+                            CITAS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('servicio.index_admin') }}">
+                            <img class="icon" src="{{ url_for('static', filename='img/servicio.png') }}" alt="Inicio">
+                            SERVICIOS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('usuario.lista_usuarios') }}">
+                            <img class="icon" src="{{ url_for('static', filename='img/personas.png') }}" alt="Inicio">
+                            CLIENTES
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
+        
         <div class="content">
             <div class="titulo">
             <h1>LISTA DE CLIENTES</h1>
@@ -90,5 +93,12 @@
             </table>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>

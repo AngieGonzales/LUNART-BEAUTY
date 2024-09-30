@@ -159,3 +159,78 @@ tr:nth-child(even) {
 .btn-delete:hover {
     background-color: #e0add2;
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        left: -330px;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .contenedor {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .titulo {
+        margin-left: 0;
+        font-size: 1.2em;
+    }
+
+    table {
+        width: 95%;
+        margin-left: 2.5%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .styled-link {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+
+    .titulo {
+        font-size: 1em;
+    }
+}

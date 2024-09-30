@@ -9,8 +9,11 @@
 <body>
     <!-- Main content -->
     <div class="main-container">
+        <!-- Botón de menú para móviles -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="profile">
                 <h3>LunArt Beauty</h3>
                 <div class="form-group">
@@ -113,6 +116,11 @@
     </div>
     
     <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("show");
+        }
+
         function agregarAlCarrito(nombre, precio) {
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
             carrito.push({ nombre: nombre, precio: precio });
