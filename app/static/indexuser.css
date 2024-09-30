@@ -67,7 +67,7 @@ h2 {
      margin-top: 10%;
 }
 table {
-    width: 60%;
+    width: 80%;
     margin: 40px auto;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -75,7 +75,7 @@ table {
     border-radius: 8px;
     overflow: hidden;
     border: 2px solid #535353;
-    margin-left: 19%;
+    margin-left: 10%;
 }
 
 th, td {
