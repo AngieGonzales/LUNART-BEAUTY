@@ -73,11 +73,97 @@ h2 {
     color: #b5838d; 
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        position: relative;
+    }
+
+    h2 {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .fondo {
+        width: 100%;
+        display: none;
+    }
+
+    .fondo.show {
+        display: block;
+    }
+
+    .fondo ul {
+        flex-direction: column;
+        width: 100%;
+        background-color: #cccccc;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .fondo ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .header-content {
+        margin-top: 200px; /* Aumentado aún más para dispositivos móviles */
+    }
+
+    .header-txt {
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reducido ligeramente para móviles */
+    }
+
+    .general-content {
+        justify-content: center;
+    }
+
+    .general-txt {
+        min-width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; /* Reducido un poco más para dispositivos muy pequeños */
+    }
+
+    .general-txt {
+        min-width: 100%;
+    }
+
+    .styled-link {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
 
 .header-content {
     display: flex;
     max-width: 1800px;
-    margin: 30px auto;
+    margin: 150px auto 30px; /* Aumentado el margen superior */
     align-items: center; /* Alinear verticalmente */
     padding: 0; /* Eliminar padding para que no haya espacio extra */
     background-color: transparent; /* Hacer el fondo transparente */
@@ -87,10 +173,10 @@ h2 {
 }
 
 .header-txt {
-    margin-left: 40%; /* Ajusta el porcentaje según lo que necesites */
+    margin-left: 28%; /* Reducido de 40% a 20% para mover el texto más a la izquierda */
+    width: 80%; /* Ajustado para mantener el texto dentro del contenedor */
+    text-align: left; /* Alinea el texto a la izquierda en pantallas grandes */
 }
-
-
 
 h1{
     font-size: 2.5rem;
@@ -127,11 +213,9 @@ h2 {
     border-bottom: 1px solid #ddd;
 }
 
-
-
 .menu-pl.container {
-    max-width: 1200px;
-    margin: 60px auto;
+    max-width: 1100px;
+    margin: 50px auto;
     padding: 0 30px;
 }
 
@@ -178,7 +262,6 @@ h2 {
     margin-right: 10px; /* Añade espacio entre el texto y el botón */
 }
 
-
 .general-txt img {
     max-width: 100%;
     border-radius: 10px;
@@ -196,22 +279,37 @@ h2 {
     color: #666;
 }
 
+
 .prices {
     font-size: 1.2rem;
     margin: 10px 0;
 }
 
+<<<<<<< Updated upstream
 .link-container {
     margin-top: -10px; /* Subir el botón hacia arriba, ajusta el valor según sea necesario */
     display: flex;
     justify-content: center; /* Centrar horizontalmente el botón si es necesario */
+=======
+.general-txt p {
+    font-size: 1rem;
+    margin-bottom: 20px; /* Increase this value to create more space between the text and the button */
+    color: #666;
+>>>>>>> Stashed changes
 }
+
+.link-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;    /* Centra el contenido verticalmente */
+    padding: 15px;
+}
+
 
 .styled-link {
     display: inline-block;
-    background: linear-gradient(to right, #d46e9a, #0a0a0a);
-    color: white;
     padding: 10px 20px;
+<<<<<<< Updated upstream
     border-radius: 5px;
     text-decoration: none;
     transition: background 0.3s, transform 0.3s;
@@ -222,4 +320,17 @@ h2 {
 
 .styled-link:hover {
     transform: scale(1.05);
+=======
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
 }
+
+.styled-link:hover {
+    background: linear-gradient(to right, #0f0d0a, #d46e9a);
+    transform: scale(1.05); /* Agrandar un poco el botón */
+>>>>>>> Stashed changes
+}
+

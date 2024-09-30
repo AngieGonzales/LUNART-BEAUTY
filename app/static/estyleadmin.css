@@ -17,6 +17,31 @@ header {
     top: 0;
     display: flex;
 }
+
+
+
+
+.header-txt {
+    margin-left: 40%; /* Ajusta el porcentaje según lo que necesites */
+}
+
+
+.servicios-content {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(193, 144, 178, 0.765); /* Sombra similar a categorías */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px auto; /* Espaciado externo */
+    max-width: 1000px; /* Ancho máximo */
+    text-align: center; /* Centrar el texto */
+    margin-top: 100px; /* Ajuste según el header */
+}
+
+.servicios-content h1, .servicios-content p {
+    margin-bottom: 15px; /* Espacio entre los elementos */
+    color: #333; /* Texto oscuro */
+}
+
 header nav {
     flex-grow: 1;
     text-align: right;
@@ -31,6 +56,8 @@ h1 {
     margin-left: 35%;
     width: 50%;
 }
+
+
 .header-content {
     display: flex;
     max-width: 1800px;
@@ -42,6 +69,8 @@ h1 {
     border-radius: 0; /* Sin bordes redondeados */
     margin-top: 100px; /* Ajustar según la altura del header */
 }
+
+
 .header-txt {
     margin-top: 5%;
     margin-left: 40%; /* Ajusta el porcentaje según lo que necesites */
