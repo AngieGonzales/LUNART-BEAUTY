@@ -9,8 +9,11 @@
 </head>
 <body>
     <div class="main-container">
+        <!-- Botón de menú para móviles -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <!-- Sidebar -->
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="profile">
                 <h3>LunArt Beauty</h3>
                 <div class="form-group">
@@ -21,7 +24,6 @@
                 <li>
                     <a href="{{ url_for('menu.ruta_inicio') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/casa.png') }}" alt="Inicio">
-
                         INICIO
                     </a>
                 </li>
@@ -45,7 +47,13 @@
             <p>Aquí puedes encontrar información y opciones para gestionar tu perfil.</p>
             <img class="img-1" src="{{ url_for('static', filename='img/cara.png') }}" alt="usuario">
         </div>
-        
     </div>
+
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>

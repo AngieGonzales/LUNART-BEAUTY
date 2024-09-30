@@ -55,7 +55,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 150px auto 30px; /* Aumentamos el margen superior a 150px */
     padding: 0 20px;
     align-items: center;
     background-color: #fff;
@@ -115,7 +115,7 @@ body {
 }
 
 /* Responsividad */
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .header .container {
         flex-direction: column;
     }
@@ -125,7 +125,7 @@ body {
     }
 
     .header-txt h1 {
-        font-size: 36px; /* Reducir el tamaño en pantallas más pequeñas */
+        font-size: 50px; /* Reducir el tamaño en pantallas más pequeñas */
     }
 }
 
@@ -135,7 +135,7 @@ body {
     font-style: italic; /* Agregado para cursiva */
     color: #050505;
     background-color: #fffcfcb6;
-    padding-top: 120px; /* Espacio extra para evitar que el contenido quede detrás del header */
+    padding-top: 130px; /* Espacio extra para evitar que el contenido quede detrás del header */
 }
 
 /* Sección de ancho completo */
@@ -299,7 +299,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 150px auto 30px; /* Aumentamos el margen superior a 150px */
     padding: 0 20px;
     align-items: center;
     background-color: #fff;
@@ -308,3 +308,179 @@ h2 {
     margin-top: 6%;
 }
 
+/* Ajustes generales para responsividad */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px; /* Reducir el padding superior en pantallas pequeñas */
+    }
+
+    header {
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .fondo ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fondo ul li {
+        margin: px 0;
+    }
+
+    .header-content {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .header-img, .header-txt {
+        flex-basis: 100%;
+    }
+
+    .header-txt h1 {
+        font-size: 24px;
+    }
+
+    .header-txt p {
+        font-size: 1rem;
+    }
+
+    .section-content {
+        flex-direction: column;
+    }
+
+    .section-image img {
+        max-width: 100%;
+    }
+
+    .section-text h3 {
+        font-size: 2rem;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .header-txt h1 {
+        font-size: 20px;
+    }
+
+    .btn-1, .btn-gym {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.fondo ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.fondo ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0;
+    top: 100%;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block !important;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .fondo ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #eaeaea;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .fondo ul.show {
+        display: flex;
+    }
+
+    .fondo ul li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .fondo ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .fondo ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* ... (resto de los estilos) ... */

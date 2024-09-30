@@ -220,6 +220,81 @@ h2 {
 }
 
 .styled-link:hover {
-    background: darkred;
     transform: scale(1.05);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px; /* Ajusta este valor según la altura de tu header */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .fondo ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #cccccc;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .fondo ul.show {
+        display: flex;
+    }
+
+    .fondo ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .fondo ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #bbb;
+    }
+
+    .header-content {
+        margin-top: 20px;
+    }
+
+    .header-txt {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .general-content {
+        justify-content: center;
+    }
+
+    .general-txt {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .general-txt {
+        flex-basis: 100%;
+    }
 }

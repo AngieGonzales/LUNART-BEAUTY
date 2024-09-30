@@ -141,3 +141,113 @@ h1 {
     margin-left: 35%;
     width: 50%;
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        left: -330px;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 60px; /* Añade espacio en la parte superior */
+    }
+
+    .tabla {
+        margin-top: 40px; /* Añade más espacio antes de la tabla */
+    }
+
+    h1 {
+        margin-left: 0;
+        width: 100%;
+        font-size: 2em;
+        margin-top: 20px; /* Ajusta el margen superior del título */
+    }
+
+    table {
+        width: 95%;
+        margin-left: 2.5%;
+        font-size: 14px;
+        margin-top: 30px; /* Añade espacio entre el título y la tabla */
+    }
+
+    th, td {
+        padding: 10px 5px;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        display: inline-block;
+        margin: 2px;
+    }
+
+    .link-container {
+        margin-left: 0;
+        margin-top: 30px; /* Añade espacio después de la tabla */
+    }
+
+    .styled-link {
+        width: 50%;
+        margin: 20px auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding-top: 80px; /* Aumenta el espacio en la parte superior para pantallas más pequeñas */
+    }
+
+    .tabla {
+        margin-top: 50px; /* Aumenta el espacio antes de la tabla */
+    }
+
+    table {
+        font-size: 12px;
+        margin-top: 40px; /* Aumenta el espacio entre el título y la tabla */
+    }
+
+    th, td {
+        padding: 8px 2px;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-top: 30px; /* Ajusta el margen superior del título */
+    }
+
+    td img {
+        max-width: 50px;
+        height: auto;
+    }
+
+    .styled-link {
+        width: 70%;
+        font-size: 14px;
+    }
+}
