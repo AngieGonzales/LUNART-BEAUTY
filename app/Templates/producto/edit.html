@@ -8,13 +8,13 @@
 </head>
 <body>
     <h1>EDITAR PRODUCTOS</h1>
-    <form action="{{ url_for('producto.edit', id=producto.idproducto) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url_for('producto.edit', id=producto.id) }}" method="POST" enctype="multipart/form-data">
 
-        <label for="nombre">Nombre</label>
+        <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" value="{{ producto.nombre }}" required>
         
-        <label for="precio">Precio</label>
-        <input type="text" id="precio" name="precio" value="{{ "{:,.2f}".format(producto.precio).replace(',', '@').replace('.', ',').replace('@', '.') }}" required>
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="precio" value="{{ "{:,.2f}".format(producto.precio).replace(',', '.').replace('.', ',') }}" required>
 
         <label for="imagen">Imagen</label>
         <input type="file" name="imagen" id="imagen" accept="image/*">
@@ -36,7 +36,7 @@
         <label for="stock">Stock</label>
         <input type="number" id="stock" name="stock" required>
         
-        <button type="submit">ACTUALIZAR</button>
+        <button type="submit">Actualizar</button>
     </form>
 </body>
 </html>
