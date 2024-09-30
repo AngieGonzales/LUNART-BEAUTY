@@ -1,7 +1,6 @@
 import os
 
     #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:@localhost:3306/belleza'
-  
 class Config:
     USER = os.getenv('MYSQL_USER', 'root')
     PASSWORD = os.getenv('MYSQL_PASSWORD', 'FJcDicglwsuwxNJUoEyNIeeRZyDLpUKr')
@@ -9,7 +8,7 @@ class Config:
     PORT = os.getenv('MYSQL_PORT', 29344)
     DATABASE = os.getenv('MYSQL_DATABASE', 'belleza')
 
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:HuGkpgUUNsrqDlSadfouBceYjsFEiSfh@junction.proxy.rlwy.net:57233/railway'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:@localhost:3306/belleza'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
      # Configuración para la carga de imágenes
