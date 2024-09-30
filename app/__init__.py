@@ -25,8 +25,7 @@ def create_app():
     def load_user(id):
         return Usuario.query.get(int(id))
 
-    from app.Routes import cita_routes
-    app.register_blueprint(cita_routes.bp)
+    
 
     with app.app_context():
         schedule_cita_cleanup()
@@ -45,9 +44,6 @@ def create_app():
     app.register_blueprint(categoria_routes.bp)
     app.register_blueprint(contacto_routes.bp)
     app.register_blueprint(cita_routes.bp)
-    
-    with app.app_context():
-        db.create_all()
 
     app.config['SQLALCHEMY_ECHO'] = True
 
@@ -64,7 +60,7 @@ def create_app():
 def eliminar_citas_vencidas():
     with create_app().app_context():
         fecha_actual = datetime.now().date()
-        citas_vencidas = Cita.query.filter(Cita.fecha < fecha_actual).all()
+        citas_vencidas = cita.query.filter(cita.fecha < fecha_actual).all()
         for cita in citas_vencidas:
             db.session.delete(cita)
         db.session.commit()
