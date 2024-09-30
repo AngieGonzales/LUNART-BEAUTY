@@ -4,7 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from flask_login import LoginManager
 import os
 from datetime import datetime
-
+import locale
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -46,6 +46,14 @@ def create_app():
     app.register_blueprint(contacto_routes.bp)
 
     app.config['SQLALCHEMY_ECHO'] = True
+
+    # Configurar la localización para el formato de números
+    locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
+
+    # Registrar el filtro personalizado
+    @app.template_filter('format_price')
+    def format_price(value):
+        return locale.format_string('%.2f', value, grouping=True)
 
     return app
 

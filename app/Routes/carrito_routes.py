@@ -16,7 +16,7 @@ def ruta_carrito():
 @bp.route('/guardar_carrito', methods=['POST'])
 def guardar_carrito():
     data = request.json
-    carrito_items = data.get('carrito')  # Asegúrate de que el JSON contenga una clave 'carrito'
+    carrito_items = data.get('carrito')
 
     if carrito_items:
         for item in carrito_items:
@@ -27,20 +27,21 @@ def guardar_carrito():
             if item['cantidad'] <= 0 or item['precio'] < 0:
                 return jsonify({"message": "Cantidad y precio deben ser mayores que cero"}), 400
 
-            # Cambia esta línea para usar producto_id
             nuevo_item = Carrito(
-                producto_id=item['producto'],  # Asegúrate de usar el ID del producto
+                producto_id=item['producto'],
                 cantidad=item['cantidad'],
-                precio=item['precio'],
-                subtotal=item['cantidad'] * item['precio'],
+                precio=float(item['precio']),  # Asegúrate de que el precio sea un float
+                subtotal=item['cantidad'] * float(item['precio']),
             )
             db.session.add(nuevo_item)
 
         try:
             db.session.commit()
         except Exception as e:
-            db.session.rollback()  # Revertir cambios en caso de error
-            return jsonify({"message": str(e)}), 500  # Retorna el error
+            db.session.rollback()
+            return jsonify({"message": str(e)}), 500
+
+    return jsonify({"message": "Carrito guardado exitosamente"}), 200
 
 # Ruta para guardar la factura
 @bp.route('/guardar_factura', methods=['POST'])

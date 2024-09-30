@@ -190,6 +190,14 @@
     </div>
 
     <script>
+        function formatearPrecio(precio) {
+            // Asegurarse de que el precio sea un número
+            precio = parseFloat(precio);
+            
+            // Formatear el precio con dos decimales sin usar Intl.NumberFormat
+            return '$ ' + precio.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        }
+
         function actualizarTabla() {
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
             let total = 0;
@@ -203,8 +211,8 @@
                 fila.innerHTML = `
                     <td>${item.nombre}</td>
                     <td><input type="number" class="cantidad" value="${item.cantidad}" min="1" data-index="${index}"></td>
-                    <td>$${item.precio}</td>
-                    <td>$${subtotal}</td>
+                    <td>${formatearPrecio(item.precio)}</td>
+                    <td>${formatearPrecio(subtotal)}</td>
                     <td>
                         <button class="btn-update" data-index="${index}">Actualizar</button>
                         <button class="btn-delete" data-index="${index}">Eliminar</button>
@@ -213,7 +221,7 @@
                 total += subtotal;
             });
 
-            document.getElementById('total').innerText = `$${total}`;
+            document.getElementById('total').innerText = formatearPrecio(total);
 
             document.querySelectorAll('.btn-update').forEach(button => {
                 button.addEventListener('click', function() {
@@ -259,30 +267,55 @@
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
             const doc = new jsPDF();
 
+            // Configuración de estilos
             doc.setFontSize(20);
-            doc.text('Factura LunArt Beauty', 20, 20);
+            doc.setTextColor(212, 110, 154); // Color primario: #d46e9a
+            doc.text('Factura LunArt Beauty', 105, 20, { align: 'center' });
+
             doc.setFontSize(12);
+            doc.setTextColor(85, 85, 85); // Color secundario: #555555
             doc.text(`Fecha: ${new Date().toLocaleString()}`, 20, 30);
+            doc.text(`Nº de Factura: FAC-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`, 20, 40);
 
-            let y = 50;
+            // Tabla de productos
+            doc.setFillColor(240, 240, 240);
+            doc.rect(15, 50, 180, 10, 'F');
+            doc.setTextColor(51, 51, 51); // Color texto: #333333
             doc.setFontSize(10);
-            doc.text('Producto', 20, y);
-            doc.text('Cantidad', 80, y);
-            doc.text('Precio', 120, y);
-            doc.text('Subtotal', 160, y);
-            y += 10;
+            doc.text('Producto', 20, 57);
+            doc.text('Cantidad', 80, 57);
+            doc.text('Precio', 120, 57);
+            doc.text('Subtotal', 160, 57);
 
-            carrito.forEach(item => {
+            let y = 70;
+            let total = 0;
+            carrito.forEach((item, index) => {
                 const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                
+                if (index % 2 !== 0) {
+                    doc.setFillColor(250, 250, 250);
+                    doc.rect(15, y - 5, 180, 10, 'F');
+                }
+                
                 doc.text(item.nombre, 20, y);
                 doc.text(item.cantidad.toString(), 80, y);
-                doc.text(`$${item.precio}`, 120, y);
-                doc.text(`$${subtotal}`, 160, y);
+                doc.text(formatearPrecio(item.precio), 120, y);
+                doc.text(formatearPrecio(subtotal), 160, y);
                 y += 10;
             });
 
-            const total = document.getElementById('total').innerText.slice(1);
-            doc.text(`Total: $${total}`, 20, y + 10);
+            // Total
+            doc.setFillColor(212, 110, 154);
+            doc.rect(120, y, 75, 10, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(12);
+            doc.text(`Total: ${formatearPrecio(total)}`, 190, y + 7, { align: 'right' });
+
+            // Pie de página
+            doc.setTextColor(85, 85, 85);
+            doc.setFontSize(10);
+            doc.text('Gracias por su compra en LunArt Beauty', 105, 280, { align: 'center' });
 
             // Descargar el PDF
             doc.save('factura_lunart_beauty.pdf');

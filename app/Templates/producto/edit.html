@@ -14,7 +14,7 @@
         <input type="text" id="nombre" name="nombre" value="{{ producto.nombre }}" required>
         
         <label for="precio">Precio</label>
-        <input type="text" id="precio" name="precio" value="{{ producto.precio }}" required>
+        <input type="text" id="precio" name="precio" value="{{ "{:,.2f}".format(producto.precio).replace(',', '@').replace('.', ',').replace('@', '.') }}" required>
 
         <label for="imagen">Imagen</label>
         <input type="file" name="imagen" id="imagen" accept="image/*">
