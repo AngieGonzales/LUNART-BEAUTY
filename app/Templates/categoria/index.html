@@ -21,12 +21,15 @@
             </div>
             <div class="campos">
             <ul>
+<<<<<<< Updated upstream
                 <li>
                     <a href="{{ url_for('estilistas.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
                         ESTILISTAS
                     </a>
                 </li>
+=======
+>>>>>>> Stashed changes
                 <li>
                     <a href="{{ url_for('categoria.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
@@ -36,7 +39,11 @@
                 <li>
                     <a href="{{ url_for('producto.indexproductos') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
+<<<<<<< Updated upstream
                         PRODUCTOS
+=======
+                        NOTIFICACIONES STOCK
+>>>>>>> Stashed changes
                     </a>
                 </li>
                 <li>
@@ -61,17 +68,19 @@
             </div>
         </div>
     </div>
-    <div class="tabla">
-             <h1> CATEGORIAS </h1>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>                
-                <th>Imagen</th>
-                <th>Acciones</th>
 
-            </tr>
+    <div class="tabla">
+        <h1> CATEGORIAS </h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>                
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
             <tbody>
                 {% for categoria in data %}
                 <tr>
@@ -82,14 +91,28 @@
                         <img src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
                     </td>
                     <td>
+<<<<<<< Updated upstream
                         <a class ="btn-edit" href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">Editar</a> 
                         <a  class= "btn-delete "href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">Eliminar</a>
+=======
+                        <a class="btn-edit" href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">Editar</a> 
+                        <a class="btn-delete" href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">Eliminar</a>
+>>>>>>> Stashed changes
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+<<<<<<< Updated upstream
         <a href="{{ url_for('categoria.add') }}" class="styled-link">AGREGAR</a>
+=======
+
+        <!-- Buttons Container (positioned below the table) -->
+        <div class="button-container">
+            
+            <a href="{{ url_for('categoria.add') }}" class="styled-link">Agregar</a>
+        </div>
+>>>>>>> Stashed changes
     </div>
     </div>
 

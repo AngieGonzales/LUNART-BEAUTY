@@ -150,6 +150,7 @@ td img {
     background-color: #e0add2;
 }
 
+<<<<<<< Updated upstream
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -271,3 +272,26 @@ td img {
         padding: 6px 12px;
     }
 }
+=======
+/* Button container to align buttons below the table */
+.button-container {
+    text-align: center; /* Center-aligns the buttons horizontally */
+    margin-top: 20px;   /* Adds space between the table and the buttons */
+}
+
+.styled-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #d46e9a, #0a0a0a); /* Gradiente de fondo */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 0 10px;  /* Adds spacing between the buttons */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.styled-link:hover {
+    background: linear-gradient(to right, #0f0d0a, #d46e9a);
+    transform: scale(1.05); /* Agrandar un poco el botón */
+}
+>>>>>>> Stashed changes

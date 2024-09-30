@@ -33,6 +33,13 @@
                         ACTUALIZAR PERFIL
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
                 <li>
                     <a href="{{ url_for('usuario.logout') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/cerrar.png') }}" alt="Cerrar Sesión">
