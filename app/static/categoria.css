@@ -150,129 +150,6 @@ td img {
     background-color: #e0add2;
 }
 
-<<<<<<< Updated upstream
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .sidebar {
-        left: -330px;
-        transition: left 0.3s ease;
-    }
-
-    .sidebar.show {
-        left: 0;
-    }
-
-    .tabla {
-        width: 100%;
-        margin-left: 0;
-        padding: 10px;
-    }
-
-    h1 {
-        margin-left: 0;
-        width: 100%;
-        font-size: 1.8em;
-        margin-top: 60px;
-    }
-
-    table {
-        width: 100%;
-        margin-left: 0;
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 8px 4px;
-    }
-
-    .btn-edit, .btn-delete {
-        padding: 4px 8px;
-        font-size: 0.7rem;
-        display: inline-block;
-        margin: 2px;
-    }
-
-    .styled-link {
-        margin-left: 0;
-        width: 50%;
-        text-align: center;
-        display: block;
-        margin: 20px auto;
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
-    /* Hacer la tabla scrollable horizontalmente */
-    .tabla {
-        overflow-x: auto;
-    }
-
-    /* Ajustar el ancho de las columnas */
-    table th:nth-child(1),
-    table td:nth-child(1) {
-        width: 10%;
-    }
-    table th:nth-child(2),
-    table td:nth-child(2) {
-        width: 20%;
-    }
-    table th:nth-child(3),
-    table td:nth-child(3) {
-        width: 25%;
-    }
-    table th:nth-child(4),
-    table td:nth-child(4) {
-        width: 25%;
-    }
-    table th:nth-child(5),
-    table td:nth-child(5) {
-        width: 20%;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th, td {
-        padding: 6px 2px;
-    }
-
-    .btn-edit, .btn-delete {
-        padding: 3px 6px;
-        font-size: 0.6rem;
-    }
-
-    td img {
-        max-width: 40px;
-        height: auto;
-    }
-
-    .styled-link {
-        width: 70%;
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-}
-=======
 /* Button container to align buttons below the table */
 .button-container {
     text-align: center; /* Center-aligns the buttons horizontally */
@@ -288,10 +165,10 @@ td img {
     border-radius: 10px;
     margin: 0 10px;  /* Adds spacing between the buttons */
     transition: background-color 0.3s, transform 0.3s;
+    margin-left: 20%;
 }
 
 .styled-link:hover {
     background: linear-gradient(to right, #0f0d0a, #d46e9a);
     transform: scale(1.05); /* Agrandar un poco el botón */
 }
->>>>>>> Stashed changes

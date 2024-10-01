@@ -22,6 +22,12 @@
             <div class="campos">
             <ul>
                 <li>
+                    <a href="{{ url_for('estilistas.index') }}">
+                        <img class="icon" src="{{ url_for('static', filename='img/tijeras.png') }}" alt="Inicio">
+                        ESTILISTAS
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url_for('categoria.index') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/orden.png') }}" alt="Inicio">
                         CATEGORIAS
@@ -30,7 +36,7 @@
                 <li>
                     <a href="{{ url_for('producto.indexproductos') }}">
                         <img class="icon" src="{{ url_for('static', filename='img/campana.png') }}" alt="Inicio">
-                        NOTIFICACIONES STOCK
+                        PRODUCTOS
                     </a>
                 </li>
                 <li>
@@ -54,7 +60,6 @@
             </ul>
             </div>
         </div>
-    </div>
 
     <div class="tabla">
         <h1> CATEGORIAS </h1>
@@ -78,8 +83,8 @@
                         <img src="{{ url_for('static', filename='uploads/' ~ categoria.imagen) }}" alt="{{ categoria.nombre }}" width="100">
                     </td>
                     <td>
-                        <a class="btn-edit" href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">Editar</a> 
-                        <a class="btn-delete" href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">Eliminar</a>
+                        <a class="btn-edit" href="{{ url_for('categoria.edit', id=categoria.idCategoria) }}">EDITAR</a> 
+                        <a class="btn-delete" href="{{ url_for('categoria.delete', id=categoria.idCategoria) }}">ELIMINAR</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -89,7 +94,7 @@
         <!-- Buttons Container (positioned below the table) -->
         <div class="button-container">
             
-            <a href="{{ url_for('categoria.add') }}" class="styled-link">Agregar</a>
+            <a href="{{ url_for('categoria.add') }}" class="styled-link">AGREGAR</a>
         </div>
     </div>
     </div>
