@@ -135,40 +135,38 @@ def admin_dashboard():
     
 @bp.route('/usuario/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
-   
     usuario = Usuario.query.get_or_404(id)
 
     if request.method == 'POST':
-       
         nombre = request.form.get('nombre')
         correo = request.form.get('correo')
         celular = request.form.get('celular')
 
-        
         usuario.nombre = nombre
         usuario.correo = correo
         usuario.celular = celular
 
         try:
-            
             db.session.commit()
             flash('Perfil actualizado con éxito.')
-            return redirect(url_for('usuario.index'))  
+            return redirect(url_for('usuario.edit', id=usuario.id))
         except Exception as e:
             db.session.rollback()
             flash(f'Error al actualizar el perfil: {str(e)}')
 
-    
     return render_template('usuarios/edit.html', usuario=usuario)
 
 
-@bp.route('/usuario/delete/<int:id>')
+@bp.route('/usuario/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
     usuario = Usuario.query.get_or_404(id)
-
-    db.session.delete(usuario)
-    db.session.commit()
-
-    flash('Cita eliminada correctamente.', 'success')
-    return redirect(url_for('usuario.index'))
+    try:
+        db.session.delete(usuario)
+        db.session.commit()
+        flash('Usuario eliminado correctamente')
+        return redirect(url_for('usuario.lista_usuarios'))
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Error al eliminar el usuario: {str(e)}')
+        return redirect(url_for('usuario.lista_usuarios'))
 
