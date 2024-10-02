@@ -80,7 +80,7 @@
                             <span class="product-stock">Stock: {{ producto.stock }}</span>
                         </li>
                     {% endfor %}
-                </ul>
+                </ul>z
             </div>
         {% endif %}
 
@@ -91,7 +91,6 @@
                     <th>ID</th>
                     <th>NOMBRE</th>
                     <th>PRECIO</th>
-                    <th>IMAGEN</th>
                     <th>STOCK</th>
                     <th>ACCIONES</th>
                 </tr>
@@ -99,18 +98,10 @@
             <tbody>
                 {% for producto in data %}
                 <tr>
-                    <td>{{ producto.idproducto }}</td>
+                    <td>{{ producto.id }}</td>
                     <td>{{ producto.nombre }}</td>
-                    <td>{{ "{:,.2f}".format(producto.precio).replace(',', '@').replace('.', ',').replace('@', '.') }}</td>
-                    <td>
-                        <img src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
-                    </td>
-                    <td>
-                        {{ producto.stock }}
-                        {% if producto.stock < 5 %}
-                            <span style="color: red;">¡Stock bajo!</span>
-                        {% endif %}
-                    </td>
+                    <td>{{ "{:,.2f}".format(producto.precio).replace(',', '.').replace('.', ',') }}</td>
+                    <td>{{ producto.stock }}</td>
                     <td>
                         <a class="btn-edit" href="{{ url_for('producto.edit', id=producto.idproducto) }}">EDITAR</a>
                         <a class="btn-delete" href="{{ url_for('producto.delete', id=producto.idproducto) }}">ELIMINAR</a>

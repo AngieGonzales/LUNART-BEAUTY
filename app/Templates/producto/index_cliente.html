@@ -51,7 +51,7 @@
                 <img class="img-1" src="{{ url_for('static', filename='uploads/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" width="100">
                 <h3>{{ producto.nombre }}</h3>
                 <div class="prices">
-                    <samp>Precio: {{ producto.precio }}</samp>
+                    <samp>Precio: {{ "{:,.2f}".format(producto.precio).replace(',', 'X').replace('.', ',').replace('X', '.') }}</samp>
                 </div>
                 <div class="link-container">
                     <a class="styled-link" onclick="agregarAlCarrito('{{ producto.nombre }}', '{{ producto.precio }}')">Agregar al Carrito</a>

@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 from app.Models.producto import Producto
 from app.Models.categoria import Categoria
 from app import db
+from decimal import Decimal
 
 bp = Blueprint('producto', __name__, url_prefix='/producto')
 
@@ -69,7 +70,11 @@ def edit(id):
 
     if request.method == 'POST':
         producto.nombre = request.form.get('nombre')
-        producto.precio = request.form.get('precio')
+        
+        # Convertir el precio de string a Decimal
+        precio_str = request.form.get('precio').replace('.', '').replace(',', '.')
+        producto.precio = Decimal(precio_str)
+        
         producto.categoria_id = request.form.get('categoria')
         producto.stock = request.form.get('stock')
 
